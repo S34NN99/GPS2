@@ -1,6 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 public interface IAnimation 
 {
@@ -9,3 +7,13 @@ public interface IAnimation
     void UsingSecondarySkill(bool isUsingSkill);
     void UsingUniqueSkill(string skillName, bool isUsingSkill);
 }
+
+public interface IPlayer
+{
+    void Stun(PlayerMovement playerMovement);
+    void UnStun(PlayerMovement playerMovement);
+    void SpawnFire(PlayerMovement playerMovement);
+    void RemoveFire(PlayerMovement playerMovement);
+}
+
+

@@ -71,8 +71,7 @@ public class Fire : MonoBehaviour
                 if (!target.myPlayer.isStunned)
                 {
 
-                    target.myPlayer.isStunned = true;
-                    gameManager.CheckIfPlayerStun(target);
+                    target.Stun(target);
                     //spawned fire on player
                     SpawnFireOnPlayer(target.transform);
                     fireInfo.trappedPlayer.Add(target.gameObject);
@@ -120,8 +119,7 @@ public class Fire : MonoBehaviour
             for (int i = 0; i < fireInfo.trappedPlayer.Count; i++)
             {
                 PlayerMovement playerMovement = fireInfo.trappedPlayer[i].GetComponent<PlayerMovement>();
-                playerMovement.myPlayer.isStunned = false;
-                playerMovement.RemoveStunIcon(fireInfo.trappedPlayer[i]);
+                playerMovement.UnStun(playerMovement);
                 foreach(Transform transform in playerMovement.transform)
                 {
                     if(transform.CompareTag("Fire"))

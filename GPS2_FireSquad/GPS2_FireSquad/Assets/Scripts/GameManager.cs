@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -201,18 +202,18 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public void CheckIfPlayerStun(PlayerMovement playerMovement) // to instatiate stun icon on top of player
-    {
-        if(playerMovement.myPlayer.isStunned)
-        {
-            IAnimation iAnimation = playerMovement.GetComponent<IAnimation>();
-            Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
-            GameObject stunIcon = Instantiate(stunPrefab, abovePlayer, Quaternion.identity);
-            stunIcon.transform.parent = playerMovement.gameObject.transform;
+    //public void CheckIfPlayerStun(PlayerMovement playerMovement) // to instatiate stun icon on top of player
+    //{
+    //    if(playerMovement.myPlayer.isStunned)
+    //    {
+    //        IAnimation iAnimation = playerMovement.GetComponent<IAnimation>();
+    //        Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
+    //        GameObject stunIcon = Instantiate(stunPrefab, abovePlayer, Quaternion.identity);
+    //        stunIcon.transform.parent = playerMovement.gameObject.transform;
 
-            iAnimation.Walking(false);
-        }
-    }
+    //        iAnimation.Walking(false);
+    //    }
+    //}
 
 
 

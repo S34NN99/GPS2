@@ -20,8 +20,7 @@ public class Trap : MonoBehaviour
 
             if (target.myPlayer.characterType != PublicEnumList.CharacterType.Demolisher)
             {
-                target.myPlayer.isStunned = true;
-                gameManager.CheckIfPlayerStun(target);
+                target.Stun(target);
                 trappedPlayer.Add(target.gameObject);
             }
         }
