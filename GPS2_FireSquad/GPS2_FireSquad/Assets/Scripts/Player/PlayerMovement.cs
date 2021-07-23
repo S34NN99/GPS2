@@ -174,14 +174,21 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
         }
     }
 
-    public void SpawnFire(PlayerMovement playerMovement)
+    public void SpawnFire(PlayerMovement playerMovement, GameObject firePrefab)
     {
 
     }
 
     public void RemoveFire(PlayerMovement playerMovement)
     {
-
+        foreach (Transform transform in playerMovement.transform)
+        {
+            if (transform.tag == "Fire")
+            {
+                Destroy(transform.gameObject);
+                return;
+            }
+        }
     }
 
     #endregion
@@ -404,17 +411,17 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
             }
     }
 
-    void RemoveFire(GameObject target)
-    {
-        foreach (Transform transform in target.transform)
-        {
-            if (transform.tag == "Fire")
-            {
-                Destroy(transform.gameObject);
-                return;
-            }
-        }
-    }
+    //void RemoveFire(GameObject target)
+    //{
+    //    foreach (Transform transform in target.transform)
+    //    {
+    //        if (transform.tag == "Fire")
+    //        {
+    //            Destroy(transform.gameObject);
+    //            return;
+    //        }
+    //    }
+    //}
 
     //enable/disable player coroutine
     void SetCoroutine(PlayerMovement currPlayer, bool temp)

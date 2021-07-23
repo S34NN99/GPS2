@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public interface IAnimation 
 {
@@ -12,7 +13,7 @@ public interface IPlayer
 {
     void Stun(PlayerMovement playerMovement);
     void UnStun(PlayerMovement playerMovement);
-    void SpawnFire(PlayerMovement playerMovement);
+    void SpawnFire(PlayerMovement playerMovement, GameObject firePrefab);
     void RemoveFire(PlayerMovement playerMovement);
 }
 
