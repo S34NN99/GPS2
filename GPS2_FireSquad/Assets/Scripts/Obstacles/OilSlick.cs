@@ -19,8 +19,7 @@ public class OilSlick : MonoBehaviour
             
             if (target.myPlayer.characterType != PublicEnumList.CharacterType.Medic)
             {
-                target.myPlayer.isStunned = true;
-                gameManager.CheckIfPlayerStun(target);
+                target.Stun(target);
                 Destroy(this.gameObject);
             }
         }

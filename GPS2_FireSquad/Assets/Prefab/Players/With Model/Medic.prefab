@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232616413}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.3251, z: 1.218}
+  m_LocalPosition: {x: 0, y: 0.2, z: 1.218}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3849194074226287894}
@@ -53,13 +53,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781018185}
-  m_LocalRotation: {x: -0.258819, y: 0, z: 0, w: 0.9659259}
-  m_LocalPosition: {x: -0.438, y: 0.808, z: 0.219}
+  m_LocalRotation: {x: -0.7912402, y: -0.21201213, z: 0.55403227, w: 0.14845248}
+  m_LocalPosition: {x: -0.432, y: 0.781, z: 0.201}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3849194074226287894}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -30, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -180, y: 70, z: -30}
 --- !u!1 &138336102901530927
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 3666401653245884872}
   - component: {fileID: 3666401653245884875}
   - component: {fileID: 3666401653245884879}
+  - component: {fileID: 1707358226}
   m_Layer: 0
   m_Name: Medic
   m_TagString: Player
@@ -933,13 +934,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1
+  m_Height: 0.97
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: -0.06, y: 0.5, z: 0.1}
 --- !u!136 &3666401653245884872
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1008,6 +1009,28 @@ MonoBehaviour:
   target: {fileID: 0}
   wall2Hp: {fileID: 0}
   wall1Hp: {fileID: 0}
+--- !u!195 &1707358226
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476794844982525868}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4500839454391039897
 GameObject:
   m_ObjectHideFlags: 0

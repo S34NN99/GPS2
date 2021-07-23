@@ -8,30 +8,57 @@ using UnityEngine.UI;
 public class Objective
 {
     public enum ObjectiveType { Rescue, Time, Teammates };
-    //public enum ObjectiveGoal { victimsSaved, timeLeftSeconds, teammatesLeft };
 
     public string ObjectiveText(ObjectiveType thisObjectiveType, float currentValue, float maxValue)
     {
         string currVal = currentValue.ToString();
         string maxVal = maxValue.ToString();
 
-        switch (thisObjectiveType)
+        if (!objectiveCompleted())
         {
-            case ObjectiveType.Rescue:
-                return ("Rescue " + maxVal + " victims\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+            switch (thisObjectiveType)
+            {
+                case ObjectiveType.Rescue:
+                    return ("Rescue " + maxVal + " victims\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
-            case ObjectiveType.Teammates:
-                return ("Leave no teammates\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+                case ObjectiveType.Teammates:
+                    return ("Leave no teammates\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
-            case ObjectiveType.Time:
-                    return ("Complete in " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+                case ObjectiveType.Time:
+                    return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
-            default:
-                {
-                    Debug.LogWarning("No objective found.");
-                    return null;
-                }
+                default:
+                    {
+                        Debug.LogWarning("No objective found.");
+                        return null;
+                    }
+            }
         }
+        else if (objectiveCompleted())
+        {
+            switch (thisObjectiveType)
+            {
+                case ObjectiveType.Rescue:
+                    return ("All " + maxVal + " victims are saved\n").ToString();
+
+                case ObjectiveType.Teammates:
+                    return ("All " + currVal + " of " + maxVal + " teammates are in the safe zone.\n").ToString();
+
+                case ObjectiveType.Time:
+                    return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+
+                default:
+                    {
+                        Debug.LogWarning("No objective found.");
+                        return null;
+                    }
+            }
+        }
+        else
+        {
+            return null;
+        }
+        
     }
 
 
@@ -43,6 +70,36 @@ public class Objective
     public bool objectiveCompleted()
     {
         return (objectiveValue >= currentValue);
+    }
+
+    public bool loseCondition()
+    {
+        if (objectiveType == Objective.ObjectiveType.Time)
+        {
+            return (currentValue <= 0);
+        }
+        else
+        {
+            return false;
+        }
+
+            /*
+        switch (objectiveType)
+        {
+            case Objective.ObjectiveType.Time:
+                return (currentValue <= 0);     // Lose when time reaches 0
+
+            case Objective.ObjectiveType.Rescue:
+                return (currentValue <= 0);     //
+
+            case Objective.ObjectiveType.Teammates:
+                return (currentValue <= 0);
+
+            default:
+                return false;
+        }
+            */
+
     }
 }
 
@@ -59,7 +116,6 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Timer timer;
-    
 
     private void Start()
     {
@@ -127,4 +183,21 @@ public class TaskManager : MonoBehaviour
         }   
     }
 
+    #region Win/Lose Conditions
+
+    public int numberOfConditionsMet()
+    {
+        int completedCount = 0;
+        foreach (Objective objective in ActiveObjectives)
+        {
+            if (objective.objectiveCompleted())
+            {
+                completedCount += 1;
+            }
+        }
+
+        return completedCount;
+    }
+
+    #endregion Win/Lose Condition
 }

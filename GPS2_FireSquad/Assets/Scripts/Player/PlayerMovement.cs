@@ -38,7 +38,7 @@ public class PlayerInfo
     public CheckCoroutine characterCoroutine;
 }
 
-public class PlayerMovement : MonoBehaviour, IAnimation
+public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
 {
     [Header("Player Information")]
     public PlayerInfo myPlayer;
@@ -129,7 +129,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation
         }
     }
 
-    #region Animation
+    #region INTERFACES 
     public void Walking(bool isWalking)
     {
         animator.SetBool("isWalking", isWalking);
@@ -148,6 +148,47 @@ public class PlayerMovement : MonoBehaviour, IAnimation
     public void UsingUniqueSkill(string skillName, bool isUsingSkill)
     {
         animator.SetBool(skillName, isUsingSkill);
+    }
+
+    public void Stun(PlayerMovement playerMovement)
+    {
+        IAnimation iAnimation = playerMovement.GetComponent<IAnimation>();
+        Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
+        GameObject stunIcon = Instantiate(gameManager.stunPrefab, abovePlayer, Quaternion.identity);
+        stunIcon.transform.parent = playerMovement.gameObject.transform;
+
+        playerMovement.myPlayer.isStunned = true;
+        iAnimation.Walking(false);
+    }
+
+    public void UnStun(PlayerMovement playerMovement)
+    {
+        foreach (Transform transform in playerMovement.transform)
+        {
+            if (transform.tag == "Stun")
+            {
+                Destroy(transform.gameObject);
+                playerMovement.myPlayer.isStunned = false;
+                return;
+            }
+        }
+    }
+
+    public void SpawnFire(PlayerMovement playerMovement, GameObject firePrefab)
+    {
+
+    }
+
+    public void RemoveFire(PlayerMovement playerMovement)
+    {
+        foreach (Transform transform in playerMovement.transform)
+        {
+            if (transform.tag == "Fire")
+            {
+                Destroy(transform.gameObject);
+                return;
+            }
+        }
     }
 
     #endregion
@@ -370,30 +411,17 @@ public class PlayerMovement : MonoBehaviour, IAnimation
             }
     }
 
-    //remove stun icon
-    public void RemoveStunIcon(GameObject target)
-    {
-        foreach (Transform transform in target.transform)
-        {
-            if(transform.tag == "Stun")
-            {
-                Destroy(transform.gameObject);
-                return;
-            }
-        }
-    }
-
-    void RemoveFire(GameObject target)
-    {
-        foreach (Transform transform in target.transform)
-        {
-            if (transform.tag == "Fire")
-            {
-                Destroy(transform.gameObject);
-                return;
-            }
-        }
-    }
+    //void RemoveFire(GameObject target)
+    //{
+    //    foreach (Transform transform in target.transform)
+    //    {
+    //        if (transform.tag == "Fire")
+    //        {
+    //            Destroy(transform.gameObject);
+    //            return;
+    //        }
+    //    }
+    //}
 
     //enable/disable player coroutine
     void SetCoroutine(PlayerMovement currPlayer, bool temp)
@@ -465,8 +493,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation
             for (int i = 0; i < trap.trappedPlayer.Count; i++)
             {
                 PlayerMovement playerMovement = trap.trappedPlayer[i].GetComponent<PlayerMovement>();
-                playerMovement.myPlayer.isStunned = false;
-                RemoveStunIcon(trap.trappedPlayer[i]);
+                UnStun(playerMovement);
             }
         }
         Destroy(target);
@@ -482,9 +509,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation
         yield return new WaitForSeconds(3.0f);
         if (tag == "Player")
         {
-            Debug.Log("Target is player");
-            target.GetComponent<PlayerMovement>().myPlayer.isStunned = false;
-            RemoveStunIcon(target);
+            UnStun(target.GetComponent<PlayerMovement>());
         }
         else
         {

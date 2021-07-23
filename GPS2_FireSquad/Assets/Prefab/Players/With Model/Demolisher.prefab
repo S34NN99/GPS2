@@ -1334,6 +1334,7 @@ GameObject:
   - component: {fileID: 8065609958551635579}
   - component: {fileID: 8065609958551635577}
   - component: {fileID: 8065609958551635576}
+  - component: {fileID: 617419174}
   m_Layer: 0
   m_Name: Demolisher
   m_TagString: Player
@@ -1383,10 +1384,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.27124214
-  m_Height: 1.2830634
+  m_Radius: 0.42951176
+  m_Height: 1.3496559
   m_Direction: 1
-  m_Center: {x: 0.079444885, y: 0.572247, z: 0.050195664}
+  m_Center: {x: 0.05985555, y: 0.5389508, z: 0.13707048}
 --- !u!143 &8065609958551635579
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1398,7 +1399,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 1.33
+  m_Height: 1
   m_Radius: 0.3
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1441,7 +1442,7 @@ MonoBehaviour:
     characterMainSkill: 2
     characterSecondadrySkill: 3
     characterCommonSkill: 0500000006000000
-    moveSpeed: 5
+    moveSpeed: 3
     detectMaxRadius: 2
     isExtinguishing: 0
     isLookingAtFire: 0
@@ -1459,6 +1460,28 @@ MonoBehaviour:
   target: {fileID: 0}
   wall2Hp: {fileID: 3052276899969761688, guid: daaf9eeb29d21c84fae7ea9ea8e49a52, type: 3}
   wall1Hp: {fileID: 4415002798841622945, guid: f98b9e55924cc484a908dcb18f3a5669, type: 3}
+--- !u!195 &617419174
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147111831107879163}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7167849091162736846
 GameObject:
   m_ObjectHideFlags: 0
