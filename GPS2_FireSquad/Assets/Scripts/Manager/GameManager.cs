@@ -31,20 +31,20 @@ public class GameManager : MonoBehaviour
         {
             PlayerMovement playermovement = playerGroup[i].GetComponent<PlayerMovement>();
             NavMeshAgent navMeshAgent = playermovement.GetComponent<NavMeshAgent>();
-            if (!playermovement.playerSelected)
+            if (!playermovement.playerSelected && !playermovement.myPlayer.isStunned)
             {
                 IAnimation iAnimation = navMeshAgent.gameObject.GetComponent<IAnimation>();
                 Vector3 notSelectedPos = playermovement.transform.position;
                 navMeshAgent.enabled = true;
                 float distance = Vector3.Distance(notSelectedPos, selectedPlayerPos);
 
-                if(distance > 20)
+                if (distance > 20)
                 {
                     navMeshAgent.isStopped = false;
                     GroupUp(navMeshAgent, selectedPlayerPos);
                     iAnimation.Walking(true);
                 }
-                else if(distance < 10)
+                else if (distance < 10)
                 {
                     navMeshAgent.isStopped = true;
                     iAnimation.Walking(false);
@@ -88,6 +88,8 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+    //TESTING FMOD
+    FMOD.Studio.EventInstance AE;
 
     //add any new obstacles' tag here 
     public void UseSkill()
@@ -130,6 +132,12 @@ public class GameManager : MonoBehaviour
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
                     break;
 
+                case "Fire":
+                    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
+                    iAnimation.UsingMainSkill(true);
+                    Debug.Log("?");
+                    break;
+
                 /*case "Victim":              FOR VICTIM AND CHECK IF PLAYER IS CARRINY VICTIM OR NOT TO SET THE CORRECT ANIMATION
                     break; */
 
@@ -157,6 +165,7 @@ public class GameManager : MonoBehaviour
         PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>(); ;
         Animator animator = playerObject.GetComponent<Animator>(); ;
         IAnimation iAnimation = playerObject.GetComponent<IAnimation>();
+        Debug.Log("Stopped");
 
         if (playerMovement.myPlayer.characterType == PublicEnumList.CharacterType.Extinguisher)
         {
@@ -202,18 +211,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    //public void CheckIfPlayerStun(PlayerMovement playerMovement) // to instatiate stun icon on top of player
-    //{
-    //    if(playerMovement.myPlayer.isStunned)
-    //    {
-    //        IAnimation iAnimation = playerMovement.GetComponent<IAnimation>();
-    //        Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
-    //        GameObject stunIcon = Instantiate(stunPrefab, abovePlayer, Quaternion.identity);
-    //        stunIcon.transform.parent = playerMovement.gameObject.transform;
-
-    //        iAnimation.Walking(false);
-    //    }
-    //}
+ 
 
 
 

@@ -35,10 +35,11 @@ public class PlayerInfo
     public bool isStunned = false;
     public bool isOnObstacle = false;
 
+    public FMOD.Studio.EventInstance EI;
     public CheckCoroutine characterCoroutine;
 }
 
-public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
+public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
 {
     [Header("Player Information")]
     public PlayerInfo myPlayer;
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
     // Update is called once per frame
     void Update()
     {
+
         if (playerSelected && !myPlayer.isStunned)
         {
             if(!myPlayer.isExtinguishing)
@@ -83,7 +85,6 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
                 if (myPlayer.isMoving)
                 {
                     gameManager.CheckTarget(this, myPlayer.characterCoroutine);
-                    //StopCoroutine(myPlayer.characterCoroutine.currCoroutine);
                 }
             }
 
@@ -91,6 +92,12 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
             verticalMove = joystick.Vertical;
 
             Vector3 direction = new Vector3(horizontalMove, 0f, verticalMove).normalized;
+
+            if (myPlayer.isExtinguishing)
+            {
+                CheckFireInRadius(myPlayer);
+                return;
+            }
 
             if (direction.magnitude >= 0.1f)
             {
@@ -100,22 +107,17 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
                     float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
                     controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
+                    return;
 
                 }
-                else if(myPlayer.isCarryingVictim)
+                else if (myPlayer.isCarryingVictim)
                 {
                     Walking(false);
                     animator.SetBool("isCarryingVictim", true);
                     float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
                     transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
                     controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-                }
-                else
-                {
-                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-
-                    CheckFireInRadius(myPlayer);
+                    return;
                 }
             }
             else
@@ -163,6 +165,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
 
     public void UnStun(PlayerMovement playerMovement)
     {
+        Debug.Log("Revoming Stun");
         foreach (Transform transform in playerMovement.transform)
         {
             if (transform.tag == "Stun")
@@ -176,23 +179,29 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
 
     public void SpawnFire(PlayerMovement playerMovement, GameObject firePrefab)
     {
-
+        GameObject fire = Instantiate(gameManager.firePrefab, playerMovement.transform);
+        fire.GetComponent<Fire>().fireInfo.spawnOnPlayer = true;
+        fire.transform.position = playerMovement.transform.position;
     }
 
-    public void RemoveFire(PlayerMovement playerMovement)
+    public void StartAudioFmod(FMOD.Studio.EventInstance EI, string pathname)
     {
-        foreach (Transform transform in playerMovement.transform)
-        {
-            if (transform.tag == "Fire")
-            {
-                Destroy(transform.gameObject);
-                return;
-            }
-        }
+        // EXAMPLE
+        /*AE = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Extinguisher/EXT_Extinguishing");
+        AE.start();*/
+
+        EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
+        EI.start();
     }
 
-    #endregion
+    public void StopAudioFmod(FMOD.Studio.EventInstance EI)
+    {
+        EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EI.release();
+    }
 
+
+    #endregion INTERFACES
 
     #region Detection
     //////////Fire Detection
@@ -297,11 +306,11 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
         if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Fire"))
         {
             Fire fire = hit.collider.gameObject.GetComponent<Fire>();
-            
+            Walking(false);
             actionBtn.gameObject.SetActive(true);
             textBtn.text = myPlayer.characterMainSkill.ToString();
             target = hit.collider.gameObject;
-
+            Debug.Log("Looking at fire");
             fire.fireInfo.isDamaged = true;
         }
     }
@@ -378,7 +387,6 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
 
     public void PlayerSkills(PlayerMovement currPlayer, PublicEnumList.CharacterSkill playerSkill)
     {
-        Debug.Log("Used " + playerSkill.ToString());
             switch (playerSkill)
             {
                 case PublicEnumList.CharacterSkill.Extinguish:
@@ -411,18 +419,6 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
             }
     }
 
-    //void RemoveFire(GameObject target)
-    //{
-    //    foreach (Transform transform in target.transform)
-    //    {
-    //        if (transform.tag == "Fire")
-    //        {
-    //            Destroy(transform.gameObject);
-    //            return;
-    //        }
-    //    }
-    //}
-
     //enable/disable player coroutine
     void SetCoroutine(PlayerMovement currPlayer, bool temp)
     {
@@ -443,8 +439,6 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer
         currPlayer.myPlayer.isLookingAtFire = true;
         SetCoroutine(currPlayer, false);
         yield return new WaitForSeconds(0f);
-        //gameManager.RemoveTimer(this.gameObject);
-        //animator.SetBool("usingMainSkill", false);
     }
 
     public GameObject wall2Hp;

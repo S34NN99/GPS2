@@ -14,7 +14,12 @@ public interface IPlayer
     void Stun(PlayerMovement playerMovement);
     void UnStun(PlayerMovement playerMovement);
     void SpawnFire(PlayerMovement playerMovement, GameObject firePrefab);
-    void RemoveFire(PlayerMovement playerMovement);
+}
+
+public interface IFmod
+{
+    void StartAudioFmod(FMOD.Studio.EventInstance EI, string pathname);
+    void StopAudioFmod(FMOD.Studio.EventInstance EI);
 }
 
 

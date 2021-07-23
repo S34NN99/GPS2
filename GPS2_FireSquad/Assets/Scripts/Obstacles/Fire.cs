@@ -11,8 +11,7 @@ public class FireInfo
     public float immunityDuration = 1.0f;
     public bool isDamaged = false;
 
-    [Space(20)]
-    public List<GameObject> trappedPlayer;
+    public bool spawnOnPlayer = false;
 }
 
 public class Fire : MonoBehaviour
@@ -35,7 +34,9 @@ public class Fire : MonoBehaviour
     {
         if(fireInfo.currentHealth <= 0)
         {
-            Death();
+            bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
+            Debug.Log(temp);
+            Death(temp);
         }
 
         if(fireInfo.isDamaged)
@@ -73,8 +74,7 @@ public class Fire : MonoBehaviour
 
                     target.Stun(target);
                     //spawned fire on player
-                    SpawnFireOnPlayer(target.transform);
-                    fireInfo.trappedPlayer.Add(target.gameObject);
+                    target.SpawnFire(target, gameManager.firePrefab);
 
                     iAnimation.Walking(false);
                 }
@@ -84,13 +84,6 @@ public class Fire : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void SpawnFireOnPlayer(Transform player)
-    {
-        GameObject fire = Instantiate(gameManager.firePrefab, player);
-        fire.transform.position = player.transform.position;
-
     }
 
     public void LoseHealth()
@@ -112,27 +105,14 @@ public class Fire : MonoBehaviour
         }
     }
 
-    public void Death()
+    public void Death(bool temp)
     {
-        if (fireInfo.trappedPlayer.Count > 0)
+        if (temp)
         {
-            for (int i = 0; i < fireInfo.trappedPlayer.Count; i++)
-            {
-                PlayerMovement playerMovement = fireInfo.trappedPlayer[i].GetComponent<PlayerMovement>();
-                playerMovement.UnStun(playerMovement);
-                foreach(Transform transform in playerMovement.transform)
-                {
-                    if(transform.CompareTag("Fire"))
-                    {
-                        Debug.Log("Fire found");
-                        Destroy(transform.gameObject);
-                        break;
-                    }
-                }
-            }
+            PlayerMovement player = transform.parent.GetComponent<PlayerMovement>();
+            player.UnStun(player);
         }
         Destroy(this.gameObject);
-
     }
 
     void UpdateHealth(FireInfo fireinfo, GameObject healthIcon)
