@@ -12,9 +12,10 @@ public class FireInfo
     public bool isDamaged = false;
 
     public bool spawnOnPlayer = false;
+    public FMOD.Studio.EventInstance EI;
 }
 
-public class Fire : MonoBehaviour
+public class Fire : MonoBehaviour, IFmod
 {
     public FireInfo fireInfo;
     public GameObject healthPrefab;
@@ -28,6 +29,7 @@ public class Fire : MonoBehaviour
     {
         fireInfo.currentHealth = fireInfo.maxHealth;
         gameManager = FindObjectOfType<GameManager>();
+        StartAudioFmod(this.gameObject, "event:/SFX/Fire");
     }
 
     private void Update()
@@ -86,6 +88,28 @@ public class Fire : MonoBehaviour
         }
     }
 
+    #region FMOD 
+    public void StartAudioFmod(GameObject gameObject, string pathname)
+    {
+        // EXAMPLE
+        /*AE = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Extinguisher/EXT_Extinguishing");
+        AE.start();*/
+        FireInfo fireinfo = gameObject.GetComponent<Fire>().fireInfo;
+        fireinfo.EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(fireInfo.EI, this.transform, this.GetComponent<Rigidbody>());
+        fireinfo.EI.start();
+        Debug.Log("Playing");
+    }
+
+    public void StopAudioFmod(GameObject gameObject)
+    {
+        FireInfo fireinfo = gameObject.GetComponent<Fire>().fireInfo;
+        fireinfo.EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        fireinfo.EI.release();
+    }
+
+    #endregion FMOD
+
     public void LoseHealth()
     {
         fireInfo.currentHealth--;
@@ -112,6 +136,7 @@ public class Fire : MonoBehaviour
             PlayerMovement player = transform.parent.GetComponent<PlayerMovement>();
             player.UnStun(player);
         }
+        StopAudioFmod(this.gameObject);
         Destroy(this.gameObject);
     }
 

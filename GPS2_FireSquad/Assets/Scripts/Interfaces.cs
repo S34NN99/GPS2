@@ -18,8 +18,9 @@ public interface IPlayer
 
 public interface IFmod
 {
-    void StartAudioFmod(FMOD.Studio.EventInstance EI, string pathname);
-    void StopAudioFmod(FMOD.Studio.EventInstance EI);
+    void StartAudioFmod(GameObject gameObject, string pathname);
+    void StopAudioFmod(GameObject gameObject);
 }
+
 
 

@@ -25,7 +25,7 @@ public class RescueArea : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Teammate" + collision.gameObject.name + "entered safe area");
+            Debug.Log("Teammate" + collision.gameObject.name + " entered safe area");
 
             taskManager.UpdateValue(Objective.ObjectiveType.Teammates, 1f);
         }

@@ -184,20 +184,21 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
         fire.transform.position = playerMovement.transform.position;
     }
 
-    public void StartAudioFmod(FMOD.Studio.EventInstance EI, string pathname)
+    public void StartAudioFmod(GameObject gameObject, string pathname)
     {
         // EXAMPLE
         /*AE = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Extinguisher/EXT_Extinguishing");
         AE.start();*/
-
-        EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
-        EI.start();
+        PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
+        playerMovement.myPlayer.EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
+        playerMovement.myPlayer.EI.start();
     }
 
-    public void StopAudioFmod(FMOD.Studio.EventInstance EI)
+    public void StopAudioFmod(GameObject gameObject)
     {
-        EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        EI.release();
+        PlayerMovement playerMovement = gameObject.GetComponent<PlayerMovement>();
+        playerMovement.myPlayer.EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        playerMovement.myPlayer.EI.release();
     }
 
 

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     float currCountDown;
     public Image timer;
 
+    #region NAVMESH
     void CheckCharDistance()
     {
         Vector3 selectedPlayerPos = playerObject.transform.position;
@@ -62,6 +63,8 @@ public class GameManager : MonoBehaviour
         navMeshAgent.destination = destination;
     }
 
+    #endregion NAVMESH
+
     private void Update()
     {
         CheckCharDistance();
@@ -99,7 +102,7 @@ public class GameManager : MonoBehaviour
             PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
             Animator animator = playerObject.GetComponent<Animator>(); ;
             IAnimation iAnimation = playerObject.GetComponent<IAnimation>();
-
+            IFmod fmod = playerObject.GetComponent<IFmod>();
             isPressed = !isPressed;
 
             if (playerMovement.target.tag != "Fire")
@@ -135,7 +138,8 @@ public class GameManager : MonoBehaviour
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iAnimation.UsingMainSkill(true);
-                    Debug.Log("?");
+                    fmod.StartAudioFmod(playerMovement.gameObject, "event:/SFX/Extinguisher/EXT_Extinguishing");
+
                     break;
 
                 /*case "Victim":              FOR VICTIM AND CHECK IF PLAYER IS CARRINY VICTIM OR NOT TO SET THE CORRECT ANIMATION
@@ -150,13 +154,6 @@ public class GameManager : MonoBehaviour
     }
 
     #region when player let go of action button
-    private void CheckFire(Fire fire)
-    {
-        if (fire.fireInfo.currentHealth < 3)
-        {
-            StartCoroutine(fire.Reignite(fire));
-        }
-    }
 
     //when player let go of button during extinguishing
     public void LetGoExtinguish()
@@ -165,6 +162,7 @@ public class GameManager : MonoBehaviour
         PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>(); ;
         Animator animator = playerObject.GetComponent<Animator>(); ;
         IAnimation iAnimation = playerObject.GetComponent<IAnimation>();
+        IFmod fmod = playerObject.GetComponent<IFmod>();
         Debug.Log("Stopped");
 
         if (playerMovement.myPlayer.characterType == PublicEnumList.CharacterType.Extinguisher)
@@ -174,6 +172,7 @@ public class GameManager : MonoBehaviour
             playerMovement.myPlayer.isLookingAtFire = false;
             playerMovement.myPlayer.isExtinguishing = false;
             iAnimation.UsingMainSkill(false);
+            fmod.StopAudioFmod(playerMovement.gameObject);
         }
     }
 
