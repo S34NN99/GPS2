@@ -124,6 +124,27 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4943625414354133531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637624155557756010
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &-3942626123554143484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,18 +181,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5546157529881067944}
-  - {fileID: 1950683181928344003}
-  EditorEvents:
-  - {fileID: -9069614816072931345}
-  - {fileID: 5231471073875893654}
+  - {fileID: -4943625414354133531}
+  - {fileID: 1201861572299381345}
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1950683181928344003}
+  - {fileID: 1201861572299381345}
   StringsBanks:
-  - {fileID: 5546157529881067944}
-  stringsBankWriteTime: 637626856328964646
+  - {fileID: -4943625414354133531}
+  stringsBankWriteTime: 637624155557756010
   cacheVersion: 6
+--- !u!114 &1201861572299381345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637624155557715894
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
+  Exists: 1
 --- !u!114 &1588194975023726496
 MonoBehaviour:
   m_ObjectHideFlags: 0
