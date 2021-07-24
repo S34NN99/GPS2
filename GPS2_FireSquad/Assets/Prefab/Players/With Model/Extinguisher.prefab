@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 888338029}
   - component: {fileID: 888338030}
   - component: {fileID: 888338028}
-  - component: {fileID: 888338027}
   - component: {fileID: 7353984426792415902}
   m_Layer: 0
   m_Name: Extinguisher
@@ -265,41 +264,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &888338027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913363158345008754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4a6592ec48148847ad98ff66201c8c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPlayer:
-    characterType: 0
-    characterMainSkill: 0
-    characterSecondadrySkill: 0
-    characterCommonSkill: 0500000006000000
-    moveSpeed: 3
-    detectMaxRadius: 2
-    isExtinguishing: 0
-    isLookingAtFire: 0
-    isCarryingVictim: 0
-    isPressingButton: 0
-    isMoving: 0
-    isStunned: 0
-    isOnObstacle: 0
-    characterCoroutine:
-      isInCoroutine: 0
-  actionBtn: {fileID: 0}
-  joystick: {fileID: 0}
-  animator: {fileID: 0}
-  playerSelected: 0
-  target: {fileID: 0}
-  wall2Hp: {fileID: 0}
-  wall1Hp: {fileID: 0}
 --- !u!195 &7353984426792415902
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1503,7 +1467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6502412242188208166}
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: -0.00005567074, y: 0.5533061, z: 0.013575109}
+  m_LocalPosition: {x: -1.07, y: 0.5533061, z: -13.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 569488030044593352}
