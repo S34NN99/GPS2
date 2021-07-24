@@ -227,18 +227,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5844224638420737811}
-  - {fileID: 2411715943161175388}
-  EditorEvents:
-  - {fileID: -5007119023794816743}
-  - {fileID: -7340633707170923515}
+  - {fileID: 590987359318652512}
+  - {fileID: 2562398793420033397}
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 2411715943161175388}
+  - {fileID: 2562398793420033397}
   StringsBanks:
-  - {fileID: 5844224638420737811}
-  stringsBankWriteTime: 637626856328964646
+  - {fileID: 590987359318652512}
+  stringsBankWriteTime: 637624155557756010
   cacheVersion: 6
+--- !u!114 &590987359318652512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637624155557756010
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &1201861572299381345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,6 +356,27 @@ MonoBehaviour:
   lastModified: 637626856328914755
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &2562398793420033397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637624155557715894
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
   Exists: 1
 --- !u!114 &2570154766671937352
 MonoBehaviour:
@@ -526,6 +566,27 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &7254516350704208896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637624155557715894
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
+  Exists: 1
 --- !u!114 &7902335422151908752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,3 +610,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5067
+--- !u!114 &8917643176327460623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637624155557756010
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
