@@ -18,11 +18,11 @@ public class VictimHealth : MonoBehaviour
 
     private void Start()
     {
-        currentHP = maxHP;
-        healthBar.SetMaxHealth(maxHP);
+        //currentHP = maxHP;
+        //healthBar.SetMaxHealth(maxHP);
 
         thisMesh = this.GetComponent<MeshFilter>();
-        InvokeRepeating("HealthDecrease", 0f, healthChangeRate);
+        //InvokeRepeating("HealthDecrease", 0f, healthChangeRate);
     }
 
     public void CheckCarrying(bool isCarrying)

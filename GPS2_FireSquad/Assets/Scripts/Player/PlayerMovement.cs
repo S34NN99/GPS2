@@ -39,7 +39,7 @@ public class PlayerInfo
     public CheckCoroutine characterCoroutine;
 }
 
-public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
+public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 {
     [Header("Player Information")]
     public PlayerInfo myPlayer;
@@ -154,13 +154,13 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
 
     public void Stun(PlayerMovement playerMovement)
     {
-        IAnimation iAnimation = playerMovement.GetComponent<IAnimation>();
+        IPlayer iPlayer = playerMovement.GetComponent<IPlayer>();
         Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
         GameObject stunIcon = Instantiate(gameManager.stunPrefab, abovePlayer, Quaternion.identity);
         stunIcon.transform.parent = playerMovement.gameObject.transform;
 
         playerMovement.myPlayer.isStunned = true;
-        iAnimation.Walking(false);
+        iPlayer.Walking(false);
     }
 
     public void UnStun(PlayerMovement playerMovement)
@@ -259,6 +259,12 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
                         break;
 
                     case PublicEnumList.CharacterType.Medic:
+                        if(myplayer.isCarryingVictim)
+                        {
+                            actionBtn.gameObject.SetActive(true);
+                            return;
+                        }
+
                         if (Physics.Raycast(rayCastPos, transform.forward, out hit, myplayer.detectMaxRadius))
                         {
                             if(hit.collider.gameObject.CompareTag("Victim"))
@@ -281,16 +287,9 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
                         }
                         else
                         {
-                            if (myplayer.isCarryingVictim)
-                            {
-                                actionBtn.gameObject.SetActive(true);
-                            }
-                            else
-                            {
-                                actionBtn.gameObject.SetActive(false);
-                            }
+                            actionBtn.gameObject.SetActive(false);
                         }
-                       
+
                         break;
 
                     default:
@@ -370,7 +369,7 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
             actionBtn.gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.CompareTag("Oil Slick")) // demolisher secondary skill 
+        if (collision.gameObject.CompareTag("Oil Slick")) // Medic secondary skill 
         {
             Debug.Log("exit oil");
             myPlayer.isOnObstacle = false;
@@ -491,7 +490,10 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
                 UnStun(playerMovement);
             }
         }
+
         Destroy(target);
+        myPlayer.isOnObstacle = false;
+        actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }
@@ -512,6 +514,8 @@ public class PlayerMovement : MonoBehaviour, IAnimation, IPlayer, IFmod
             Destroy(target);
         }
 
+        myPlayer.isOnObstacle = false;
+        actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }

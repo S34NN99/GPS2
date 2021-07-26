@@ -35,7 +35,6 @@ public class CameraMovement : MonoBehaviour
     public void SwitchPlayer(GameObject player)
     {
         float distance = Vector3.Distance(selectedPlayer.transform.position, player.transform.position);
-        Debug.Log(distance);
 
         isSwitchingCharacter = true;
 

@@ -67,7 +67,7 @@ public class Fire : MonoBehaviour, IFmod
         if (collision.gameObject.tag == "Player")
         {
             PlayerMovement target = collision.gameObject.GetComponent<PlayerMovement>();
-            IAnimation iAnimation = collision.gameObject.GetComponent<IAnimation>();
+            IPlayer iPlayer = collision.gameObject.GetComponent<IPlayer>();
 
             if (target.myPlayer.characterType != PublicEnumList.CharacterType.Extinguisher)
             {
@@ -78,7 +78,7 @@ public class Fire : MonoBehaviour, IFmod
                     //spawned fire on player
                     target.SpawnFire(target, gameManager.firePrefab);
 
-                    iAnimation.Walking(false);
+                    iPlayer.Walking(false);
                 }
                 else
                 {
