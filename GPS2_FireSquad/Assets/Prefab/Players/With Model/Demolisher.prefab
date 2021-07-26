@@ -1330,8 +1330,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7522265901108632129}
   - component: {fileID: 8065609958551635572}
-  - component: {fileID: 8065609958551635578}
   - component: {fileID: 8065609958551635579}
+  - component: {fileID: 8065609958551635578}
   - component: {fileID: 8065609958551635577}
   - component: {fileID: 8065609958551635576}
   - component: {fileID: 617419174}
@@ -1374,20 +1374,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &8065609958551635578
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7147111831107879163}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.42951176
-  m_Height: 1.3496559
-  m_Direction: 1
-  m_Center: {x: 0.05985555, y: 0.5389508, z: 0.13707048}
 --- !u!143 &8065609958551635579
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1406,6 +1392,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.57, z: 0.06}
+--- !u!136 &8065609958551635578
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147111831107879163}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.42951176
+  m_Height: 1.3496559
+  m_Direction: 1
+  m_Center: {x: 0.05985555, y: 0.5389508, z: 0.13707048}
 --- !u!95 &8065609958551635577
 Animator:
   serializedVersion: 3
