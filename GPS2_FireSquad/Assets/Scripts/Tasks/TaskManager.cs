@@ -69,9 +69,9 @@ public class Objective
     //public float ObjectiveTimeLeft { get => objectiveValue / 60; set => objectiveTime = objectiveValue / 60; }
     public bool objectiveCompleted()
     {
-        return (objectiveValue >= currentValue);
+        return (currentValue >= objectiveValue);
     }
-
+    /*
     public bool loseCondition()
     {
         if (objectiveType == Objective.ObjectiveType.Time)
@@ -83,7 +83,7 @@ public class Objective
             return false;
         }
 
-            /*
+            
         switch (objectiveType)
         {
             case Objective.ObjectiveType.Time:
@@ -98,9 +98,8 @@ public class Objective
             default:
                 return false;
         }
-            */
-
     }
+    */
 }
 
 public class TaskManager : MonoBehaviour
@@ -116,6 +115,7 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Timer timer;
+    [SerializeField] private SummaryManagerNew summaryManager;
 
     private void Start()
     {
@@ -146,6 +146,8 @@ public class TaskManager : MonoBehaviour
         //Display task list
 
         UpdateObjectiveList();
+
+        LevelProgression();
     }
 
     public void UpdateValue(Objective.ObjectiveType thisObjectiveType, float value)
@@ -184,6 +186,37 @@ public class TaskManager : MonoBehaviour
     }
 
     #region Win/Lose Conditions
+
+    public void LevelProgression()
+    {
+        if (timeRanOut() && numberOfConditionsMet() < 0)
+        {
+            Debug.Log("Level Lost");
+            summaryManager.SummaryDisplay();
+        }
+        else if (timeRanOut() && numberOfConditionsMet() <= 2)
+        {
+            Debug.Log("Level Won: Time Ran Out");
+            summaryManager.SummaryDisplay();
+        }
+        else if (numberOfConditionsMet() == ActiveObjectives.Length)
+        {
+            Debug.Log("Level Won: 3 Stars");
+            summaryManager.SummaryDisplay();
+        }
+    }
+
+    public bool timeRanOut()
+    {
+        foreach (Objective objective in ActiveObjectives)
+        {
+            if (objective.objectiveType == Objective.ObjectiveType.Time && objective.currentValue <= 0)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public int numberOfConditionsMet()
     {
