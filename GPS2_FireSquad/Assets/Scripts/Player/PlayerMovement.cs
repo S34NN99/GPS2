@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     private CharacterController controller;
     public Joystick joystick;
 
-    public Animator animator;
+    private Animator animator;
 
     [Space(30)]
     private GameManager gameManager;

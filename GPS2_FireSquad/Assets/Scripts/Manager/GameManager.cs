@@ -39,13 +39,13 @@ public class GameManager : MonoBehaviour
                 navMeshAgent.enabled = true;
                 float distance = Vector3.Distance(notSelectedPos, selectedPlayerPos);
 
-                if (distance > 20)
+                if (distance > 25)
                 {
                     navMeshAgent.isStopped = false;
                     GroupUp(navMeshAgent, selectedPlayerPos, playermovement.gameObject);
                     iPlayer.Walking(true);
                 }
-                else if (distance < 10)
+                else if (distance < 5)
                 {
                     navMeshAgent.isStopped = true;
                     iPlayer.Walking(false);
