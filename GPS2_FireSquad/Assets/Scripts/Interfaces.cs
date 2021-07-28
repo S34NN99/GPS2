@@ -11,7 +11,7 @@ public interface IPlayer
     void Walking(bool isWalking);
     void UsingMainSkill(bool isUsingSkill);
     void UsingSecondarySkill(bool isUsingSkill);
-    void UsingUniqueSkill(string skillName, bool isUsingSkill);
+    void UniqueAnimation(string skillName, bool isUsingSkill);
 }
 
 public interface IFmod

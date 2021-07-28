@@ -149,7 +149,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         animator.SetBool("usingSecondarySkill", isUsingSkill);
     }
 
-    public void UsingUniqueSkill(string skillName, bool isUsingSkill)
+    public void UniqueAnimation(string skillName, bool isUsingSkill)
     {
         animator.SetBool(skillName, isUsingSkill);
     }
@@ -501,6 +501,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             for (int i = 0; i < trap.trappedPlayer.Count; i++)
             {
                 PlayerMovement playerMovement = trap.trappedPlayer[i].GetComponent<PlayerMovement>();
+                IPlayer iPlayer = playerMovement.GetComponent<IPlayer>();
+                iPlayer.UniqueAnimation("Trap", false);
                 UnStun(playerMovement);
             }
         }
@@ -521,6 +523,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         if (tag == "Player")
         {
             UnStun(target.GetComponent<PlayerMovement>());
+            target.GetComponent<IPlayer>().UniqueAnimation("Slip", false);
         }
         else
         {

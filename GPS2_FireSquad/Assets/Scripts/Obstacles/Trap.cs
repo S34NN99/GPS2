@@ -17,10 +17,11 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             PlayerMovement target = collision.gameObject.GetComponent<PlayerMovement>();
-
+            IPlayer iPlayer = target.GetComponent<IPlayer>();
             if (target.myPlayer.characterType != PublicEnumList.CharacterType.Demolisher)
             {
                 target.Stun(target);
+                iPlayer.UniqueAnimation("Trap", true);
                 trappedPlayer.Add(target.gameObject);
             }
         }

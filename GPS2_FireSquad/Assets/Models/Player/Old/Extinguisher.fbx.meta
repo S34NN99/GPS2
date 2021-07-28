@@ -1,41 +1,17 @@
 fileFormatVersion: 2
-guid: 0a37f4dd6c9f98a4eb0167689b72149d
+guid: 3cdacf70c3ba2d14ab8727f9f53f49dc
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable:
   - first:
-      74: 7126266920115138763
-    second: rig|Burning
-  - first:
-      74: -6516319926367718764
-    second: rig|Carry
-  - first:
-      74: -5383772582448187662
-    second: rig|Carry idle
-  - first:
-      74: -6294502380388427035
-    second: rig|Grab
+      74: -4583901022000930592
+    second: rig|Extingush fire
   - first:
       74: -7361427651036151181
     second: rig|Idle
   - first:
-      74: 4230943043443852748
-    second: rig|Kneel
-  - first:
-      74: -4088201207626340406
-    second: rig|Kneel idle
-  - first:
-      74: 2061203593307095106
-    second: rig|Push button
-  - first:
-      74: -6155673445179249225
-    second: rig|Push button idle
-  - first:
-      74: -5480419611278045171
-    second: rig|Run
-  - first:
-      74: -8424649094298919918
-    second: rig|Trapped
+      74: 1023992570608409904
+    second: rig|Walk
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -63,7 +39,94 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: rig|Extingush fire
+      takeName: rig|Extingush fire
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 108
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|Idle
+      takeName: rig|Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: rig|Walk
+      takeName: rig|Walk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
