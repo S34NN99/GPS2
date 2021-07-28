@@ -70,7 +70,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     // Update is called once per frame
     void Update()
     {
-
+        
         if (playerSelected && !myPlayer.isStunned)
         {
             if(!myPlayer.isExtinguishing)
@@ -129,6 +129,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                 Walking(false);
             }
         }
+
+        CheckInteractInRadius(myPlayer);
     }
 
     #region INTERFACES 
@@ -318,13 +320,21 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     private void CheckInteractInRadius(PlayerInfo myPlayer)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Interact"))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.GetComponent<Door>() ||
+            Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Button"))
         {
             actionBtn.gameObject.SetActive(true);
 
             if (hit.collider.gameObject.CompareTag("Button"))
             {
-                textBtn.text = myPlayer.characterCommonSkill[0].ToString();
+                if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == false)
+                {
+                    textBtn.text = "Press button";
+                }
+                else if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == true)
+                {
+                    textBtn.text = "Release button";
+                }
             }
             else if (hit.collider.gameObject.GetComponent<Door>().isLocked == false)
             {
@@ -413,7 +423,11 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                     currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(PressButton(currPlayer, target));
                     break;
 
-            default:
+                case PublicEnumList.CharacterSkill.InteractDoor:
+                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(InteractDoor(currPlayer, target));
+                    break;
+
+                default:
                     Debug.Log("Could not find skill");
                     break;
             }
@@ -567,15 +581,42 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     IEnumerator PressButton(PlayerMovement currPlayer, GameObject target)
     {
-        string tag = target.tag;
-
-        yield return new WaitForSeconds(3.0f);
-
         if (tag == "Button" && currPlayer.myPlayer.isPressingButton == false)
         {
             Debug.Log("Target is Button");
-            //target;
+            target.GetComponent<CoopDoorButton>().ButtonPressed();
             currPlayer.myPlayer.isPressingButton = true;
+            yield return new WaitForSeconds(3.0f);
+        }
+        else if (tag == "Button" && currPlayer.myPlayer.isPressingButton == true)
+        {
+            Debug.Log("Target is Button");
+            target.GetComponent<CoopDoorButton>().ButtonReleased();
+            currPlayer.myPlayer.isPressingButton = false;
+            yield return new WaitForSeconds(3.0f);
+        }
+
+        gameManager.RemoveTimer(this.gameObject);
+        SetCoroutine(currPlayer, false);
+    }
+
+    IEnumerator InteractDoor(PlayerMovement currPlayer, GameObject target)
+    {
+        yield return new WaitForSeconds(3.0f);
+
+        if (target.GetComponent<Door>())
+        {
+            Debug.Log("Target is Door");
+            Door door = target.GetComponent<Door>();
+
+            if (door.isOpen == true)
+            {
+                door.CloseDoorAnimation();
+            }
+            else if (door.isOpen == false)
+            {
+                door.OpenDoorAnimation();
+            }
         }
 
         gameManager.RemoveTimer(this.gameObject);
