@@ -235,6 +235,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5067
+--- !u!114 &-2273631616431005130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD Studio/GPS2_FireSquad/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637629470601986320
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,17 +267,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6933834204572360773}
-  - {fileID: 4570727658392526983}
-  EditorEvents:
-  - {fileID: 1688803792843983375}
-  - {fileID: 8246732198766113955}
+  - {fileID: 1495373890812773517}
+  - {fileID: -2273631616431005130}
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4570727658392526983}
+  - {fileID: -2273631616431005130}
   StringsBanks:
-  - {fileID: -6933834204572360773}
-  stringsBankWriteTime: 637626856328964646
+  - {fileID: 1495373890812773517}
+  stringsBankWriteTime: 637629470602006320
   cacheVersion: 6
 --- !u!114 &590987359318652512
 MonoBehaviour:
@@ -301,6 +318,27 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1012
+  Exists: 1
+--- !u!114 &1495373890812773517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD Studio/GPS2_FireSquad/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637629470602006320
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
   Exists: 1
 --- !u!114 &1588194975023726496
 MonoBehaviour:

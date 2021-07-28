@@ -117,6 +117,8 @@ public class TaskManager : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private SummaryManagerNew summaryManager;
 
+    //[SerializeField] private GameObject[] teammates;
+
     private void Start()
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
