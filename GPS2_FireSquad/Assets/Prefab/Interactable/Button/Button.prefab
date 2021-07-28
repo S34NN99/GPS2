@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3187785694123264443}
   - component: {fileID: 3187785694123264442}
   - component: {fileID: 3187785694123264441}
-  - component: {fileID: 3187785694123264445}
+  - component: {fileID: 1219631518620125125}
+  - component: {fileID: 428759414548868675}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3187785694123264440}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.83, y: 1.88, z: 6.15}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3187785694123264445
+--- !u!114 &1219631518620125125
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,7 +107,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 3187785694123264440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d396b8d625326f74c9d52b8e3e909235, type: 3}
+  m_Script: {fileID: 11500000, guid: 10832b9d579e15144ba85c0262802a1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockedDoor: {fileID: 0}
+  ButtonAnimator: {fileID: 428759414548868675}
+  coopDoor: {fileID: 0}
+  isPressed: 0
+--- !u!95 &428759414548868675
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187785694123264440}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5ad8ebd8dbac824a9d05beb5c425ef3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
