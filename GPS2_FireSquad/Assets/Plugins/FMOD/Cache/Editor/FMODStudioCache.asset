@@ -128,6 +128,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2533
+--- !u!114 &-7287600377219991522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Extinguisher/EXT_Extinguishing
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Extinguisher/EXT_Extinguishing
+  guid: 1d5a648a47ad334f889053b6b800b9f6
+  Banks:
+  - {fileID: -3566728803481983228}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2533
 --- !u!114 &-6933834204572360773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +323,25 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5067
+--- !u!114 &-3566728803481983228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../OneDrive/Documents/FMOD Studio/GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637626856328914755
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1782887287094766994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,15 +418,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1541862312332452920}
-  - {fileID: 4760065565027821957}
-  EditorEvents: []
+  - {fileID: 3410183386750134932}
+  - {fileID: -3566728803481983228}
+  EditorEvents:
+  - {fileID: 9107814052672457088}
+  - {fileID: -7287600377219991522}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4760065565027821957}
+  - {fileID: -3566728803481983228}
   StringsBanks:
-  - {fileID: -1541862312332452920}
-  stringsBankWriteTime: 637624155557756010
+  - {fileID: 3410183386750134932}
+  stringsBankWriteTime: 637626856328964646
   cacheVersion: 6
 --- !u!114 &590987359318652512
 MonoBehaviour:
@@ -650,6 +694,27 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 700
+  Exists: 1
+--- !u!114 &3410183386750134932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../OneDrive/Documents/FMOD Studio/GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637626856328964646
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 818
   Exists: 1
 --- !u!114 &3712100593853193814
 MonoBehaviour:
@@ -1057,3 +1122,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &9107814052672457088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Fire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Fire
+  guid: 0cb5b14a610eb14d9b3b0e255ee40159
+  Banks:
+  - {fileID: -3566728803481983228}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 40
+  Length: 33044

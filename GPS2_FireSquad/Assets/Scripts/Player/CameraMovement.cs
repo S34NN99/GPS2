@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraMovement : MonoBehaviour
 {
     public GameObject playerGroup;
-    public GameObject selectedPlayer;
+    private GameObject selectedPlayer;
 
     public float smoothSpeed = 0.125f;
     private float speed = 45f;
