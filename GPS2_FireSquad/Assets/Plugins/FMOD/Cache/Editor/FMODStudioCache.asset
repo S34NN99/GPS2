@@ -418,17 +418,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 3410183386750134932}
-  - {fileID: -3566728803481983228}
-  EditorEvents:
-  - {fileID: 9107814052672457088}
-  - {fileID: -7287600377219991522}
+  - {fileID: 4539046344001504993}
+  - {fileID: 4016058068239318972}
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3566728803481983228}
+  - {fileID: 4016058068239318972}
   StringsBanks:
-  - {fileID: 3410183386750134932}
-  stringsBankWriteTime: 637626856328964646
+  - {fileID: 4539046344001504993}
+  stringsBankWriteTime: 637624155557756010
   cacheVersion: 6
 --- !u!114 &590987359318652512
 MonoBehaviour:
@@ -781,6 +779,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 0
+--- !u!114 &4016058068239318972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637624155557715894
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
+  Exists: 1
 --- !u!114 &4037228766004915885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,6 +841,27 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 33044
+--- !u!114 &4539046344001504993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637624155557756010
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &4570727658392526983
 MonoBehaviour:
   m_ObjectHideFlags: 0
