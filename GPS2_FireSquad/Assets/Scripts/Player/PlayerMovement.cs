@@ -8,6 +8,7 @@ public class CheckCoroutine
 {
     public Coroutine currCoroutine;
     public bool isInCoroutine;
+    public PublicEnumList.CoroutineType type;
 }
 
 
@@ -415,40 +416,46 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     public void PlayerSkills(PlayerMovement currPlayer, PublicEnumList.CharacterSkill playerSkill)
     {
-            switch (playerSkill)
-            {
-                case PublicEnumList.CharacterSkill.Extinguish:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(ExtinguishFire(currPlayer, target));
-                    break;
+        switch (playerSkill)
+        {
+            case PublicEnumList.CharacterSkill.Extinguish:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(ExtinguishFire(currPlayer, target));
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                break;
 
-                case PublicEnumList.CharacterSkill.Break:
+            case PublicEnumList.CharacterSkill.Break:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(BreakWall(currPlayer, target));
-                    break;
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                break;
 
-                case PublicEnumList.CharacterSkill.DemolishTrap:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(BreakTrap(currPlayer, target));
-                    break;
+            case PublicEnumList.CharacterSkill.DemolishTrap:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(BreakTrap(currPlayer, target));
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Secondary;
+                break;
 
-                case PublicEnumList.CharacterSkill.Heal:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(SaveTeamate(currPlayer, target));
-                        break;
+            case PublicEnumList.CharacterSkill.Heal:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(SaveTeamate(currPlayer, target));
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                break;
 
-                case PublicEnumList.CharacterSkill.Carry:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(CarryVictim(currPlayer, target));
-                    break;
+            case PublicEnumList.CharacterSkill.Carry:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(CarryVictim(currPlayer, target));
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.CarryingVictim;
+                break;
 
-                case PublicEnumList.CharacterSkill.Press:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(PressButton(currPlayer, target));
-                    break;
+            case PublicEnumList.CharacterSkill.Press:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(PressButton(currPlayer, target));
+                currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.PressButton;
+                break;
 
-                case PublicEnumList.CharacterSkill.InteractDoor:
-                    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(InteractDoor(currPlayer, target));
-                    break;
+            case PublicEnumList.CharacterSkill.InteractDoor:
+                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(InteractDoor(currPlayer, target));
+                break;
 
-                default:
-                    Debug.Log("Could not find skill");
-                    break;
-            }
+            default:
+                Debug.Log("Could not find skill");
+                break;
+        }
     }
 
     //enable/disable player coroutine
@@ -511,7 +518,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     {
         // have to get Trap's list of trapped player and free them
         Trap trap = target.GetComponent<Trap>();
-
+        SetCoroutine(currPlayer, true);
 
         yield return new WaitForSeconds(3.0f);
         if (trap.trappedPlayer.Count > 0)
@@ -526,6 +533,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         }
 
         Destroy(target);
+        UsingSecondarySkill(false);
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
@@ -536,6 +544,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     IEnumerator SaveTeamate(PlayerMovement currPlayer, GameObject target)
     {
         string tag = target.tag;
+        SetCoroutine(currPlayer, true);
 
         yield return new WaitForSeconds(3.0f);
         if (tag == "Player")
@@ -545,14 +554,13 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         }
         else
         {
-            Debug.Log("Target is oil");
             Destroy(target);
         }
 
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
-        UsingSecondarySkill(false);
+        UsingMainSkill(false);
         SetCoroutine(currPlayer, false);
     }
 
@@ -560,7 +568,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     IEnumerator CarryVictim(PlayerMovement currPlayer, GameObject target)
     {
         string tag = target.tag;
-
+        SetCoroutine(currPlayer, true);
         Transform carryingPosition = currPlayer.transform.GetChild(2);
         Transform placePosition = currPlayer.transform.GetChild(3);
 
@@ -602,6 +610,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     IEnumerator PressButton(PlayerMovement currPlayer, GameObject target)
     {
+        SetCoroutine(currPlayer, true);
         if (tag == "Button" && currPlayer.myPlayer.isPressingButton == false)
         {
             Debug.Log("Target is Button");
