@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     public bool playerSelected = false;
     float horizontalMove;
     float verticalMove;
+    private Vector3 prevRotation;
 
     private void Start()
     {
@@ -92,14 +93,18 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             verticalMove = joystick.Vertical;
 
             Vector3 direction = new Vector3(horizontalMove, 0f, verticalMove).normalized;
-
             if (myPlayer.isExtinguishing)
             {
                 CheckFireInRadius(myPlayer);
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                if (direction.magnitude >= 0.1f)
+                {
+                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                }
                 return;
             }
+
+
 
             if (direction.magnitude >= 0.1f)
             {
@@ -317,6 +322,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     {
         RaycastHit hit;
         Vector3 rayCastPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+
         if (Physics.Raycast(rayCastPos, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Fire"))
         {
             Fire fire = hit.collider.gameObject.GetComponent<Fire>();
