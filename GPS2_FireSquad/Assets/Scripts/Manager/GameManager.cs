@@ -121,12 +121,12 @@ public class GameManager : MonoBehaviour
 
                 case "Oil Slick":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterSecondadrySkill);
-                    iPlayer.UsingSecondarySkill(true);
+                    iPlayer.UsingMainSkill(true);
                     break;
 
                 case "Player":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterSecondadrySkill);
-                    iPlayer.UsingSecondarySkill(true);
+                    iPlayer.UsingMainSkill(true);
                     break;
 
                 case "Button":
@@ -192,32 +192,59 @@ public class GameManager : MonoBehaviour
     {
         IPlayer iPlayer = playerMovement.GetComponent<IPlayer>();
 
-        //checking for future e.g fire, walls, citizen. Can use switch case
-        switch (playerMovement.target.tag)
-        {
-            case "Fire":
-                //DisableTimer();
-                //RemoveTimer(playerObject);
-                //playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
-                //playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
-                //CheckFire(playerMovement.target.GetComponent<Fire>());
-                break;
+        Debug.Log("Checking Target");
+        RemoveTimer(playerObject);
+        playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
+        playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
 
-            case "Wall":
-                //DisableTimer();
-                RemoveTimer(playerObject);
-                playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
-                playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
+        switch(playerMovement.myPlayer.characterCoroutine.type)
+        {
+            case PublicEnumList.CoroutineType.Main:
                 iPlayer.UsingMainSkill(false);
                 break;
 
+            case PublicEnumList.CoroutineType.Secondary:
+                iPlayer.UsingSecondarySkill(false);
+                break;
+
+            case PublicEnumList.CoroutineType.CarryingVictim:
+                if(!playerMovement.myPlayer.isCarryingVictim)
+                {
+                    iPlayer.UsingMainSkill(false);
+                }
+                else
+                {
+                    iPlayer.UsingMainSkill(true);
+                    iPlayer.UniqueAnimation("isCarryingVictim", true);
+                }
+
+                break;
+
+            case PublicEnumList.CoroutineType.PressButton:
+                //stop press button animaitong
+                break;
+
             default:
-                //DisableTimer();
-                RemoveTimer(playerObject);
-                playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
-                playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
                 break;
         }
+
+
+
+        //checking for future e.g fire, walls, citizen. Can use switch case
+        //switch (playerMovement.target.tag)
+        //{
+        //    case "Wall":
+        //        //DisableTimer();
+        //        RemoveTimer(playerObject);
+        //        playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
+        //        playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
+        //        iPlayer.UsingMainSkill(false);
+        //        break;
+
+        //    default:
+        //        //DisableTimer();
+        //        break;
+        //}
     }
     #endregion
 
