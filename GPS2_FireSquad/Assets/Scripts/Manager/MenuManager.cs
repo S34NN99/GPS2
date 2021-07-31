@@ -99,5 +99,7 @@ public class MenuManager : MonoBehaviour
     public void LeaveLevel()
     {
         SceneManager.LoadScene("Main Menu");
+        //mainMenu.SetActive(false);
+        //levelSelectMenu.SetActive(true);
     }
 }
