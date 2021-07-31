@@ -77,7 +77,7 @@ public class Fire : MonoBehaviour, IFmod
                     target.Stun(target);
                     //spawned fire on player
                     target.SpawnFire(target, gameManager.firePrefab);
-
+                    iPlayer.UniqueAnimation("Burn", true);
                     iPlayer.Walking(false);
                 }
                 else
@@ -134,7 +134,9 @@ public class Fire : MonoBehaviour, IFmod
         if (temp)
         {
             PlayerMovement player = transform.parent.GetComponent<PlayerMovement>();
+            IPlayer iPlayer = player.gameObject.GetComponent<IPlayer>();
             player.UnStun(player);
+            iPlayer.UniqueAnimation("Burn", false);
         }
         //StopAudioFmod(this.gameObject);
         Destroy(this.gameObject);
