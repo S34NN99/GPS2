@@ -96,6 +96,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             if (myPlayer.isExtinguishing)
             {
                 CheckFireInRadius(myPlayer);
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
                 return;
             }
 
