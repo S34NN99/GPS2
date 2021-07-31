@@ -141,11 +141,19 @@ public class GameManager : MonoBehaviour
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iPlayer.UsingMainSkill(true);
                     //fmod.StartAudioFmod(playerMovement.gameObject, "event:/SFX/Extinguisher/EXT_Extinguishing");
-
                     break;
 
-                /*case "Victim":              FOR VICTIM AND CHECK IF PLAYER IS CARRINY VICTIM OR NOT TO SET THE CORRECT ANIMATION
-                    break; */
+                case "Victim":
+                    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
+                    if (!playerMovement.myPlayer.isCarryingVictim)
+                    {
+                        iPlayer.UsingMainSkill(true);
+                    }
+                    else
+                    {
+                        iPlayer.UsingMainSkill(false);
+                    }
+                    break; 
 
                 default:
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);

@@ -101,33 +101,40 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
             if (direction.magnitude >= 0.1f)
             {
-                if (!myPlayer.isExtinguishing && !myPlayer.isCarryingVictim)
-                {
-                    Walking(true);
-                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-                    return;
+                Walking(true);
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
 
-                }
-                else if (myPlayer.isCarryingVictim)
-                {
-                    Walking(false);
-                    animator.SetBool("isCarryingVictim", true);
-                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-                    return;
-                }
+                //if(myPlayer.isCarryingVictim) animator.SetBool("isCarryingVictim", true); 
+                //if (!myPlayer.isExtinguishing && !myPlayer.isCarryingVictim)
+                //{
+                //    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                //    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                //    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
+                //    return;
+                //}
+                //else if (myPlayer.isCarryingVictim)
+                //{
+                //    animator.SetBool("isCarryingVictim", true);
+                //    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                //    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                //    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
+                //    return;
+                //}
             }
             else
             {
-                if (myPlayer.characterType == PublicEnumList.CharacterType.Medic)
-                {
-                    animator.SetBool("isCarryingVictim", false);
-                }
                 Walking(false);
             }
+            //else
+            //{
+            //    if (myPlayer.characterType == PublicEnumList.CharacterType.Medic)
+            //    {
+            //        animator.SetBool("isCarryingVictim", false);
+            //    }
+            //    Walking(false);
+            //}
         }
 
         CheckInteractInRadius(myPlayer);
@@ -151,6 +158,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     public void UniqueAnimation(string skillName, bool isUsingSkill)
     {
+        Debug.Log("Set");
         animator.SetBool(skillName, isUsingSkill);
     }
 
@@ -236,6 +244,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                                 actionBtn.gameObject.SetActive(true);
                                 textBtn.text = myplayer.characterMainSkill.ToString();
                                 target = hit.collider.gameObject;
+                                Debug.Log("Fire detected");
                             }
                         }
                         else
@@ -305,7 +314,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     void CheckFireInRadius(PlayerInfo myPlayer)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Fire"))
+        Vector3 rayCastPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+        if (Physics.Raycast(rayCastPos, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Fire"))
         {
             Fire fire = hit.collider.gameObject.GetComponent<Fire>();
             Walking(false);
@@ -534,6 +544,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
+        UsingSecondarySkill(false);
         SetCoroutine(currPlayer, false);
     }
 
@@ -544,8 +555,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
         Transform carryingPosition = currPlayer.transform.GetChild(2);
         Transform placePosition = currPlayer.transform.GetChild(3);
-
-
 
         if (tag == "Victim" && currPlayer.myPlayer.isCarryingVictim == false)
         {
@@ -558,11 +567,13 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             target.transform.parent.parent = carryingPosition.transform;
             currPlayer.myPlayer.isCarryingVictim = true;
 
+            UniqueAnimation("isCarryingVictim", true);
             target.GetComponent<VictimHealth>().CheckCarrying(true);
             Debug.Log("Victim is picked up");
         }
         else if(currPlayer.myPlayer.isCarryingVictim)
         {
+            UniqueAnimation("isCarryingVictim", false);
             yield return new WaitForSeconds(3.0f);
             target.GetComponent<Rigidbody>().useGravity = true;
             target.GetComponent<BoxCollider>().enabled = true;
@@ -577,7 +588,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             Debug.Log("Victim is dropped");
         }
 
-        UsingMainSkill(false);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }
