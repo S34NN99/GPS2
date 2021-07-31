@@ -430,6 +430,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 700
   Exists: 1
+--- !u!114 &-1314328039647045153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637624155557715894
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1012
+  Exists: 1
 --- !u!114 &-1186970504535762441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,17 +506,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -1186970504535762441}
-  - {fileID: 8008037256521917548}
-  EditorEvents:
-  - {fileID: -4720189456973168349}
-  - {fileID: -4845190158566777640}
+  - {fileID: 6665322446107038022}
+  - {fileID: -1314328039647045153}
+  EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 8008037256521917548}
+  - {fileID: -1314328039647045153}
   StringsBanks:
-  - {fileID: -1186970504535762441}
-  stringsBankWriteTime: 637626856328964646
+  - {fileID: 6665322446107038022}
+  stringsBankWriteTime: 637624155557756010
   cacheVersion: 6
 --- !u!114 &590987359318652512
 MonoBehaviour:
@@ -1081,6 +1100,27 @@ MonoBehaviour:
     Value: 818
   Exists: 1
 --- !u!114 &6052799554853146493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../GPS2_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637624155557756010
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
+--- !u!114 &6665322446107038022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
