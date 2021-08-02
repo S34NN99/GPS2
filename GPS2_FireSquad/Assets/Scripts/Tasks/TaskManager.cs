@@ -42,7 +42,7 @@ public class Objective
                     return ("All " + maxVal + " victims are saved\n").ToString();
 
                 case ObjectiveType.Teammates:
-                    return ("All " + currVal + " of " + maxVal + " teammates are in the safe zone.\n").ToString();
+                    return ("All " + currVal + " teammates are in the safe zone.\n").ToString();
 
                 case ObjectiveType.Time:
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
@@ -71,6 +71,7 @@ public class Objective
     {
         return (currentValue >= objectiveValue);
     }
+
     /*
     public bool loseCondition()
     {
@@ -123,6 +124,7 @@ public class TaskManager : MonoBehaviour
     {
         playerMovement = FindObjectOfType<PlayerMovement>();
         timer = FindObjectOfType<Timer>();
+        SetObjectivesValue(ActiveObjectives, timer);
     }
 
     private void Update()
@@ -137,7 +139,9 @@ public class TaskManager : MonoBehaviour
                 //    objective.currentValue = FindObjectsOfType<VictimHealth>().Length;  //To change
                 //    break;
                 case Objective.ObjectiveType.Time:
-                    objective.currentValue = timer.currentTime;
+                    float time = timer.currentTime;
+                    time = Mathf.Round(time);
+                    objective.currentValue = time;
                     break;
                 //case Objective.ObjectiveType.Teammates:
                 //    objective.currentValue = FindObjectsOfType<PlayerMovement>().Length;    //To change
@@ -150,6 +154,27 @@ public class TaskManager : MonoBehaviour
         UpdateObjectiveList();
 
         LevelProgression();
+    }
+
+    public void SetObjectivesValue(Objective[] activeObjectives, Timer timer)
+    {
+        foreach (Objective objective in activeObjectives)
+        {
+            switch (objective.objectiveType)
+            {
+                case Objective.ObjectiveType.Rescue:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Victim").Length;
+                    break;
+
+                case Objective.ObjectiveType.Teammates:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Player").Length;
+                    break;
+
+                case Objective.ObjectiveType.Time:
+                    objective.objectiveValue = timer.startTime;
+                    break;
+            }
+        }
     }
 
     public void UpdateValue(Objective.ObjectiveType thisObjectiveType, float value)

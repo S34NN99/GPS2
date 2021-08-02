@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iPlayer.UsingMainSkill(true);
-                    //fmod.StartAudioFmod(playerMovement.gameObject, "event:/SFX/Extinguisher/EXT_Extinguishing");
+                    fmod.StartAudioFmod(playerMovement.gameObject, "event:/SFX/Extinguisher/EXT_Extinguishing");
                     break;
 
                 case "Victim":
@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
         playerMovement.myPlayer.isLookingAtFire = false;
         playerMovement.myPlayer.isExtinguishing = false;
         iPlayer.UsingMainSkill(false);
-        //fmod.StopAudioFmod(playerMovement.gameObject);
+        fmod.StopAudioFmod(playerMovement.gameObject);
 
     }
 

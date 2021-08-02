@@ -401,6 +401,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             case PublicEnumList.CharacterSkill.Break:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(BreakWall(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                StartAudioFmod(currPlayer.gameObject, "event:/SFX/Demolisher/BreakWallSFX");
                 break;
 
             case PublicEnumList.CharacterSkill.DemolishTrap:
@@ -479,9 +480,10 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         target.GetComponent<Renderer>().material.color = Color.red;
         //target.GetComponent<MeshFilter>().sharedMesh = wall1HpMesh;
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.3f);
         Destroy(target);
 
+        StopAudioFmod(currPlayer.gameObject);
         UsingMainSkill(false);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);

@@ -50,6 +50,9 @@ public class SummaryManager : MonoBehaviour
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
+        minutes = Mathf.Round(minutes * 100f) / 100f;
+        seconds = Mathf.Round(seconds * 100f) / 100f;
+
         textToDisplay.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
