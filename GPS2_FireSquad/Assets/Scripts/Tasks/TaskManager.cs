@@ -235,14 +235,14 @@ public class TaskManager : MonoBehaviour
 
     public bool timeRanOut()
     {
-        foreach (Objective objective in ActiveObjectives)
+        if (timer.currentTime <= 0)
         {
-            if (objective.objectiveType == Objective.ObjectiveType.Time && objective.currentValue <= 0)
-            {
-                return true;
-            }
+            return true;
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
     public int numberOfConditionsMet()
