@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -474,12 +474,12 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2045457604}
     - target: {fileID: 3666401653245884879, guid: 756878b770c586244a89b2f7ee105ec5,
         type: 3}
       propertyPath: actionBtn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1434121009}
     - target: {fileID: 3849194074226287894, guid: 756878b770c586244a89b2f7ee105ec5,
         type: 3}
       propertyPath: m_RootOrder
@@ -4492,12 +4492,12 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2045457604}
     - target: {fileID: 8065609958551635576, guid: 50e5bb39be5c58c4fb7fd555ca1a1dc0,
         type: 3}
       propertyPath: actionBtn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1434121009}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e5bb39be5c58c4fb7fd555ca1a1dc0, type: 3}
 --- !u!4 &542417095 stripped
@@ -15013,12 +15013,12 @@ PrefabInstance:
         type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2045457604}
     - target: {fileID: 30824971178610387, guid: 2aa810e3363bc5f4db74403814c6a516,
         type: 3}
       propertyPath: actionBtn
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1434121009}
     - target: {fileID: 569488030044593352, guid: 2aa810e3363bc5f4db74403814c6a516,
         type: 3}
       propertyPath: m_RootOrder
@@ -18112,6 +18112,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2041440354}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2045457604 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1738324140961081544, guid: 2006abbb523401f47a4f2de9162323c5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1434121005}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2054680037
 GameObject:
   m_ObjectHideFlags: 0
