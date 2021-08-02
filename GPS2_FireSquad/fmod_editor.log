@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000242D92F7AC8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000001A948182988 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,48 +18,105 @@
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670016
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670080
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9312
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006E609CF0E8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000075BA68EFD8
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8649B7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8649B7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8649B7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8649B7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000024291EFE408
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='BreakWallSFX', format=5, channels=2, frequency=48000, lengthbytes=12096, lengthpcm=62693, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.720062.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670016
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9312
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006E609CF0E8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8649B7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8649B7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8649B7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8649B7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000024291EFDFE8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFE4357D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFE4357D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFE4357E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFE4357F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A895683B28
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ExtinguishSFX', format=5, channels=2, frequency=48000, lengthbytes=24160, lengthpcm=121626, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.549286.
-[LOG] SoundI::release                          : FireBurning (00000242969FE598)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC560A8)
-[LOG] SoundI::release                          :     FireBurning (0000024305B216C8)
-[LOG] SoundI::release                          : bgmupdated (00000242969FE088)
-[LOG] SoundI::release                          :     bgmupdated (00000242ACC58E28)
-[LOG] SoundI::release                          :     bgmupdated (0000024222D7E068)
-[LOG] SoundI::release                          :  (00000243033B55E8)
-[LOG] SoundI::release                          :     BreakWallSFX (000002421DBE70B8)
-[LOG] SoundI::release                          :  (00000243033B58C8)
-[LOG] SoundI::release                          :     ExtinguishSFX (000002421DBE6078)
-[LOG] SoundI::release                          :  (000002421D3A1CE8)
-[LOG] SoundI::release                          :     ExplosionSFX (00000242ACC57908)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670080
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000075BA68EFD8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFE4357D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFE4357D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFE4357E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFE4357F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001A894967B48
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='BreakWallSFX', format=5, channels=2, frequency=48000, lengthbytes=12096, lengthpcm=62693, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.720062.
+[LOG] SystemI::createSound                     : filename = ../GPS2_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001A947F8F1B8 : node = 000001A88EFC2850
+[LOG] SystemI::createSound                     : add node to async list : head = 000001A94E562D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A947F8F1B8
+[LOG] SystemI::createSoundInternal             :     Create name='../GPS2_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1670080
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9312
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A88EFC2960
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='FireBurning', format=5, channels=2, frequency=48000, lengthbytes=479648, lengthpcm=1586155, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.967926.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A947F8F1B8
+[LOG] SoundI::release                          : FireBurning (000001A896311BD8)
+[LOG] SoundI::release                          :     FireBurning (000001A88AC87BC8)
+[LOG] SoundI::release                          :     FireBurning (000001A947F95038)
+[LOG] SystemI::createSound                     : filename = ../GPS2_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001A91BE0E3F8 : node = 000001A8940061E0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001A94E562D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A91BE0E3F8
+[LOG] SystemI::createSoundInternal             :     Create name='../GPS2_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1670080
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9312
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A8940062F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='bgmupdated', format=5, channels=2, frequency=48000, lengthbytes=590848, lengthpcm=1919686, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.737610.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A91BE0E3F8
+[LOG] SoundI::release                          : bgmupdated (000001A947F8A418)
+[LOG] SoundI::release                          :     bgmupdated (000001A88AC873A8)
+[LOG] SoundI::release                          :     bgmupdated (000001A947F8FA28)
+[LOG] SystemI::createSound                     : filename = ../GPS2_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000001A947F91018 : node = 000001A88EFC5CD0
+[LOG] SystemI::createSound                     : add node to async list : head = 000001A94E562D88.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A947F91018
+[LOG] SystemI::createSoundInternal             :     Create name='../GPS2_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1670080
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 9312
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A88EFC5DE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='FireBurning', format=5, channels=2, frequency=48000, lengthbytes=479648, lengthpcm=1586155, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.967926.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A947F91018
+[LOG] SoundI::release                          : FireBurning (000001A947F8F1B8)
+[LOG] SoundI::release                          :     FireBurning (000001A91B4A8168)
+[LOG] SoundI::release                          :     FireBurning (000001A94E5F5C78)
+[LOG] SoundI::release                          : bgmupdated (000001A91BE0E3F8)
+[LOG] SoundI::release                          :     bgmupdated (000001A91B4A8308)
+[LOG] SoundI::release                          :     bgmupdated (000001A8946F5CB8)
+[LOG] SoundI::release                          : FireBurning (000001A947F91018)
+[LOG] SoundI::release                          :     FireBurning (000001A91B4A7AE8)
+[LOG] SoundI::release                          :     FireBurning (000001A8946F5958)
+[LOG] SoundI::release                          :  (000001A8957FD638)
+[LOG] SoundI::release                          :     BreakWallSFX (000001A91B4A8648)
+[LOG] SoundI::release                          :  (000001A895526B08)
+[LOG] SoundI::release                          :     ExplosionSFX (000001A88AC88728)
+[LOG] SoundI::release                          :  (000001A8957FD078)
+[LOG] SoundI::release                          :     ExtinguishSFX (000001A91B4A84A8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -70,7 +127,3 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
