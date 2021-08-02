@@ -458,32 +458,24 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         yield return new WaitForSeconds(0f);
     }
 
-    public GameObject wall2Hp;
-    public GameObject wall1Hp;
-    Mesh wallMesh;
-    Mesh wall2HpMesh;
-    Mesh wall1HpMesh;
 
     //break wall
     IEnumerator BreakWall(PlayerMovement currPlayer, GameObject target)
     {
         SetCoroutine(currPlayer, true);
 
-        //change sprites here
-        //wallMesh = target.GetComponent<MeshFilter>().sharedMesh;
-        //wall2HpMesh = wall2Hp.GetComponent<MeshFilter>().sharedMesh;
-        //wall1HpMesh = wall1Hp.GetComponent<MeshFilter>().sharedMesh;
+        Wall wall = target.GetComponent<Wall>();
 
         yield return new WaitForSeconds(1.0f);
-        target.GetComponent<Renderer>().material.color = Color.yellow;
-        //target.GetComponent<MeshFilter>().sharedMesh = wall2HpMesh;
+        wall.Damage();
+        //target.GetComponent<Renderer>().material.color = Color.yellow;
 
         yield return new WaitForSeconds(1.0f);
-        target.GetComponent<Renderer>().material.color = Color.red;
-        //target.GetComponent<MeshFilter>().sharedMesh = wall1HpMesh;
+        wall.Damage();
+        //target.GetComponent<Renderer>().material.color = Color.red;
 
         yield return new WaitForSeconds(1.3f);
-        Destroy(target);
+        wall.Damage();
 
         StopAudioFmod(currPlayer.gameObject);
         UsingMainSkill(false);
