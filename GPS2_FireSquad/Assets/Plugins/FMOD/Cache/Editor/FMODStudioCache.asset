@@ -295,7 +295,7 @@ MonoBehaviour:
   guid: 0cb5b14a610eb14d9b3b0e255ee40159
   Banks:
   - {fileID: 5358077601213276897}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -430,6 +430,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 2533
+--- !u!114 &-4809120332374010704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Extinguisher/ExtinguishingSFX
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Extinguisher/ExtinguishingSFX
+  guid: 1d5a648a47ad334f889053b6b800b9f6
+  Banks:
+  - {fileID: 5358077601213276897}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2000
 --- !u!114 &-4720189456973168349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -533,11 +556,11 @@ MonoBehaviour:
   Path: ../GPS2_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637635348881604015
+  lastModified: 637635372314842013
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 922
+    Value: 968
   Exists: 1
 --- !u!114 &-3566728803481983228
 MonoBehaviour:
@@ -722,15 +745,16 @@ MonoBehaviour:
   - {fileID: 5358077601213276897}
   EditorEvents:
   - {fileID: -6040698150516234787}
-  - {fileID: 2325628095896015072}
   - {fileID: -7258365720073156980}
   - {fileID: 2350043131833105077}
+  - {fileID: 5618036546968523145}
+  - {fileID: -4809120332374010704}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5358077601213276897}
   StringsBanks:
   - {fileID: -3643444224340816758}
-  stringsBankWriteTime: 637635348881604015
+  stringsBankWriteTime: 637635372314842013
   cacheVersion: 6
 --- !u!114 &590987359318652512
 MonoBehaviour:
@@ -910,8 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SFX/Extinguisher/EXT_Extinguishing
   guid: 1d5a648a47ad334f889053b6b800b9f6
-  Banks:
-  - {fileID: 5358077601213276897}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -935,7 +958,7 @@ MonoBehaviour:
   guid: 5694c1928fcecb4e81ddbb40a0bf5206
   Banks:
   - {fileID: 5358077601213276897}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -1374,7 +1397,7 @@ MonoBehaviour:
   Path: ../GPS2_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637635348881584086
+  lastModified: 637635372314821603
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1399,6 +1422,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 818
   Exists: 1
+--- !u!114 &5618036546968523145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Medic/RescueSFX
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Medic/RescueSFX
+  guid: b8d5c4ffdce5904c961e5a6d2bac76e5
+  Banks:
+  - {fileID: 5358077601213276897}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2847
 --- !u!114 &5844224638420737811
 MonoBehaviour:
   m_ObjectHideFlags: 0

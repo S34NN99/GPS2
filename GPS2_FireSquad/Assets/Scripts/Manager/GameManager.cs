@@ -131,7 +131,6 @@ public class GameManager : MonoBehaviour, IFmod
             PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
             Animator animator = playerObject.GetComponent<Animator>(); ;
             IPlayer iPlayer = playerObject.GetComponent<IPlayer>();
-            IFmod fmod = playerObject.GetComponent<IFmod>();
             isPressed = !isPressed;
 
             if (playerMovement.target.tag != "Fire")
@@ -167,7 +166,6 @@ public class GameManager : MonoBehaviour, IFmod
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iPlayer.UsingMainSkill(true);
-                    fmod.StartAudioFmod(playerMovement.gameObject, "event:/SFX/Extinguisher/EXT_Extinguishing");
                     break;
 
                 case "Victim":

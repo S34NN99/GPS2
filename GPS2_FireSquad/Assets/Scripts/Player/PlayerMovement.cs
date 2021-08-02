@@ -396,6 +396,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             case PublicEnumList.CharacterSkill.Extinguish:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(ExtinguishFire(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                StartAudioFmod(currPlayer.gameObject, "event:/SFX/Extinguisher/ExtinguishingSFX");
                 break;
 
             case PublicEnumList.CharacterSkill.Break:
@@ -417,6 +418,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             case PublicEnumList.CharacterSkill.Carry:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(CarryVictim(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.CarryingVictim;
+                StartAudioFmod(currPlayer.gameObject, "event:/SFX/Medic/RescueSFX");
                 break;
 
             case PublicEnumList.CharacterSkill.Press:
@@ -581,6 +583,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             Debug.Log("Victim is dropped");
         }
 
+        StopAudioFmod(currPlayer.gameObject);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }
