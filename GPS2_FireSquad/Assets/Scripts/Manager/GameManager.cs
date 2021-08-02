@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IFmod
 {
     public CameraMovement cameraMovement;
 
@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
     float maxCountDown = 2.0f;
     float currCountDown;
     public Image timer;
+
+    private FMOD.Studio.EventInstance EI;
+
+    void Start()
+    {
+        StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+    }
 
     #region NAVMESH
     void CheckCharDistance()
@@ -69,6 +76,23 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion NAVMESH
+
+    public void StartAudioFmod(GameObject gameObject, string pathname)
+    {
+        // EXAMPLE
+        /*AE = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Extinguisher/EXT_Extinguishing");
+        AE.start();*/
+        EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(EI, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+        EI.start();
+        Debug.Log("Playing");
+    }
+
+    public void StopAudioFmod(GameObject gameObject)
+    {
+        EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EI.release();
+    }
 
     private void Update()
     {

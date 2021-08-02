@@ -29,7 +29,7 @@ public class Fire : MonoBehaviour, IFmod
     {
         fireInfo.currentHealth = fireInfo.maxHealth;
         gameManager = FindObjectOfType<GameManager>();
-        StartAudioFmod(this.gameObject, "event:/SFX/Fire");
+        //StartAudioFmod(this.gameObject, "event:/BGM/bgm");
     }
 
     private void Update()
