@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002E18239C288 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000218640287A8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,131 +16,11 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E66C8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E66C8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E4508
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E4508
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E2D68
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E2D68
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E0BA8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E0BA8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E0F08
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E0F08
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002E1A97E3C98
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002E1A97E3C98
-[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to 65536 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A2F58)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EC378)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E04E8)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A2BF8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EDA38)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E3C98)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A26E8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EC858)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5288)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A4398)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EF918)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E0848)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A4038)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EC6B8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E4868)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A37C8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EA2F8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E4508)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A41E8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10E9798)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E35D8)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A3E88)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EDF18)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E4BC8)
-[LOG] SoundI::release                          : FireBurning (000002E1B50BF8D8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EC1D8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E1778)
-[LOG] SoundI::release                          : FireBurning (000002E1B50BF3C8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EB198)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97DFFD8)
-[LOG] SoundI::release                          : FireBurning (000002E1B50BF218)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EA158)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E0D58)
-[LOG] SoundI::release                          : FireBurning (000002E1B50BFA88)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10ED6F8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E4A18)
-[LOG] SoundI::release                          : FireBurning (000002E1B50BF068)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EDBD8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5E58)
-[LOG] SoundI::release                          : FireBurning (000002E0F8A0A178)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EE8D8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5CA8)
-[LOG] SoundI::release                          : FireBurning (000002E0F8A09E18)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10E95F8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E41A8)
-[LOG] SoundI::release                          : FireBurning (000002E0F8A0A4D8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EC038)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E0338)
-[LOG] SoundI::release                          : FireBurning (000002E0F8A09AB8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EF5D8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5948)
-[LOG] SoundI::release                          : FireBurning (000002E0FA706E08)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EE738)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E3428)
-[LOG] SoundI::release                          : FireBurning (000002E0FA706598)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10ECD38)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E0BA8)
-[LOG] SoundI::release                          : FireBurning (000002E0FA706088)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EE598)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E6878)
-[LOG] SoundI::release                          : FireBurning (000002E0FA706748)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10ED558)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E4D78)
-[LOG] SoundI::release                          : FireBurning (000002E0FA706AA8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EAB18)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E30C8)
-[LOG] SoundI::release                          : FireBurning (000002E1A978BAF8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EF438)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E2A08)
-[LOG] SoundI::release                          : FireBurning (000002E1823C6248)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EBE98)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5AF8)
-[LOG] SoundI::release                          : FireBurning (000002E1823C6AB8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EE258)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E3278)
-[LOG] SoundI::release                          : FireBurning (000002E0F962DE88)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EB9B8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E66C8)
-[LOG] SoundI::release                          : FireBurning (000002E0F962E038)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EF778)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E1928)
-[LOG] SoundI::release                          : FireBurning (000002E0F962E398)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EEDB8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E2D68)
-[LOG] SoundI::release                          : FireBurning (000002E0F962DB28)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EB818)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E0F08)
-[LOG] SoundI::release                          : FireBurning (000002E1B55234A8)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EDD78)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E3788)
-[LOG] SoundI::release                          : FireBurning (000002E0FBE0C928)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EB678)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E2858)
-[LOG] SoundI::release                          : FireBurning (000002E1B5524078)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EEA78)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E6008)
-[LOG] SoundI::release                          : FireBurning (000002E0FBE0CE38)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EBCF8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E46B8)
-[LOG] SoundI::release                          : FireBurning (000002E0FA6A3468)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EA7D8)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E5798)
-[LOG] SoundI::release                          : FireBurning (000002E0FBE0C418)
-[LOG] SoundI::release                          :     FireBurning (000002E0F10EBB58)
-[LOG] SoundI::release                          :     FireBurning (000002E1A97E1C88)
-[LOG] Thread::callback                         : FMOD Studio update thread finished.
-[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
-[LOG] LiveUpdate::release                      : 
-[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
-[LOG] Thread::callback                         : FMOD stream thread finished.
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
-[LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6

@@ -65,6 +65,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1012
   Exists: 1
+--- !u!114 &-8323485717165904481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD Studio/GPS2_FireSquad/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637629470602006320
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 700
+  Exists: 1
 --- !u!114 &-8309339679173174629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,20 +738,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -3643444224340816758}
-  - {fileID: 5358077601213276897}
-  EditorEvents:
-  - {fileID: -6040698150516234787}
-  - {fileID: 2325628095896015072}
-  - {fileID: -7258365720073156980}
+  EditorBanks: []
+  EditorEvents: []
   EditorParameters: []
-  MasterBanks:
-  - {fileID: 5358077601213276897}
-  StringsBanks:
-  - {fileID: -3643444224340816758}
-  stringsBankWriteTime: 637635328731039086
+  MasterBanks: []
+  StringsBanks: []
+  stringsBankWriteTime: 0
   cacheVersion: 6
+--- !u!114 &253996993736162419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD Studio/GPS2_FireSquad/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637629470601986320
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &590987359318652512
 MonoBehaviour:
   m_ObjectHideFlags: 0
