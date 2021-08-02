@@ -664,8 +664,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../OneDrive/Documents/FMOD Studio/GPS2_FMOD/GPS2_FMOD.fspro
-  sourceBankPath: ../../../OneDrive/Documents/FMOD Studio/GPS2_FMOD/Build
+  sourceProjectPath: ../GPS2_FMOD/GPS2_FMOD.fspro
+  sourceBankPath: ../GPS2_FMOD/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
@@ -686,7 +686,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
