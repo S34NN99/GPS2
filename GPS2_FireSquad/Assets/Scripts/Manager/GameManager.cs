@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject firePrefab;
 
     public bool isPressed = false;
+    public bool isGrouping = false;
     float maxCountDown = 2.0f;
     float currCountDown;
     public Image timer;
@@ -44,12 +45,14 @@ public class GameManager : MonoBehaviour
                     navMeshAgent.isStopped = false;
                     GroupUp(navMeshAgent, selectedPlayerPos, playermovement.gameObject);
                     iPlayer.Walking(true);
+                    isGrouping = true;
                 }
-                else if (distance < 5)
+                else if (distance < 5 && isGrouping == true)
                 {
+
                     navMeshAgent.isStopped = true;
                     iPlayer.Walking(false);
-                    playermovement.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                    //playermovement.gameObject.GetComponent<CapsuleCollider>().enabled = true;
                 }
             }
             else
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
     void GroupUp(NavMeshAgent navMeshAgent, Vector3 destination, GameObject player)
     {      
         navMeshAgent.destination = destination;
-        player.GetComponent<CapsuleCollider>().enabled = false;
+        //player.GetComponent<CapsuleCollider>().enabled = false;
     }
 
     #endregion NAVMESH

@@ -13,8 +13,6 @@ public class CameraMovement : MonoBehaviour
     public float speedOffset;
     public Vector3 offset;
 
-    private bool isSwitchingCharacter = false;
-
     private void Start()
     {
         selectedPlayer = playerGroup.transform.GetChild(0).gameObject;
@@ -36,8 +34,6 @@ public class CameraMovement : MonoBehaviour
     {
         float distance = Vector3.Distance(selectedPlayer.transform.position, player.transform.position);
 
-        isSwitchingCharacter = true;
-
         speed = distance + speedOffset;
 
         selectedPlayer.GetComponent<PlayerMovement>().playerSelected = false;
@@ -45,4 +41,5 @@ public class CameraMovement : MonoBehaviour
         FindObjectOfType<GameManager>().playerObject = selectedPlayer;
         selectedPlayer.GetComponent<PlayerMovement>().playerSelected = true;
     }
+
 }

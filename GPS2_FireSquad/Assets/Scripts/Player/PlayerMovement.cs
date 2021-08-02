@@ -113,36 +113,11 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                 float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
                 controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-
-                //if(myPlayer.isCarryingVictim) animator.SetBool("isCarryingVictim", true); 
-                //if (!myPlayer.isExtinguishing && !myPlayer.isCarryingVictim)
-                //{
-                //    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                //    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                //    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-                //    return;
-                //}
-                //else if (myPlayer.isCarryingVictim)
-                //{
-                //    animator.SetBool("isCarryingVictim", true);
-                //    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
-                //    transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
-                //    controller.Move(direction * myPlayer.moveSpeed * Time.deltaTime);
-                //    return;
-                //}
             }
             else
             {
                 Walking(false);
             }
-            //else
-            //{
-            //    if (myPlayer.characterType == PublicEnumList.CharacterType.Medic)
-            //    {
-            //        animator.SetBool("isCarryingVictim", false);
-            //    }
-            //    Walking(false);
-            //}
         }
 
         CheckInteractInRadius(myPlayer);
@@ -166,7 +141,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     public void UniqueAnimation(string skillName, bool isUsingSkill)
     {
-        Debug.Log("Set");
         animator.SetBool(skillName, isUsingSkill);
     }
 
@@ -278,9 +252,10 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                         break;
 
                     case PublicEnumList.CharacterType.Medic:
-                        if(myplayer.isCarryingVictim)
+                        if(myplayer.isCarryingVictim && !myplayer.isStunned)
                         {
                             actionBtn.gameObject.SetActive(true);
+                            textBtn.text = "Drop";
                             return;
                         }
 

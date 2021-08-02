@@ -71,7 +71,7 @@ public class Fire : MonoBehaviour, IFmod
 
             if (target.myPlayer.characterType != PublicEnumList.CharacterType.Extinguisher)
             {
-                if (!target.myPlayer.isStunned)
+                if (!target.myPlayer.isStunned && target.playerSelected)
                 {
 
                     target.Stun(target);
@@ -79,6 +79,7 @@ public class Fire : MonoBehaviour, IFmod
                     target.SpawnFire(target, gameManager.firePrefab);
                     iPlayer.UniqueAnimation("Burn", true);
                     iPlayer.Walking(false);
+                    Debug.Log("On fire");
                 }
                 else
                 {
@@ -139,6 +140,7 @@ public class Fire : MonoBehaviour, IFmod
             iPlayer.UniqueAnimation("Burn", false);
         }
         //StopAudioFmod(this.gameObject);
+        //NavMeshFixer.FixNavMesh();
         Destroy(this.gameObject);
     }
 
