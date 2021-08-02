@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour, IFmod
                     iPlayer.Walking(true);
                     isGrouping = true;
                 }
-                else if (distance < 5 && isGrouping == true)
+                else if (distance < 10 && isGrouping == true)
                 {
 
                     navMeshAgent.isStopped = true;
