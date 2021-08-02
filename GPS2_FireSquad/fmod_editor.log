@@ -2,10 +2,9 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20109 (115889), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
+[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
 [LOG] AsyncManager::init                       : manager 00000242D92F7AC8 isAsync 0 updatePeriod 0.02
@@ -17,143 +16,50 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88D2FD8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88D2FD8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88DB378
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88DB378
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88D2E28
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88D2E28
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88D4268
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88D4268
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88D60C8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88D60C8
-[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to 65536 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000242A88D60C8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000242A88D60C8
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 516448
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 4480
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670016
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9312
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006E609CEEA8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006E609CF0E8
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8649B7D70
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8649B7D40
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8649B7E40
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8649B7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000242B3A6C068
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000024291EFE408
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='BreakWallSFX', format=5, channels=2, frequency=48000, lengthbytes=12096, lengthpcm=62693, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.720062.
-[WRN] AsyncCommandBuffer::growBuffer           : Growing command buffer to 131072 bytes. Initial command buffer size can be tuned to avoid dynamic growth using Studio::System::setAdvancedSettings()
-[LOG] SoundI::release                          : FireBurning (00000242A88D39F8)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF33B8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DC2A8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D6E48)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF3558)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DA958)
-[LOG] SoundI::release                          : FireBurning (00000242A88D8438)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF4258)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D9A28)
-[LOG] SoundI::release                          : FireBurning (00000242A88D5D68)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE80F8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DB528)
-[LOG] SoundI::release                          : FireBurning (00000242A88D4E38)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7F58)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DACB8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D7A18)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7258)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DB378)
-[LOG] SoundI::release                          : FireBurning (00000242A88D4AD8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE78D8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D9878)
-[LOG] SoundI::release                          : FireBurning (00000242A88D76B8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7DB8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DA7A8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D6AE8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE70B8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D9F38)
-[LOG] SoundI::release                          : FireBurning (00000242A88D54F8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE6F18)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D9D88)
-[LOG] SoundI::release                          : FireBurning (00000242A88D9368)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE6218)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DA298)
-[LOG] SoundI::release                          : FireBurning (00000242A88D3338)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE6BD8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DCCC8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D7508)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE6078)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DA5F8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D5858)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE56B8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DCB18)
-[LOG] SoundI::release                          : FireBurning (00000242A88D8E58)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7738)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DBD98)
-[LOG] SoundI::release                          : FireBurning (0000024044933E68)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE63B8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DA448)
-[LOG] SoundI::release                          : FireBurning (00000240449330E8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE5518)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D9BD8)
-[LOG] SoundI::release                          : FireBurning (000002404492D418)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE5378)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D45C8)
-[LOG] SoundI::release                          : FireBurning (0000024044930508)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE85D8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D4268)
-[LOG] SoundI::release                          : FireBurning (00000240449315E8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE6A38)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D3F08)
-[LOG] SoundI::release                          : FireBurning (00000240449301A8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7598)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D3D58)
-[LOG] SoundI::release                          : FireBurning (000002404492E6A8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE5038)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D65D8)
-[LOG] SoundI::release                          : FireBurning (000002404492F0C8)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE5D38)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D3698)
-[LOG] SoundI::release                          : FireBurning (000002404492D778)
-[LOG] SoundI::release                          :     FireBurning (000002421DBE7C18)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D40B8)
-[LOG] SoundI::release                          : FireBurning (000002404492CF08)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4E868)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D4418)
-[LOG] SoundI::release                          : FireBurning (000002404492EF18)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4D9C8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D2FD8)
-[LOG] SoundI::release                          : FireBurning (000002404492DFE8)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4D688)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D6278)
-[LOG] SoundI::release                          : FireBurning (0000024044931438)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4A908)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D2E28)
-[LOG] SoundI::release                          : FireBurning (000002404492FAE8)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4D4E8)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D60C8)
-[LOG] SoundI::release                          : FireBurning (00000242A88D96C8)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF4738)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DB018)
-[LOG] SoundI::release                          : FireBurning (000002404492C848)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4D348)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D6938)
-[LOG] SoundI::release                          : FireBurning (00000242A88D7F28)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF3218)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DAE68)
-[LOG] SoundI::release                          : FireBurning (0000024044939118)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC4A768)
-[LOG] SoundI::release                          :     FireBurning (00000242A88D3848)
-[LOG] SoundI::release                          : FireBurning (00000242A88D5BB8)
-[LOG] SoundI::release                          :     FireBurning (000002421EDF3898)
-[LOG] SoundI::release                          :     FireBurning (00000242A88DAB08)
-[LOG] SoundI::release                          : FireBurning (000002404493A3A8)
-[LOG] SoundI::release                          :     FireBurning (00000242ACC49C08)
-[LOG] SoundI::release                          :     FireBurning (000002404492B918)
-[LOG] SoundI::release                          :  (00000242966FE658)
-[LOG] SoundI::release                          :     BreakWallSFX (000002421EDF43F8)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1670016
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 9312
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000006E609CF0E8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8649B7D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8649B7D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8649B7E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8649B7F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000024291EFDFE8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ExtinguishSFX', format=5, channels=2, frequency=48000, lengthbytes=24160, lengthpcm=121626, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.549286.
+[LOG] SoundI::release                          : FireBurning (00000242969FE598)
+[LOG] SoundI::release                          :     FireBurning (00000242ACC560A8)
+[LOG] SoundI::release                          :     FireBurning (0000024305B216C8)
+[LOG] SoundI::release                          : bgmupdated (00000242969FE088)
+[LOG] SoundI::release                          :     bgmupdated (00000242ACC58E28)
+[LOG] SoundI::release                          :     bgmupdated (0000024222D7E068)
+[LOG] SoundI::release                          :  (00000243033B55E8)
+[LOG] SoundI::release                          :     BreakWallSFX (000002421DBE70B8)
+[LOG] SoundI::release                          :  (00000243033B58C8)
+[LOG] SoundI::release                          :     ExtinguishSFX (000002421DBE6078)
+[LOG] SoundI::release                          :  (000002421D3A1CE8)
+[LOG] SoundI::release                          :     ExplosionSFX (00000242ACC57908)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -164,13 +70,6 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[ERR] OutputWASAPI::mixerThread                : GetCurrentPadding returned 0x88890004.  Device was unplugged!
-[LOG] Thread::callback                         : FMOD mixer thread finished.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
