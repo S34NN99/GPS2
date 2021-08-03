@@ -314,32 +314,38 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     private void CheckInteractInRadius(PlayerInfo myPlayer)
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.GetComponent<Door>() ||
-            Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Button"))
-        {
-            actionBtn.gameObject.SetActive(true);
+        //if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.GetComponent<Door>() ||
+        //    Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Button"))
+        //{
 
+        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius))
+        {
             if (hit.collider.gameObject.CompareTag("Button"))
             {
-                if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == false)
-                {
-                    textBtn.text = "Press button";
-                }
-                else if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == true)
-                {
-                    textBtn.text = "Release button";
-                }
-            }
-            else if (hit.collider.gameObject.GetComponent<Door>().isLocked == false)
-            {
-                textBtn.text = myPlayer.characterCommonSkill[1].ToString();
-            }
-            else if (hit.collider.gameObject.GetComponent<Door>().isLocked == true)
-            {
-                textBtn.text = "Locked";
-            }
+                actionBtn.gameObject.SetActive(true);
 
-            target = hit.collider.gameObject;
+                if (hit.collider.gameObject.CompareTag("Button"))
+                {
+                    if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == false)
+                    {
+                        textBtn.text = "Press button";
+                    }
+                    else if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == true)
+                    {
+                        textBtn.text = "Release button";
+                    }
+                }
+                else if (hit.collider.gameObject.GetComponent<Door>().isLocked == false)
+                {
+                    textBtn.text = myPlayer.characterCommonSkill[1].ToString();
+                }
+                else if (hit.collider.gameObject.GetComponent<Door>().isLocked == true)
+                {
+                    textBtn.text = "Locked";
+                }
+
+                target = hit.collider.gameObject;
+            }
         }
     }
 
