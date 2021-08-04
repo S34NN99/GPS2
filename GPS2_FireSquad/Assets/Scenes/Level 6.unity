@@ -15,16 +15,16 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogColor: {r: 0.909804, g: 1, b: 1, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_LinearFogStart: 15
+  m_LinearFogEnd: 270.5
+  m_AmbientSkyColor: {r: 0.4279548, g: 0.49148646, b: 0.5566038, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.17660876, g: 0.22105831, b: 0.3033653, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,8 +97,10 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: ea7cab97f48afbb42ba3c81f3da3d2a8,
+    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e343027d080d05d40817dda016606d67,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -306,6 +308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -369,6 +376,11 @@ PrefabInstance:
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -459,6 +471,11 @@ PrefabInstance:
     - target: {fileID: 3033475870850453519, guid: 90743514bd4d403408d9ece2a0747ce9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4202490564834061152, guid: 90743514bd4d403408d9ece2a0747ce9,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -749,6 +766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -818,6 +840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -120.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2555c3d582dc72345bc543d7d77d1b27, type: 3}
@@ -962,6 +989,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -1240,6 +1272,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coffee table
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940136423770523130, guid: 5d2718905f967ef4784d18fdef5d6e48,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6940136424368060079, guid: 5d2718905f967ef4784d18fdef5d6e48,
         type: 3}
@@ -1762,6 +1799,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oil
       objectReference: {fileID: 0}
+    - target: {fileID: 7732230375563721961, guid: 295f967589d81ff47bb329445a491a10,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092576000679501116, guid: 295f967589d81ff47bb329445a491a10,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 295f967589d81ff47bb329445a491a10, type: 3}
 --- !u!4 &138772335 stripped
@@ -2248,6 +2295,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 2389310813142831481, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3558869937315326486, guid: 86835a57825d6c542b78ddc23ea49960,
         type: 3}
       propertyPath: m_RootOrder
@@ -2317,6 +2369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190729155740922028, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86835a57825d6c542b78ddc23ea49960, type: 3}
@@ -2679,10 +2736,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 1053354111723126763, guid: 6b6308e52f5ded74daf3e70550597a37,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1557893128686116414, guid: 6b6308e52f5ded74daf3e70550597a37,
         type: 3}
       propertyPath: m_Name
       value: Small table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557893128686116414, guid: 6b6308e52f5ded74daf3e70550597a37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2221804206617773188, guid: 6b6308e52f5ded74daf3e70550597a37,
         type: 3}
@@ -3155,6 +3222,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Oil (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7732230375563721961, guid: 295f967589d81ff47bb329445a491a10,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092576000679501116, guid: 295f967589d81ff47bb329445a491a10,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8092576000679501116, guid: 295f967589d81ff47bb329445a491a10,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3335,6 +3412,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa chair (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
@@ -3641,6 +3728,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sink
       objectReference: {fileID: 0}
+    - target: {fileID: 4623762526812409386, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5431683277550965904, guid: ad2c982746621ca46a86fef3acc5b789,
         type: 3}
       propertyPath: m_RootOrder
@@ -3710,6 +3802,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569093745802031103, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2c982746621ca46a86fef3acc5b789, type: 3}
@@ -3866,6 +3963,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &376746672 stripped
@@ -3963,7 +4070,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &395396953
 Transform:
@@ -4058,6 +4165,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7064662318386303779, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8233024520804313164, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
         type: 3}
       propertyPath: m_RootOrder
@@ -4117,6 +4229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor mat (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721858957774123766, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be9c32880acd3e4fadaff0bf3e7257b, type: 3}
@@ -4216,6 +4333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7410195621421195755, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547094821060795012, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4275,6 +4397,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tv
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067630441369468990, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f46e24eaab1b5d439a0b5280ede5b3d, type: 3}
@@ -4356,6 +4483,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 878182886840519768, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_Name
@@ -4380,6 +4512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chair (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
@@ -4450,6 +4587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.987
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2555c3d582dc72345bc543d7d77d1b27, type: 3}
@@ -4798,6 +4940,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa chair (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
@@ -5150,6 +5302,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -5809,10 +5966,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 3045725564862765563, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3550080275718813742, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
       propertyPath: m_Name
       value: Lamp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550080275718813742, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
@@ -5822,17 +5989,17 @@ PrefabInstance:
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.12
+      value: 8.131
       objectReference: {fileID: 0}
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.72
+      value: -11.863
       objectReference: {fileID: 0}
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.97
+      value: -14.96
       objectReference: {fileID: 0}
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
@@ -6060,6 +6227,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -6129,6 +6301,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.0650024
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2555c3d582dc72345bc543d7d77d1b27, type: 3}
@@ -6687,6 +6864,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sink
       objectReference: {fileID: 0}
+    - target: {fileID: 4623762526812409386, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5431683277550965904, guid: ad2c982746621ca46a86fef3acc5b789,
         type: 3}
       propertyPath: m_RootOrder
@@ -6741,6 +6923,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569093745802031103, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2c982746621ca46a86fef3acc5b789, type: 3}
@@ -7410,10 +7597,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 5381585429583945062, guid: d679d7d05b675be479c4f14d77cd15ed,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5886142175102336179, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
       propertyPath: m_Name
       value: tv cabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886142175102336179, guid: d679d7d05b675be479c4f14d77cd15ed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6549385819409032713, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
@@ -7428,12 +7625,12 @@ PrefabInstance:
     - target: {fileID: 6549385819409032713, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.5
+      value: -11.552
       objectReference: {fileID: 0}
     - target: {fileID: 6549385819409032713, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.08
+      value: -27.078
       objectReference: {fileID: 0}
     - target: {fileID: 6549385819409032713, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
@@ -7699,6 +7896,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -7767,6 +7969,11 @@ PrefabInstance:
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7955,10 +8162,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7875630088226183791, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8523950316494142394, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
         type: 3}
       propertyPath: m_Name
       value: toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523950316494142394, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9007470877918781696, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
         type: 3}
@@ -8040,6 +8257,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 2389310813142831481, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3558869937315326486, guid: 86835a57825d6c542b78ddc23ea49960,
         type: 3}
       propertyPath: m_RootOrder
@@ -8109,6 +8331,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vase (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190729155740922028, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86835a57825d6c542b78ddc23ea49960, type: 3}
@@ -8399,6 +8626,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 100194379869195026, guid: 010926c482c47aa47a8a6f9d59ec945b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1236478467043225725, guid: 010926c482c47aa47a8a6f9d59ec945b,
         type: 3}
       propertyPath: m_RootOrder
@@ -8463,6 +8695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Microwave 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1901374676508584647, guid: 010926c482c47aa47a8a6f9d59ec945b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 010926c482c47aa47a8a6f9d59ec945b, type: 3}
@@ -8543,6 +8780,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
@@ -8996,6 +9243,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7064662318386303779, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8233024520804313164, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
         type: 3}
       propertyPath: m_RootOrder
@@ -9055,6 +9307,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor mat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721858957774123766, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be9c32880acd3e4fadaff0bf3e7257b, type: 3}
@@ -9134,6 +9391,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -9340,6 +9602,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &1148608307 stripped
@@ -9457,6 +9729,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -9511,6 +9788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -88.399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2555c3d582dc72345bc543d7d77d1b27, type: 3}
@@ -9644,7 +9926,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -9656,7 +9938,7 @@ Light:
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1
@@ -9702,13 +9984,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160522242}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.011860025, y: 0.52764577, z: -0.8493498, w: 0.007367862}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 116.3, y: 178.4, z: 0}
 --- !u!1 &1192499215
 GameObject:
   m_ObjectHideFlags: 0
@@ -9983,6 +10265,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4202490564834061152, guid: 90743514bd4d403408d9ece2a0747ce9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90743514bd4d403408d9ece2a0747ce9, type: 3}
 --- !u!4 &1200901156 stripped
@@ -10078,6 +10365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sofa  (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4982014495758291036, guid: 38a0941f6116893438a1b2c1f554fcf9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5649901406916004582, guid: 38a0941f6116893438a1b2c1f554fcf9,
         type: 3}
       propertyPath: m_RootOrder
@@ -10142,6 +10434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 87.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783361918165496201, guid: 38a0941f6116893438a1b2c1f554fcf9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a0941f6116893438a1b2c1f554fcf9, type: 3}
@@ -10465,6 +10762,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gas canister
       objectReference: {fileID: 0}
+    - target: {fileID: 7876864825341187487, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525528101903709258, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38d94c78b7331d4a92addffecd7686d, type: 3}
 --- !u!4 &1284779648 stripped
@@ -10560,6 +10867,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -10613,6 +10925,11 @@ PrefabInstance:
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -10690,6 +11007,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gas canister (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7876864825341187487, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525528101903709258, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38d94c78b7331d4a92addffecd7686d, type: 3}
 --- !u!4 &1297939192 stripped
@@ -10758,6 +11085,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -11079,10 +11411,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7875630088226183791, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8523950316494142394, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
         type: 3}
       propertyPath: m_Name
       value: toilet
+      objectReference: {fileID: 0}
+    - target: {fileID: 8523950316494142394, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9007470877918781696, guid: 7429c45c68a3cdd4b8e8c0c5cf906458,
         type: 3}
@@ -11908,7 +12250,7 @@ PrefabInstance:
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_CastShadows
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
@@ -12013,6 +12355,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519768, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -12185,6 +12532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.172
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
@@ -12685,6 +13037,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &1482610997 stripped
@@ -13063,6 +13425,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_RootOrder
@@ -13116,6 +13483,11 @@ PrefabInstance:
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13196,6 +13568,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519768, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -13293,10 +13670,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 789748777771185771, guid: 6cc60459705dd5d45956e4c04fb346b4,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1294006595242825662, guid: 6cc60459705dd5d45956e4c04fb346b4,
         type: 3}
       propertyPath: m_Name
       value: fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294006595242825662, guid: 6cc60459705dd5d45956e4c04fb346b4,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1927237763393277188, guid: 6cc60459705dd5d45956e4c04fb346b4,
         type: 3}
@@ -13554,6 +13941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sink
       objectReference: {fileID: 0}
+    - target: {fileID: 4623762526812409386, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5431683277550965904, guid: ad2c982746621ca46a86fef3acc5b789,
         type: 3}
       propertyPath: m_RootOrder
@@ -13608,6 +14000,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6569093745802031103, guid: ad2c982746621ca46a86fef3acc5b789,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2c982746621ca46a86fef3acc5b789, type: 3}
@@ -13919,10 +14316,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 1053354111723126763, guid: 6b6308e52f5ded74daf3e70550597a37,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1557893128686116414, guid: 6b6308e52f5ded74daf3e70550597a37,
         type: 3}
       propertyPath: m_Name
       value: Small table
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557893128686116414, guid: 6b6308e52f5ded74daf3e70550597a37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2221804206617773188, guid: 6b6308e52f5ded74daf3e70550597a37,
         type: 3}
@@ -14400,6 +14807,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa chair (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
@@ -14965,6 +15382,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 878182886840519768, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_Name
@@ -14989,6 +15411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chair (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2517951397898119906, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
@@ -15043,6 +15470,11 @@ PrefabInstance:
     - target: {fileID: 3006821083410739288, guid: 2555c3d582dc72345bc543d7d77d1b27,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175244793246763831, guid: 2555c3d582dc72345bc543d7d77d1b27,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -15252,6 +15684,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7410195621421195755, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8547094821060795012, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
         type: 3}
       propertyPath: m_RootOrder
@@ -15311,6 +15748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tv
+      objectReference: {fileID: 0}
+    - target: {fileID: 9067630441369468990, guid: 1f46e24eaab1b5d439a0b5280ede5b3d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f46e24eaab1b5d439a0b5280ede5b3d, type: 3}
@@ -15509,10 +15951,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 5381585429583945062, guid: d679d7d05b675be479c4f14d77cd15ed,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5886142175102336179, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
       propertyPath: m_Name
       value: tv cabinet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5886142175102336179, guid: d679d7d05b675be479c4f14d77cd15ed,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6549385819409032713, guid: d679d7d05b675be479c4f14d77cd15ed,
         type: 3}
@@ -15589,6 +16041,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Sofa '
       objectReference: {fileID: 0}
+    - target: {fileID: 4982014495758291036, guid: 38a0941f6116893438a1b2c1f554fcf9,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 5649901406916004582, guid: 38a0941f6116893438a1b2c1f554fcf9,
         type: 3}
       propertyPath: m_RootOrder
@@ -15643,6 +16100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -170.159
+      objectReference: {fileID: 0}
+    - target: {fileID: 6783361918165496201, guid: 38a0941f6116893438a1b2c1f554fcf9,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38a0941f6116893438a1b2c1f554fcf9, type: 3}
@@ -15818,6 +16280,11 @@ PrefabInstance:
     - target: {fileID: 878182886008742625, guid: cabf41987f7a68a42b67bc65f4336f77,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 878182886840519766, guid: cabf41987f7a68a42b67bc65f4336f77,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 878182886840519768, guid: cabf41987f7a68a42b67bc65f4336f77,
@@ -16053,8 +16520,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885498697}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.52, y: 0, z: 0.3024}
-  m_LocalScale: {x: 0.39423, y: 1, z: 1}
+  m_LocalPosition: {x: -0.52, y: 0, z: 0.3699}
+  m_LocalScale: {x: 0.25231114, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1672732037}
   m_RootOrder: 0
@@ -16436,6 +16903,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gas canister (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7876864825341187487, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525528101903709258, guid: f38d94c78b7331d4a92addffecd7686d,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f38d94c78b7331d4a92addffecd7686d, type: 3}
 --- !u!4 &1905942154 stripped
@@ -16611,6 +17088,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sofa chair (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
@@ -17215,10 +17702,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 5368037867891929215, guid: 1a6a9f77e3da1ac4aad7abc1735aba85,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5872664844781785514, guid: 1a6a9f77e3da1ac4aad7abc1735aba85,
         type: 3}
       propertyPath: m_Name
       value: 'Stove '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5872664844781785514, guid: 1a6a9f77e3da1ac4aad7abc1735aba85,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6499878588195851024, guid: 1a6a9f77e3da1ac4aad7abc1735aba85,
         type: 3}
@@ -17370,10 +17867,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 3045725564862765563, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3550080275718813742, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
       propertyPath: m_Name
       value: Lamp (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550080275718813742, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4183768870506947220, guid: b4d65cb74592a3d4eae1c6e45efdefdf,
         type: 3}
@@ -18317,6 +18824,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 2389310813142831481, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3558869937315326486, guid: 86835a57825d6c542b78ddc23ea49960,
         type: 3}
       propertyPath: m_RootOrder
@@ -18386,6 +18898,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vase (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190729155740922028, guid: 86835a57825d6c542b78ddc23ea49960,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86835a57825d6c542b78ddc23ea49960, type: 3}
@@ -18949,6 +19466,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &2138115855 stripped
@@ -19066,6 +19593,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &2147410281 stripped
@@ -19164,6 +19701,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: sofa chair
       objectReference: {fileID: 0}
+    - target: {fileID: 5280654964619814780, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929089817093506729, guid: da3c3a5dc9cc89d4ab246c2a23304eb3,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3c3a5dc9cc89d4ab246c2a23304eb3, type: 3}
 --- !u!4 &7215457708835850010 stripped
@@ -19179,6 +19726,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 395396953}
     m_Modifications:
+    - target: {fileID: 7064662318386303779, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8233024520804313164, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
         type: 3}
       propertyPath: m_RootOrder
@@ -19238,6 +19790,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor mat
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721858957774123766, guid: 7be9c32880acd3e4fadaff0bf3e7257b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be9c32880acd3e4fadaff0bf3e7257b, type: 3}
@@ -19303,6 +19860,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7688249632401875478, guid: abf9b30d3f6b6fd42ad458056807a41c,
+        type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7688249632401875480, guid: abf9b30d3f6b6fd42ad458056807a41c,
         type: 3}
       propertyPath: m_Name
@@ -19321,6 +19883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: shower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247244339729328985, guid: 80fd7ae9727acc34da7122295e8b2e37,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8059388314835661283, guid: 80fd7ae9727acc34da7122295e8b2e37,
         type: 3}
@@ -19375,6 +19942,11 @@ PrefabInstance:
     - target: {fileID: 8059388314835661283, guid: 80fd7ae9727acc34da7122295e8b2e37,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192865143471032972, guid: 80fd7ae9727acc34da7122295e8b2e37,
+        type: 3}
+      propertyPath: m_CastShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
