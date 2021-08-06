@@ -9,11 +9,13 @@ public class Timer : MonoBehaviour
     public float startTime;
     public float currentTime = 0f;
 
+    public Slider slider;
     public Text countdownText;
 
     // Start is called before the first frame update
     void Start()
     {
+        slider.maxValue = startTime;
         currentTime = startTime;
     }
 
@@ -21,11 +23,13 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
+        slider.value = currentTime;
+
+        //countdownText.text = currentTime.ToString("0");
 
         if(currentTime <= 0)
         {
-            countdownText.color = Color.red;
+            //countdownText.color = Color.red;
             currentTime = 0;
         }
     }
