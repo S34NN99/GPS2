@@ -5,6 +5,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
+[System.Serializable]
+public class AbilityHolder
+{
+    public PublicEnumList.CharacterType character;
+    public Sprite image;
+}
+
 public class GameManager : MonoBehaviour, IFmod
 {
     public CameraMovement cameraMovement;
@@ -17,7 +24,7 @@ public class GameManager : MonoBehaviour, IFmod
     public GameObject stunPrefab;
     public GameObject holdTimerPrefab;
     public GameObject firePrefab;
-
+    public List<AbilityHolder> characterAbility;
     public bool isPressed = false;
     public bool isGrouping = false;
     float maxCountDown = 2.0f;
@@ -77,6 +84,7 @@ public class GameManager : MonoBehaviour, IFmod
 
     #endregion NAVMESH
 
+    #region FMOD
     public void StartAudioFmod(GameObject gameObject, string pathname)
     {
         // EXAMPLE
@@ -93,6 +101,7 @@ public class GameManager : MonoBehaviour, IFmod
         EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         EI.release();
     }
+    #endregion FMOD
 
     private void Update()
     {
@@ -273,7 +282,18 @@ public class GameManager : MonoBehaviour, IFmod
     }
     #endregion
 
- 
+    public void ChangeAbilityImage(Button actionBtn, PlayerMovement player)
+    {
+        foreach(AbilityHolder ah in characterAbility)
+        {
+            if(ah.character == player.myPlayer.characterType)
+            {
+                actionBtn.gameObject.SetActive(true);
+                actionBtn.image.sprite = ah.image;
+                return;
+            }
+        }
+    }
 
 
 

@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     private void Start()
     {
-        textBtn = actionBtn.gameObject.transform.GetChild(0).GetComponent<Text>();
+        //textBtn = actionBtn.gameObject.transform.GetChild(0).GetComponent<Text>();
         controller = this.GetComponent<CharacterController>();
         animator = this.GetComponent<Animator>();
         actionBtn.gameObject.SetActive(false);
@@ -104,8 +104,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                 }
                 return;
             }
-
-
 
             if (direction.magnitude >= 0.1f)
             {
@@ -223,8 +221,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                         {
                             if (hit.collider.gameObject.CompareTag("Fire"))
                             {
-                                actionBtn.gameObject.SetActive(true);
-                                textBtn.text = myplayer.characterMainSkill.ToString();
+                                gameManager.ChangeAbilityImage(actionBtn, this);
                                 target = hit.collider.gameObject;
                                 Debug.Log("Fire detected");
                             }
@@ -240,8 +237,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                         {
                             if (hit.collider.gameObject.CompareTag("Wall"))
                             {
-                                actionBtn.gameObject.SetActive(true);
-                                textBtn.text = myplayer.characterMainSkill.ToString();
+                                gameManager.ChangeAbilityImage(actionBtn, this);
                                 target = hit.collider.gameObject;
                             }
                         }
@@ -254,8 +250,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                     case PublicEnumList.CharacterType.Medic:
                         if(myplayer.isCarryingVictim && !myplayer.isStunned)
                         {
-                            actionBtn.gameObject.SetActive(true);
-                            textBtn.text = "Drop";
+                            gameManager.ChangeAbilityImage(actionBtn, this);
                             return;
                         }
 
@@ -263,8 +258,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                         {
                             if(hit.collider.gameObject.CompareTag("Victim"))
                             {
-                                actionBtn.gameObject.SetActive(true);
-                                textBtn.text = myplayer.characterMainSkill.ToString();
+                                gameManager.ChangeAbilityImage(actionBtn, this);
                                 target = hit.collider.gameObject;
                             }
 
@@ -273,8 +267,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                                 PlayerMovement targetPlayer = hit.collider.gameObject.GetComponent<PlayerMovement>();
                                 if (targetPlayer.myPlayer.isStunned)
                                 {
-                                    actionBtn.gameObject.SetActive(true);
-                                    textBtn.text = myplayer.characterSecondadrySkill.ToString();
+                                    gameManager.ChangeAbilityImage(actionBtn, this);
                                     target = hit.collider.gameObject;
                                 }
                             }
@@ -303,8 +296,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         {
             Fire fire = hit.collider.gameObject.GetComponent<Fire>();
             Walking(false);
-            actionBtn.gameObject.SetActive(true);
-            textBtn.text = myPlayer.characterMainSkill.ToString();
+            gameManager.ChangeAbilityImage(actionBtn, this);
             target = hit.collider.gameObject;
             Debug.Log("Looking at fire");
             fire.fireInfo.isDamaged = true;
@@ -322,26 +314,26 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         {
             if (hit.collider.gameObject.CompareTag("Button"))
             {
-                actionBtn.gameObject.SetActive(true);
+                gameManager.ChangeAbilityImage(actionBtn, this); // NEED IMAGE FROM ARTIST AND AFTER THAT DONT NID THE CODES BELOW
 
                 if (hit.collider.gameObject.CompareTag("Button"))
                 {
                     if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == false)
                     {
-                        textBtn.text = "Press button";
+                        //textBtn.text = "Press button";
                     }
                     else if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == true)
                     {
-                        textBtn.text = "Release button";
+                        //textBtn.text = "Release button";
                     }
                 }
                 else if (hit.collider.gameObject.GetComponent<Door>().isLocked == false)
                 {
-                    textBtn.text = myPlayer.characterCommonSkill[1].ToString();
+                    //textBtn.text = myPlayer.characterCommonSkill[1].ToString();
                 }
                 else if (hit.collider.gameObject.GetComponent<Door>().isLocked == true)
                 {
-                    textBtn.text = "Locked";
+                    //textBtn.text = "Locked";
                 }
 
                 target = hit.collider.gameObject;
@@ -356,8 +348,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             Debug.Log("Dected oil");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
-            actionBtn.gameObject.SetActive(true);
-            textBtn.text = myPlayer.characterSecondadrySkill.ToString();
+            gameManager.ChangeAbilityImage(actionBtn, this);
         }
 
         if (collision.gameObject.CompareTag("Trap") && myPlayer.characterType == PublicEnumList.CharacterType.Demolisher) // demolisher secondary skill 
@@ -365,8 +356,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             Debug.Log("Dected Trap");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
-            actionBtn.gameObject.SetActive(true);
-            textBtn.text = myPlayer.characterSecondadrySkill.ToString();
+            gameManager.ChangeAbilityImage(actionBtn, this);
         }
     }
 
