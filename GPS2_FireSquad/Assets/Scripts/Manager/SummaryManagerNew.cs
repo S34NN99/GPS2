@@ -81,10 +81,15 @@ public class SummaryManagerNew : MonoBehaviour
 
     public void DisplayFireHydrants()
     {
+        //If Hydrants are individual/separate
+        /*
         for (int i = 0; i < taskManager.numberOfConditionsMet(); i++)
         {
             HydrantStars[i].SetActive(true);
         }
+        */
+
+        HydrantStars[taskManager.numberOfConditionsMet()].SetActive(true);
     }
 
     public void SummaryDisplay()
