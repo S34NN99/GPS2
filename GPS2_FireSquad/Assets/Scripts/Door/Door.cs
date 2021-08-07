@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     [SerializeField]
-    private Animator DoorAnimator;
+    public Animator DoorAnimator;
 
     private string OpenDoor = "DoorOpen";
     private string CloseDoor = "DoorClose";
@@ -29,7 +29,10 @@ public class Door : MonoBehaviour
 
     public void CloseDoorAnimation()
     {
-        DoorAnimator.Play(CloseDoor);
-        isOpen = false;
+        if (!isLocked)
+        {
+            DoorAnimator.Play(CloseDoor);
+            isOpen = false;
+        }
     }
 }

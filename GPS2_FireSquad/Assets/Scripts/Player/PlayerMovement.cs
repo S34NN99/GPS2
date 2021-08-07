@@ -422,9 +422,9 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.PressButton;
                 break;
 
-            case PublicEnumList.CharacterSkill.InteractDoor:
-                currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(InteractDoor(currPlayer, target));
-                break;
+            //case PublicEnumList.CharacterSkill.InteractDoor:
+            //    currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(InteractDoor(currPlayer, target));
+            //    break;
 
             default:
                 Debug.Log("Could not find skill");
@@ -599,6 +599,8 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         SetCoroutine(currPlayer, false);
     }
 
+    //Useless - No normal doors
+    /*
     IEnumerator InteractDoor(PlayerMovement currPlayer, GameObject target)
     {
         yield return new WaitForSeconds(3.0f);
@@ -621,6 +623,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }
+    */
 
     #endregion
 

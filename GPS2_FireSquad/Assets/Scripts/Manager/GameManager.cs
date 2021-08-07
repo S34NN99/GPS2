@@ -174,9 +174,9 @@ public class GameManager : MonoBehaviour, IFmod
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[0]);
                     break;
 
-                case "Door":
-                    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
-                    break;
+                //case "Door":
+                //    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
+                //    break;
 
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
