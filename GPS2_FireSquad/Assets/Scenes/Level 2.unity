@@ -1175,6 +1175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTime: 100
   currentTime: 0
+  slider: {fileID: 0}
   countdownText: {fileID: 293187708}
 --- !u!114 &293187708
 MonoBehaviour:
@@ -2500,7 +2501,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34a10b1e62e11e149ac3735d5dfbc933, type: 2}
+  - {fileID: 2100000, guid: d8cd628d43dcac0468046288f8d54f5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5787,7 +5788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091321017}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.52, y: 0, z: 0.0881}
+  m_LocalPosition: {x: -0.52, y: 0, z: 0.0978}
   m_LocalScale: {x: 0.53077, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 305123790}
@@ -10778,7 +10779,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34a10b1e62e11e149ac3735d5dfbc933, type: 2}
+  - {fileID: 2100000, guid: d8cd628d43dcac0468046288f8d54f5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11365,6 +11366,7 @@ MonoBehaviour:
     type: 3}
   firePrefab: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
     type: 3}
+  characterAbility: []
   isPressed: 0
   isGrouping: 0
   timer: {fileID: 1051379865}
@@ -13219,7 +13221,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34a10b1e62e11e149ac3735d5dfbc933, type: 2}
+  - {fileID: 2100000, guid: d8cd628d43dcac0468046288f8d54f5f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
