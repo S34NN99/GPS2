@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OilSlick : MonoBehaviour
+public class OilSlick : MonoBehaviour, IObjectives
 {
     private GameManager gameManager;
+    private TaskManager taskManager;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        taskManager = FindObjectOfType<TaskManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,6 +24,18 @@ public class OilSlick : MonoBehaviour
                 target.Stun(target);
                 iPlayer.UniqueAnimation("Slip", true);
                 Destroy(this.gameObject);
+            }
+        }
+    }
+
+    public void AddToObjective()
+    {
+        foreach (Objective obj in taskManager.ActiveObjectives)
+        {
+            if (obj.objectiveType == Objective.ObjectiveType.RemoveOil)
+            {
+                obj.currentValue++;
+                return;
             }
         }
     }

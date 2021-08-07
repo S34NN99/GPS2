@@ -500,6 +500,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         }
 
         Destroy(target);
+        trap.AddToObjective();
         UsingSecondarySkill(false);
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);

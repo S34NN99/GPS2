@@ -11,14 +11,15 @@ public class WallMesh
 }
 
 
-public class Wall : MonoBehaviour
+public class Wall : MonoBehaviour, IObjectives
 {
     public int health = 3;
     public WallMesh[] mesh;
+    private TaskManager taskManager;
 
     private void Start()
     {
-        
+        taskManager = FindObjectOfType<TaskManager>();
     }
 
     public void Damage()
@@ -57,6 +58,18 @@ public class Wall : MonoBehaviour
 
             default:
                 break;
+        }
+    }
+
+    public void AddToObjective()
+    {
+        foreach (Objective obj in taskManager.ActiveObjectives)
+        {
+            if (obj.objectiveType == Objective.ObjectiveType.BreakWall)
+            {
+                obj.currentValue++;
+                return;
+            }
         }
     }
 }
