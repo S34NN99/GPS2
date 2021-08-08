@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Objective
 {
-    public enum ObjectiveType { Rescue, Time, Teammates };
+    public enum ObjectiveType { Rescue, Time, Teammates, Stun, BreakWall, BreakTrap, RemoveOil };
 
     public string ObjectiveText(ObjectiveType thisObjectiveType, float currentValue, float maxValue)
     {
@@ -26,6 +26,18 @@ public class Objective
 
                 case ObjectiveType.Time:
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+
+                case ObjectiveType.Stun:
+                    return null;
+
+                case ObjectiveType.BreakWall:
+                    return ("Destroy " + maxVal + " walls\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+
+                case ObjectiveType.BreakTrap:
+                    return ("Destroy " + maxVal + " traps\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+
+                case ObjectiveType.RemoveOil:
+                    return ("Remove " + maxVal + " traps\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 default:
                     {
@@ -72,6 +84,11 @@ public class Objective
         return (currentValue >= objectiveValue);
     }
 
+    public bool CheckTimeObjective()
+    {
+        return currentValue > 0;
+    }
+
     /*
     public bool loseCondition()
     {
@@ -108,7 +125,7 @@ public class TaskManager : MonoBehaviour
 
     public Objective[] ActiveObjectives;
 
-    public Text textObjectiveList;
+    [SerializeField] private List<Text> textObjectiveList;
 
     public GameObject taskObjectivesGO;
 
@@ -125,6 +142,11 @@ public class TaskManager : MonoBehaviour
         playerMovement = FindObjectOfType<PlayerMovement>();
         timer = FindObjectOfType<Timer>();
         SetObjectivesValue(ActiveObjectives, timer);
+
+        foreach(Transform textObject in taskObjectivesGO.transform)
+        {
+            textObjectiveList.Add(textObject.GetComponent<Text>());
+        }
     }
 
     private void Update()
@@ -173,6 +195,21 @@ public class TaskManager : MonoBehaviour
                 case Objective.ObjectiveType.Time:
                     objective.objectiveValue = timer.startTime;
                     break;
+
+                case Objective.ObjectiveType.Stun:
+                    break;
+
+                case Objective.ObjectiveType.BreakWall:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Wall").Length;
+                    break;
+
+                case Objective.ObjectiveType.BreakTrap:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Trap").Length;
+                    break;
+
+                case Objective.ObjectiveType.RemoveOil:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Oil Slick").Length;
+                    break;
             }
         }
     }
@@ -190,11 +227,17 @@ public class TaskManager : MonoBehaviour
 
     public void UpdateObjectiveList()
     {
-        textObjectiveList.text = null;
+        //textObjectiveList.text = null;
 
-        foreach (Objective objective in ActiveObjectives)
+        //foreach (Objective objective in ActiveObjectives)
+        //{
+        //    textObjectiveList.text += objective.ObjectiveText(objective.objectiveType, objective.currentValue, objective.objectiveValue);
+        //}
+
+        for (int i = 0; i < ActiveObjectives.Length; i++)
         {
-            textObjectiveList.text += objective.ObjectiveText(objective.objectiveType, objective.currentValue, objective.objectiveValue);
+            textObjectiveList[i].text = null;
+            textObjectiveList[i].text = ActiveObjectives[i].ObjectiveText(ActiveObjectives[i].objectiveType, ActiveObjectives[i].currentValue, ActiveObjectives[i].objectiveValue);
         }
     }
 
@@ -250,6 +293,15 @@ public class TaskManager : MonoBehaviour
         int completedCount = 0;
         foreach (Objective objective in ActiveObjectives)
         {
+            if(objective.objectiveType == Objective.ObjectiveType.Time)
+            {
+                if(objective.CheckTimeObjective())
+                {
+                    completedCount += 1;
+                    break;
+                }
+            }
+
             if (objective.objectiveCompleted())
             {
                 completedCount += 1;

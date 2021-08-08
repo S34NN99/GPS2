@@ -20,5 +20,10 @@ public interface IFmod
     void StopAudioFmod(GameObject gameObject);
 }
 
+public interface IObjectives
+{
+    void AddToObjective();
+}
+
 
 

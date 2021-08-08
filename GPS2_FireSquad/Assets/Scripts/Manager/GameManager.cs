@@ -14,22 +14,28 @@ public class AbilityHolder
 
 public class GameManager : MonoBehaviour, IFmod
 {
-    public CameraMovement cameraMovement;
-
+    [Header("LEVEL")]
+    public PublicEnumList.LevelNum currentLevel;
     private GameObject[] playerGroup => GameObject.FindGameObjectsWithTag("Player");
 
+    [Space(20)]
+    public CameraMovement cameraMovement;
     public GameObject playerObject;
     public Button actionBtn;
+
     [Header("Prefabs")]
     public GameObject stunPrefab;
     public GameObject holdTimerPrefab;
     public GameObject firePrefab;
+
+    [Header("CHARACTERS")]
     public List<AbilityHolder> characterAbility;
     public bool isPressed = false;
     public bool isGrouping = false;
-    float maxCountDown = 2.0f;
+ 
+    float maxCountDown = 2.0f;   
     float currCountDown;
-    public Image timer;
+    //public Image timer;
 
     private FMOD.Studio.EventInstance EI;
 
@@ -168,9 +174,9 @@ public class GameManager : MonoBehaviour, IFmod
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[0]);
                     break;
 
-                case "Door":
-                    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
-                    break;
+                //case "Door":
+                //    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
+                //    break;
 
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);

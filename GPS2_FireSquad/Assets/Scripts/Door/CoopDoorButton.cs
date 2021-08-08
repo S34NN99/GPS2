@@ -15,6 +15,7 @@ public class CoopDoorButton : MonoBehaviour
     public void ButtonPressed()
     {
         ButtonAnimator.Play(PressedButton);
+        coopDoor.OpenDoorAnimation();
         coopDoor.isLocked = false;
         isPressed = true;
     }
@@ -22,6 +23,7 @@ public class CoopDoorButton : MonoBehaviour
     public void ButtonReleased()
     {
         ButtonAnimator.Play(ReleasedButton);
+        coopDoor.CloseDoorAnimation();
         coopDoor.isLocked = true;
         isPressed = false;
     }
