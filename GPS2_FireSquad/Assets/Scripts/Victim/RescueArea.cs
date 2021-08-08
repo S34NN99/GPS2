@@ -22,12 +22,14 @@ public class RescueArea : MonoBehaviour
             health.GetComponent<VictimHealth>().CancelInvoke();
 
             taskManager.UpdateValue(Objective.ObjectiveType.Rescue, 1f);
+            taskManager.LevelProgression();
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Teammate" + collision.gameObject.name + " entered safe area");
 
             taskManager.UpdateValue(Objective.ObjectiveType.Teammates, 1f);
+            taskManager.LevelProgression();
         }
     }
 
@@ -40,12 +42,14 @@ public class RescueArea : MonoBehaviour
             health.GetComponent<VictimHealth>().InvokeRepeating("HealthDecrease", 0f, health.GetComponent<VictimHealth>().healthChangeRate);
 
             taskManager.UpdateValue(Objective.ObjectiveType.Rescue, -1f);
+            taskManager.LevelProgression();
         }
         else if(collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("Teammate" + collision.gameObject.name + "exits safe area");
 
             taskManager.UpdateValue(Objective.ObjectiveType.Teammates, -1f);
+            taskManager.LevelProgression();
         }
     }
 }

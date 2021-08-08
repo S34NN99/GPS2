@@ -23,11 +23,11 @@ public class SummaryManagerNew : MonoBehaviour
     [SerializeField]
     private TaskManager taskManager;
 
+    [SerializeField] private GameManager gameManager;
+    //[SerializeField] private SaveHandler saveHandler;
+
     private void Start()
     {
-        timer = FindObjectOfType<Timer>();
-        taskManager = FindObjectOfType<TaskManager>();
-
         //Start of game
         SetBestTime();
 
@@ -51,13 +51,11 @@ public class SummaryManagerNew : MonoBehaviour
 
     public void SetBestTime()
     {
-        bestTime = PlayerPrefs.GetFloat("BestTime", 0f);
         DisplayTime(bestTime, textBestTimeSUM);
     }
 
     public void SetTimeLeft()
     {
-        timeLeft = PlayerPrefs.GetFloat("TimeLeft", 0f);
         DisplayTime(timeLeft, textTimeLeftSUM);
     }
 
@@ -77,6 +75,9 @@ public class SummaryManagerNew : MonoBehaviour
         {
             bestTime = PlayerPrefs.GetFloat("BestTime");
         }
+
+        //saveHandler.ReadFromJson();
+
     }
 
     public void DisplayFireHydrants()
@@ -92,17 +93,57 @@ public class SummaryManagerNew : MonoBehaviour
         HydrantStars[taskManager.numberOfConditionsMet()].SetActive(true);
     }
 
+    public void GetScoreFromJson()
+    {
+        //check if this level is in save file
+
+        foreach (Levels lvl in SaveHandler.sH.myPlayerData.level)
+        {
+            if (lvl.levelNum == gameManager.currentLevel)
+            {
+                lvl.timeLeft = timer.currentTime;
+                lvl.objectivesCompleted = taskManager.numberOfConditionsMet();
+
+                if (timer.currentTime < bestTime)
+                {
+                    lvl.bestTime = timer.currentTime;
+                }
+                SaveHandler.sH.SaveToJSON();
+
+                bestTime = lvl.bestTime;
+                timeLeft = lvl.timeLeft;
+                Debug.Log("Existing level found");
+                return;
+            }
+        }
+
+        //if it doesnt exist
+        Levels newLevel = new Levels();
+        newLevel.levelNum = gameManager.currentLevel;
+        newLevel.timeLeft = timer.currentTime;
+        newLevel.bestTime = timer.currentTime;
+        newLevel.objectivesCompleted = taskManager.numberOfConditionsMet();
+        SaveHandler.sH.myPlayerData.level.Add(newLevel);
+        SaveHandler.sH.SaveToJSON();
+
+        bestTime = newLevel.bestTime;
+        timeLeft = newLevel.timeLeft;
+        Debug.Log("New level recorded");
+    }
+
     public void SummaryDisplay()
     {
         summaryMenuUI.SetActive(true);
         Time.timeScale = 0f;
 
-        PlayerPrefs.SetFloat("TimeLeft", timer.currentTime);
+        //PlayerPrefs.SetFloat("TimeLeft", timer.currentTime);
+        GetScoreFromJson();
 
-        UpdateBestTime();
-        //Display best time in Summary menu
+
+        //UpdateBestTime();
+        ////Display best time in Summary menu
         SetBestTime();
-        //Display time left in Summary menu
+        ////Display time left in Summary menu
         SetTimeLeft();
 
         DisplayFireHydrants();

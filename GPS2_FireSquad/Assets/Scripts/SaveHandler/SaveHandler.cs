@@ -7,15 +7,17 @@ using UnityEngine;
 [System.Serializable]
 public class Levels
 {
-    public PublicEnumList.LevelNum level;
+    public PublicEnumList.LevelNum levelNum;
     public int objectivesCompleted;
     public float bestTime;
+    public float timeLeft;
 
     public Levels()
     {
-        level = PublicEnumList.LevelNum.Level_1;
+        levelNum = PublicEnumList.LevelNum.Level_1;
         objectivesCompleted = 0;
         bestTime = 0;
+        timeLeft = 0;
     }
 }
 
@@ -39,12 +41,29 @@ public class PlayerData
 public class SaveHandler : MonoBehaviour
 {
     public PlayerData myPlayerData;
+    public static SaveHandler sH;
 
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
+        MakeThisTheOnlyGameManager();
         ReadFromJson();
+    }
+
+    void MakeThisTheOnlyGameManager()
+    {
+        if (sH == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            sH = this;
+        }
+        else
+        {
+            if (sH != this)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void SetPlayerData(PlayerData newdata)
