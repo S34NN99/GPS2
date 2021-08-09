@@ -686,7 +686,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
+  MasterBanks:
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
@@ -697,7 +698,7 @@ MonoBehaviour:
   BoltUnitOptionsBuildPending: 0
   EnableErrorCallback: 0
   SharedLibraryUpdateStage: 0
-  SharedLibraryTimeSinceStart: 3479.2943013
+  SharedLibraryTimeSinceStart: 0
   HideSetupWizard: 1
   Platforms:
   - {fileID: -8754710542384286848}
