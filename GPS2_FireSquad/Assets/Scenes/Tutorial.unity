@@ -1276,8 +1276,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 451.9, y: 187}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 414.8, y: 182.5}
+  m_SizeDelta: {x: 160, y: 85.9923}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &246958931
 MonoBehaviour:
@@ -1355,8 +1355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 6b4e8d2053c4d1a42bd857b1614dce28, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10514,6 +10514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d32ca42ca6700458fbfaff11ac66a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelimage: []
+  buttonGroup: {fileID: 0}
   mainMenu: {fileID: 0}
   settingMenu: {fileID: 0}
   levelSelectMenu: {fileID: 0}
