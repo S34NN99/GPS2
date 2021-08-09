@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MenuManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MenuManager : MonoBehaviour
     //public static bool isPause = false;
     public GameObject pauseMenu;
     public GameObject gameMenu;
+
+    public AudioMixer music;
 
     //MAIN MENU
     public void SwitchLevelSelection()
@@ -36,14 +39,14 @@ public class MenuManager : MonoBehaviour
     }
 
     //SETTINGS
-    public void AdjustVolume()
+    public void AdjustVolume(float sliderValue)
     {
-
+        music.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
     }
 
-    public void AdjustBrightness()
+    public void AdjustBrightness(float rgbValue)
     {
-
+        RenderSettings.ambientLight = new Color(rgbValue, rgbValue, rgbValue, 1);
     }
 
     public void Back()
