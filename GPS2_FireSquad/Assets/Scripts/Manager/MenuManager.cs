@@ -2,20 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Audio;
+using UnityEngine.UI;
+
+[System.Serializable]
+public class LevelImage
+{
+    public PublicEnumList.LevelNum levelNum;
+    public List<Sprite> levelSprite;
+}
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("LEVEL IMAGE")]
+    public List<LevelImage> levelImage;
+
+    [Space(20)]
+    [Header("MAIN MENU")]
     public GameObject mainMenu;
     public GameObject settingMenu;
     public GameObject levelSelectMenu;
+    public GameObject levelButtons;
     int gameLevels;
 
     //public static bool isPause = false;
     public GameObject pauseMenu;
     public GameObject gameMenu;
-
-    public AudioMixer music;
 
     //MAIN MENU
     public void SwitchLevelSelection()
@@ -23,6 +34,7 @@ public class MenuManager : MonoBehaviour
         mainMenu.SetActive(false);
 
        levelSelectMenu.SetActive(true);
+        SetLevelImage();
     }
 
     public void Setting()
@@ -39,14 +51,14 @@ public class MenuManager : MonoBehaviour
     }
 
     //SETTINGS
-    public void AdjustVolume(float sliderValue)
+    public void AdjustVolume()
     {
-        music.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
+
     }
 
-    public void AdjustBrightness(float rgbValue)
+    public void AdjustBrightness()
     {
-        RenderSettings.ambientLight = new Color(rgbValue, rgbValue, rgbValue, 1);
+
     }
 
     public void Back()
@@ -104,5 +116,26 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
         //mainMenu.SetActive(false);
         //levelSelectMenu.SetActive(true);
+    }
+
+    void SetLevelImage()
+    {
+        for (int i = 0; i < levelButtons.transform.childCount; i++)
+        {
+            int totalObjective = 0;
+
+            //Check if have level in save data
+            for (int j = 0; j < SaveHandler.sH.myPlayerData.level.Count; j++)
+            {
+                if(levelImage[i].levelNum == SaveHandler.sH.myPlayerData.level[j].levelNum)
+                {
+                    totalObjective = SaveHandler.sH.myPlayerData.level[j].objectivesCompleted;
+                }
+            }
+
+            levelButtons.transform.GetChild(i).GetComponent<Image>().sprite = levelImage[i].levelSprite[totalObjective];
+        }
+
+
     }
 }
