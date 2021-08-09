@@ -68,6 +68,7 @@ public class Wall : MonoBehaviour, IObjectives
             if (obj.objectiveType == Objective.ObjectiveType.BreakWall)
             {
                 obj.currentValue++;
+                taskManager.LevelProgression();
                 return;
             }
         }

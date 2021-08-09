@@ -473,6 +473,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         yield return new WaitForSeconds(1.3f);
         wall.Damage();
 
+        wall.AddToObjective();
         StopAudioFmod(currPlayer.gameObject);
         UsingMainSkill(false);
         gameManager.RemoveTimer(this.gameObject);

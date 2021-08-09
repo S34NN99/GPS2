@@ -35,6 +35,7 @@ public class OilSlick : MonoBehaviour, IObjectives
             if (obj.objectiveType == Objective.ObjectiveType.RemoveOil)
             {
                 obj.currentValue++;
+                taskManager.LevelProgression();
                 return;
             }
         }

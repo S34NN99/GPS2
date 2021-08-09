@@ -37,6 +37,7 @@ public class Trap : MonoBehaviour, IObjectives
             if(obj.objectiveType == Objective.ObjectiveType.BreakTrap)
             {
                 obj.currentValue++;
+                taskManager.LevelProgression();
                 return;
             }
         }
