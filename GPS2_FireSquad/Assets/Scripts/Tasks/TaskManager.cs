@@ -59,6 +59,19 @@ public class Objective
                 case ObjectiveType.Time:
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
+                case ObjectiveType.Stun:
+                    return null;
+
+                case ObjectiveType.BreakWall:
+                    return ("All " + maxVal + " walls destroyed.\n").ToString();
+
+                case ObjectiveType.BreakTrap:
+                    return ("All " + maxVal + " traps destroyed.\n").ToString();
+                    
+                case ObjectiveType.RemoveOil:
+                    return ("All " + maxVal + " oil removed.\n").ToString();
+
+
                 default:
                     {
                         Debug.LogWarning("No objective found.");
