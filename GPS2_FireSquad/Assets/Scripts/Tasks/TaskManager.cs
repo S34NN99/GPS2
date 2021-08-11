@@ -28,7 +28,7 @@ public class Objective
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 case ObjectiveType.Stun:
-                    return null;
+                    return ("Nobody get stun \n");
 
                 case ObjectiveType.BreakWall:
                     return ("Destroy " + maxVal + " walls\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
@@ -37,7 +37,7 @@ public class Objective
                     return ("Destroy " + maxVal + " traps\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 case ObjectiveType.RemoveOil:
-                    return ("Remove " + maxVal + " traps\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+                    return ("Remove " + maxVal + " oil\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 default:
                     {
@@ -189,6 +189,10 @@ public class TaskManager : MonoBehaviour
 
         UpdateObjectiveList();
 
+        if(timeRanOut())
+        {
+            summaryManager.SummaryDisplay();
+        }
         //LevelProgression();
     }
 
@@ -211,6 +215,7 @@ public class TaskManager : MonoBehaviour
                     break;
 
                 case Objective.ObjectiveType.Stun:
+                    objective.objectiveValue = 1;
                     break;
 
                 case Objective.ObjectiveType.BreakWall:

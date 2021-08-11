@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeButtonColor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Button> charBtn;
+
+    private void Start()
     {
-        
+        ChangeColor(charBtn[0]);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void ChangeColor(Button btn)
     {
-        
+        foreach(Button button in charBtn)
+        {
+            if(button == btn)
+            {
+                button.gameObject.GetComponent<Image>().color = Color.grey;
+            }
+            else
+            {
+                button.gameObject.GetComponent<Image>().color = Color.white;
+            }
+        }
     }
 }

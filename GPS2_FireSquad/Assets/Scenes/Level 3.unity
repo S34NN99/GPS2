@@ -27188,24 +27188,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1480498941}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1801254496 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3510854934202340489, guid: 2006abbb523401f47a4f2de9162323c5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3510854935125604333}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1801254497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801254496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93454825915e1164ca464e8eebd06eb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1805831767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32115,34 +32097,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 195859822, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.b
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 195859822, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.g
-      value: 0.64705884
-      objectReference: {fileID: 0}
-    - target: {fileID: 195859822, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.r
-      value: 0.90588236
-      objectReference: {fileID: 0}
     - target: {fileID: 198639128, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 188914986}
-    - target: {fileID: 883645203, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.b
-      value: 0.29411766
-      objectReference: {fileID: 0}
-    - target: {fileID: 883645203, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.g
-      value: 0.64705884
-      objectReference: {fileID: 0}
-    - target: {fileID: 883645203, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
-      propertyPath: m_Color.r
-      value: 0.90588236
-      objectReference: {fileID: 0}
     - target: {fileID: 1319410736, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -32719,13 +32677,8 @@ PrefabInstance:
       objectReference: {fileID: 1276992487}
     - target: {fileID: 5272118180504659971, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
-      propertyPath: ActiveObjectives.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5272118180504659971, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: ActiveObjectives.Array.data[2].objectiveType
-      value: 5
+      propertyPath: ActiveObjectives.Array.data[1].objectiveType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5272118180504659980, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
@@ -32742,40 +32695,6 @@ PrefabInstance:
       propertyPath: cameraMovement
       value: 
       objectReference: {fileID: 1487982983}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.data[0].image
-      value: 
-      objectReference: {fileID: 21300000, guid: 96820bf80a570df4a8df738f8dffee22,
-        type: 3}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.data[1].image
-      value: 
-      objectReference: {fileID: 21300000, guid: 4d38c5f2ebc68fc4c8646ef0b09710ef,
-        type: 3}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.data[2].image
-      value: 
-      objectReference: {fileID: 21300000, guid: 9d7da576f314d4a4895b068c764c46d1,
-        type: 3}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.data[3].image
-      value: 
-      objectReference: {fileID: 21300000, guid: 9c424ea01e48846478c8c15e6fe3adbf,
-        type: 3}
-    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
-        type: 3}
-      propertyPath: characterAbility.Array.data[3].character
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8039e14d21b44a4cb638e314466d66b, type: 3}
 --- !u!1001 &5914757720555780472
