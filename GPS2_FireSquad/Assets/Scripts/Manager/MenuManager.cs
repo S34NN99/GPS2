@@ -99,12 +99,14 @@ public class MenuManager : MonoBehaviour
     //PAUSE MENU
     public void Pause()
     {
+        Time.timeScale = 0;
         gameMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
 
     public void Confirm()
     {
+        Time.timeScale = 1;
         gameMenu.SetActive(true);
         pauseMenu.SetActive(false);
     }

@@ -57,11 +57,13 @@ MonoBehaviour:
     type: 3}
   characterAbility:
   - character: 2
-    image: {fileID: 21300000, guid: 24ff47327f95fa64cb889d76a482c82b, type: 3}
+    image: {fileID: 21300000, guid: 96820bf80a570df4a8df738f8dffee22, type: 3}
   - character: 0
-    image: {fileID: 21300000, guid: 6d870a26eb471a1429e76a077ca468a5, type: 3}
+    image: {fileID: 21300000, guid: 4d38c5f2ebc68fc4c8646ef0b09710ef, type: 3}
   - character: 1
-    image: {fileID: 21300000, guid: 45621896d7fac324d8c515fd2147a608, type: 3}
+    image: {fileID: 21300000, guid: 9d7da576f314d4a4895b068c764c46d1, type: 3}
+  - character: 1
+    image: {fileID: 21300000, guid: 9c424ea01e48846478c8c15e6fe3adbf, type: 3}
   isPressed: 0
   isGrouping: 0
 --- !u!114 &5272118180504659971
@@ -83,6 +85,9 @@ MonoBehaviour:
   - objectiveType: 2
     objectiveValue: 0
     currentValue: 0
+  - objectiveType: 5
+    objectiveValue: 0
+    currentValue: 0
   textObjectiveList: []
   taskObjectivesGO: {fileID: 0}
   listIsActive: 0
@@ -101,6 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6d32ca42ca6700458fbfaff11ac66a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelimage: []
+  buttonGroup: {fileID: 0}
   mainMenu: {fileID: 0}
   settingMenu: {fileID: 0}
   levelSelectMenu: {fileID: 0}

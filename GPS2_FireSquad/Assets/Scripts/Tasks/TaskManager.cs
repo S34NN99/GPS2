@@ -28,7 +28,7 @@ public class Objective
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 case ObjectiveType.Stun:
-                    return null;
+                    return ("Do not get stun");
 
                 case ObjectiveType.BreakWall:
                     return ("Destroy " + maxVal + " walls\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
@@ -189,6 +189,10 @@ public class TaskManager : MonoBehaviour
 
         UpdateObjectiveList();
 
+        if(timeRanOut())
+        {
+            summaryManager.SummaryDisplay();
+        }
         //LevelProgression();
     }
 
