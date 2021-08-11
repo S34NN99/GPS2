@@ -3790,7 +3790,7 @@ Light:
     m_Type: 2
     m_Resolution: 2
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.73
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -5453,6 +5453,11 @@ PrefabInstance:
       propertyPath: actionBtn
       value: 
       objectReference: {fileID: 477654542}
+    - target: {fileID: 4965704264687043863, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9950f44588a83ae4184bd2bb627e057f, type: 2}
     - target: {fileID: 6151480931985832428, guid: 799219e7d2d4cc8439ade18ce28a0c77,
         type: 3}
       propertyPath: m_RootOrder
@@ -8101,17 +8106,17 @@ PrefabInstance:
     - target: {fileID: 6468471516055018865, guid: e6ff7f4297cc02942aa216a5fcbc40eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.22
+      value: -14.36
       objectReference: {fileID: 0}
     - target: {fileID: 6468471516055018865, guid: e6ff7f4297cc02942aa216a5fcbc40eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.0577474
+      value: -6.06
       objectReference: {fileID: 0}
     - target: {fileID: 6468471516055018865, guid: e6ff7f4297cc02942aa216a5fcbc40eb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -58.78
+      value: -57.62
       objectReference: {fileID: 0}
     - target: {fileID: 6468471516055018865, guid: e6ff7f4297cc02942aa216a5fcbc40eb,
         type: 3}

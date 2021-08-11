@@ -14655,8 +14655,8 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 2
+    m_Resolution: 2
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -32254,6 +32254,11 @@ PrefabInstance:
       propertyPath: actionBtn
       value: 
       objectReference: {fileID: 383412399}
+    - target: {fileID: 4965704264687043863, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9950f44588a83ae4184bd2bb627e057f, type: 2}
     - target: {fileID: 6151480931985832428, guid: 799219e7d2d4cc8439ade18ce28a0c77,
         type: 3}
       propertyPath: m_RootOrder
