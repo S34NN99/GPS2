@@ -10966,6 +10966,14 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1319410736, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1732688684}
+    - target: {fileID: 1319410736, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 1882750937, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -23104,6 +23112,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0070a9b73ab291469846410ec024203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1732688684 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5272118180504659968, guid: f8039e14d21b44a4cb638e314466d66b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1732688681}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d32ca42ca6700458fbfaff11ac66a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1735895011

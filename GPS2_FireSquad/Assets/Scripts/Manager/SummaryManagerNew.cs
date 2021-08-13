@@ -161,6 +161,7 @@ public class SummaryManagerNew : MonoBehaviour
 
     public void NextScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
