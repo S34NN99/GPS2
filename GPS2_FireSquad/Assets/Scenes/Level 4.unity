@@ -1571,6 +1571,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Particle (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
 --- !u!4 &76131799 stripped
@@ -1845,6 +1855,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Particle (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
 --- !u!4 &98784008 stripped
@@ -1924,6 +1944,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Particle (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
 --- !u!4 &111372384 stripped
@@ -1983,6 +2013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.367486
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 4.39542
       objectReference: {fileID: 0}
@@ -1994,7 +2029,7 @@ PrefabInstance:
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.750203
+      value: -9.9559
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
@@ -2907,6 +2942,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Particle (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
@@ -4540,7 +4585,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &299045398
 Transform:
@@ -7189,6 +7234,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 195859821, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195859821, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195859821, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 195859821, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100.95905
+      objectReference: {fileID: 0}
     - target: {fileID: 195859822, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -7197,6 +7258,26 @@ PrefabInstance:
     - target: {fileID: 195859822, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 883645202, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883645202, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883645202, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883645202, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -155.95905
+      objectReference: {fileID: 0}
+    - target: {fileID: 883645203, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 883645203, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
       propertyPath: m_FontData.m_Font
@@ -7227,6 +7308,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: DisplayList
       objectReference: {fileID: 0}
+    - target: {fileID: 1387386737662438396, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386737662438396, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386737662438396, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386737662438396, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -45.959053
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386737662438397, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1387386737662438397, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -7237,6 +7343,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386738263527792, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386738263527792, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386738263527795, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386738263527795, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1387386738263527795, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3027124861805321943, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
@@ -10536,7 +10667,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &610228825
 Transform:
@@ -14686,6 +14817,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fire Particle (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
 --- !u!4 &923197927 stripped
@@ -16441,7 +16582,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1032591692
 Transform:
@@ -17179,6 +17320,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3615088
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
+        type: 3}
       propertyPath: m_LocalScale.z
       value: 4.6395116
       objectReference: {fileID: 0}
@@ -17190,7 +17336,7 @@ PrefabInstance:
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.750203
+      value: -9.9589
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
@@ -19487,6 +19633,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Particle (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
@@ -24554,13 +24705,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3519921
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.6584716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.406457
+      value: 8.3368
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.750203
+      value: -9.9636
       objectReference: {fileID: 0}
     - target: {fileID: 6314370790383914803, guid: 04a0766f429ba22489f61b88176e30d7,
         type: 3}
@@ -25209,7 +25370,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1612186727
 BoxCollider:
@@ -25849,7 +26010,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1675703821
 Transform:
@@ -30130,6 +30291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Particle (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 119
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}

@@ -40,7 +40,7 @@ public class PlayerInfo
     public CheckCoroutine characterCoroutine;
 }
 
-public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
+public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 {
     [Header("Player Information")]
     public PlayerInfo myPlayer;
@@ -55,6 +55,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
 
     [Space(30)]
     private GameManager gameManager;
+    private TaskManager taskManager;
     public bool playerSelected = false;
     float horizontalMove;
     float verticalMove;
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         animator = this.GetComponent<Animator>();
         actionBtn.gameObject.SetActive(false);
         gameManager = FindObjectOfType<GameManager>();
+        taskManager = FindObjectOfType<TaskManager>();
     }
 
     // Update is called once per frame
@@ -86,6 +88,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
             {
                 if (myPlayer.isMoving)
                 {
+                    StopAudioFmod(this.gameObject);
                     gameManager.CheckTarget(this, myPlayer.characterCoroutine);
                 }
             }
@@ -142,9 +145,23 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         animator.SetBool(skillName, isUsingSkill);
     }
 
+    public void AddToObjective()
+    {
+        foreach (Objective obj in taskManager.ActiveObjectives)
+        {
+            if (obj.objectiveType == Objective.ObjectiveType.Stun)
+            {
+                obj.objectiveValue++;
+                taskManager.LevelProgression();
+                return;
+            }
+        }
+    }
+
     public void Stun(PlayerMovement playerMovement)
     {
         IPlayer iPlayer = playerMovement.GetComponent<IPlayer>();
+        AddToObjective();
         Vector3 abovePlayer = new Vector3(playerMovement.transform.position.x, playerMovement.transform.position.y + 3, playerMovement.transform.position.z);
         GameObject stunIcon = Instantiate(gameManager.stunPrefab, abovePlayer, Quaternion.identity);
         stunIcon.transform.parent = playerMovement.gameObject.transform;
@@ -433,7 +450,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
     }
 
     //enable/disable player coroutine
-    void SetCoroutine(PlayerMovement currPlayer, bool temp)
+    public void SetCoroutine(PlayerMovement currPlayer, bool temp)
     {
         currPlayer.myPlayer.characterCoroutine.isInCoroutine = temp;
     }
@@ -463,21 +480,20 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod
         Wall wall = target.GetComponent<Wall>();
 
         yield return new WaitForSeconds(1.0f);
-        wall.Damage();
+        wall.Damage(currPlayer);
         //target.GetComponent<Renderer>().material.color = Color.yellow;
 
         yield return new WaitForSeconds(1.0f);
-        wall.Damage();
+        wall.Damage(currPlayer);
         //target.GetComponent<Renderer>().material.color = Color.red;
 
         yield return new WaitForSeconds(1.3f);
-        wall.Damage();
+        wall.Damage(currPlayer);
 
-        wall.AddToObjective();
-        StopAudioFmod(currPlayer.gameObject);
-        UsingMainSkill(false);
-        gameManager.RemoveTimer(this.gameObject);
-        SetCoroutine(currPlayer, false);
+        //StopAudioFmod(currPlayer.gameObject);
+        //UsingMainSkill(false);
+        //gameManager.RemoveTimer(this.gameObject);
+        //SetCoroutine(currPlayer, false);
     }
 
 

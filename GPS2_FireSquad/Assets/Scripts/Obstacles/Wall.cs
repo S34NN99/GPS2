@@ -16,18 +16,25 @@ public class Wall : MonoBehaviour, IObjectives
     public int health = 3;
     public WallMesh[] mesh;
     private TaskManager taskManager;
+    private GameManager gameManager;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         taskManager = FindObjectOfType<TaskManager>();
     }
 
-    public void Damage()
+    public void Damage(PlayerMovement player)
     {
         health--;
         UpdateVisual();
         if (health <= 0)
         {
+            AddToObjective();
+            player.StopAudioFmod(player.gameObject);
+            player.UsingMainSkill(false);
+            gameManager.RemoveTimer(player.gameObject);
+            player.SetCoroutine(player, false);
             Destroy(this.gameObject);
         }
     }

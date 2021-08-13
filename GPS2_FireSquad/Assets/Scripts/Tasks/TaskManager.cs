@@ -9,7 +9,7 @@ public class Objective
 {
     public enum ObjectiveType { Rescue, Time, Teammates, Stun, BreakWall, BreakTrap, RemoveOil };
 
-    public string ObjectiveText(ObjectiveType thisObjectiveType, float currentValue, float maxValue)
+    public string ObjectiveText(ObjectiveType thisObjectiveType, float currentValue, float maxValue, Text text)
     {
         string currVal = currentValue.ToString();
         string maxVal = maxValue.ToString();
@@ -28,7 +28,8 @@ public class Objective
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 case ObjectiveType.Stun:
-                    return ("Nobody get stun \n");
+                    text.color = Color.red;
+                    return ("Someone got stunned \n");
 
                 case ObjectiveType.BreakWall:
                     return ("Destroy " + maxVal + " walls\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
@@ -51,24 +52,31 @@ public class Objective
             switch (thisObjectiveType)
             {
                 case ObjectiveType.Rescue:
-                    return ("All " + maxVal + " victims are saved\n").ToString();
+                    text.color = Color.green;
+                    return ("All victims are saved\n").ToString();
 
                 case ObjectiveType.Teammates:
-                    return ("All " + currVal + " teammates are in the safe zone.\n").ToString();
+                    text.color = Color.green;
+                    return ("All teammates are in the safe zone.\n").ToString();
 
                 case ObjectiveType.Time:
+                    text.color = Color.green;
                     return ("Complete within " + maxVal + " seconds\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 case ObjectiveType.Stun:
-                    return null;
+                    text.color = Color.green;
+                    return ("Nobody get stun \n");
 
                 case ObjectiveType.BreakWall:
+                    text.color = Color.green;
                     return ("All " + maxVal + " walls destroyed.\n").ToString();
 
                 case ObjectiveType.BreakTrap:
+                    text.color = Color.green;
                     return ("All " + maxVal + " traps destroyed.\n").ToString();
                     
                 case ObjectiveType.RemoveOil:
+                    text.color = Color.green;
                     return ("All " + maxVal + " oil removed.\n").ToString();
 
 
@@ -215,7 +223,7 @@ public class TaskManager : MonoBehaviour
                     break;
 
                 case Objective.ObjectiveType.Stun:
-                    objective.objectiveValue = 1;
+                    //objective.objectiveValue = 1;
                     break;
 
                 case Objective.ObjectiveType.BreakWall:
@@ -256,7 +264,7 @@ public class TaskManager : MonoBehaviour
         for (int i = 0; i < ActiveObjectives.Length; i++)
         {
             textObjectiveList[i].text = null;
-            textObjectiveList[i].text = ActiveObjectives[i].ObjectiveText(ActiveObjectives[i].objectiveType, ActiveObjectives[i].currentValue, ActiveObjectives[i].objectiveValue);
+            textObjectiveList[i].text = ActiveObjectives[i].ObjectiveText(ActiveObjectives[i].objectiveType, ActiveObjectives[i].currentValue, ActiveObjectives[i].objectiveValue, textObjectiveList[i]);
         }
     }
 

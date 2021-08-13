@@ -26,14 +26,19 @@ public class PlayerData
 {
     public bool isInitialized;
 
+    public float Master;
     public float BGM;
+    public float SFX;
     public List<Levels> level = new List<Levels>();
 
 
     public PlayerData()
     {
         isInitialized = true;
+        Master = 1;
         BGM = 0.5f;
+        SFX = 0.5f;
+
         level = new List<Levels>();
     }
 }
