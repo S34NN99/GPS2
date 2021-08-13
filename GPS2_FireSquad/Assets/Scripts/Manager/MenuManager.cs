@@ -24,8 +24,7 @@ public class MenuManager : MonoBehaviour
 
     //public static bool isPause = false;
     public GameObject pauseMenu;
-    public GameObject gameMenu;
-
+    
     //MAIN MENU
     public void SwitchLevelSelection()
     {
@@ -100,13 +99,12 @@ public class MenuManager : MonoBehaviour
     //PAUSE MENU
     public void Pause()
     {
-        gameMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
 
     public void Confirm()
     {
-        gameMenu.SetActive(true);
+        SaveHandler.sH.SaveToJSON();
         pauseMenu.SetActive(false);
     }
 
