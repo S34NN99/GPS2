@@ -159,6 +159,11 @@ public class SummaryManagerNew : MonoBehaviour
         SceneManager.LoadScene("Main Menu");
     }
 
+    public void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     public void Replay()
     {
         Time.timeScale = 1f;

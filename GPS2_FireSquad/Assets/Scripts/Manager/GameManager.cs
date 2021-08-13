@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.AI;
 
@@ -32,8 +33,8 @@ public class GameManager : MonoBehaviour, IFmod
     public List<AbilityHolder> characterAbility;
     public bool isPressed = false;
     public bool isGrouping = false;
- 
-    float maxCountDown = 2.0f;   
+
+    float maxCountDown = 2.0f;
     float currCountDown;
     //public Image timer;
 
@@ -49,11 +50,11 @@ public class GameManager : MonoBehaviour, IFmod
     {
         Vector3 selectedPlayerPos = playerObject.transform.position;
 
-        for(int i = 0; i < playerGroup.Length; i++)
+        for (int i = 0; i < playerGroup.Length; i++)
         {
             PlayerMovement playermovement = playerGroup[i].GetComponent<PlayerMovement>();
             NavMeshAgent navMeshAgent = playermovement.GetComponent<NavMeshAgent>();
-            if (!playermovement.playerSelected && !playermovement.myPlayer.isStunned)
+            if (!playermovement.playerSelected && !playermovement.myPlayer.isStunned && !playermovement.myPlayer.characterCoroutine.isInCoroutine)
             {
                 IPlayer iPlayer = navMeshAgent.gameObject.GetComponent<IPlayer>();
                 Vector3 notSelectedPos = playermovement.transform.position;
@@ -63,11 +64,11 @@ public class GameManager : MonoBehaviour, IFmod
                 if (distance > 25)
                 {
                     navMeshAgent.isStopped = false;
-                    GroupUp(navMeshAgent, selectedPlayerPos, playermovement.gameObject);
+                    GroupUp(navMeshAgent, selectedPlayerPos);
                     iPlayer.Walking(true);
                     isGrouping = true;
                 }
-                else if (distance < 10 && isGrouping == true)
+                else if (distance < 13 && isGrouping == true)
                 {
 
                     navMeshAgent.isStopped = true;
@@ -82,8 +83,8 @@ public class GameManager : MonoBehaviour, IFmod
         }
     }
 
-    void GroupUp(NavMeshAgent navMeshAgent, Vector3 destination, GameObject player)
-    {      
+    void GroupUp(NavMeshAgent navMeshAgent, Vector3 destination)
+    {
         navMeshAgent.destination = destination;
         //player.GetComponent<CapsuleCollider>().enabled = false;
     }
@@ -193,7 +194,7 @@ public class GameManager : MonoBehaviour, IFmod
                     {
                         iPlayer.UsingMainSkill(false);
                     }
-                    break; 
+                    break;
 
                 default:
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
@@ -210,7 +211,7 @@ public class GameManager : MonoBehaviour, IFmod
     {
         isPressed = !isPressed;
         PlayerMovement playerMovement = playerObject.GetComponent<PlayerMovement>();
-        if(playerMovement.myPlayer.characterType != PublicEnumList.CharacterType.Extinguisher)
+        if (playerMovement.myPlayer.characterType != PublicEnumList.CharacterType.Extinguisher)
         {
             return;
         }
@@ -237,7 +238,7 @@ public class GameManager : MonoBehaviour, IFmod
         playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
         playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
 
-        switch(playerMovement.myPlayer.characterCoroutine.type)
+        switch (playerMovement.myPlayer.characterCoroutine.type)
         {
             case PublicEnumList.CoroutineType.Main:
                 iPlayer.UsingMainSkill(false);
@@ -248,7 +249,7 @@ public class GameManager : MonoBehaviour, IFmod
                 break;
 
             case PublicEnumList.CoroutineType.CarryingVictim:
-                if(!playerMovement.myPlayer.isCarryingVictim)
+                if (!playerMovement.myPlayer.isCarryingVictim)
                 {
                     iPlayer.UsingMainSkill(false);
                 }
@@ -290,15 +291,22 @@ public class GameManager : MonoBehaviour, IFmod
 
     public void ChangeAbilityImage(Button actionBtn, PlayerMovement player)
     {
-        foreach(AbilityHolder ah in characterAbility)
+        foreach (AbilityHolder ah in characterAbility)
         {
-            if(ah.character == player.myPlayer.characterType)
+            if (ah.character == player.myPlayer.characterType)
             {
                 actionBtn.gameObject.SetActive(true);
                 actionBtn.image.sprite = ah.image;
                 return;
             }
         }
+    }
+
+  
+
+    public void LevelSelection()
+    {
+        SceneManager.LoadScene(0);
     }
 
 
