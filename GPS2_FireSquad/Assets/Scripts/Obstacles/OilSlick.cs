@@ -23,6 +23,7 @@ public class OilSlick : MonoBehaviour, IObjectives
             {
                 target.Stun(target);
                 iPlayer.UniqueAnimation("Slip", true);
+                AddToObjective();
                 Destroy(this.gameObject);
             }
         }

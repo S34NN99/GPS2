@@ -528,6 +528,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     {
         string tag = target.tag;
         SetCoroutine(currPlayer, true);
+        OilSlick oil = target.GetComponent<OilSlick>();
 
         yield return new WaitForSeconds(3.0f);
         if (tag == "Player")
@@ -537,9 +538,10 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         }
         else
         {
+            oil.AddToObjective();
             Destroy(target);
         }
-
+        
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
