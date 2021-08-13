@@ -49,7 +49,7 @@ public class SaveHandler : MonoBehaviour
     public static SaveHandler sH;
 
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         MakeThisTheOnlyGameManager();
         ReadFromJson();
@@ -86,7 +86,7 @@ public class SaveHandler : MonoBehaviour
     //change dataPath to persistenDataPath when building
     public PlayerData ReadFromJson()
     {
-        string myDir = Application.dataPath + "/PlayerSave/playerData.json";
+        string myDir = Application.dataPath + "/PlayerSaves/playerData.json";
         //string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
         if (File.Exists(myDir))
         {
@@ -111,9 +111,9 @@ public class SaveHandler : MonoBehaviour
 
     public void SaveToJSON()
     {
-        string filePath = Path.Combine(Application.dataPath, "PlayerSave");
+        string filePath = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
         //string filePath = Path.Combine(Application.persistentDataPath, "PlayerSave");
-        if (!System.IO.File.Exists(filePath))
+        if (!File.Exists(filePath))
         {
             Directory.CreateDirectory(filePath);
             Debug.Log("Creating Path");
@@ -122,7 +122,7 @@ public class SaveHandler : MonoBehaviour
 
         SetPlayerData(myPlayerData);
         string myJson = JsonUtility.ToJson(myPlayerData);
-        string myDir = Path.Combine(Application.dataPath, "PlayerSave", "playerData.json");
+        string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
         File.WriteAllText(myDir, myJson);
         ReadFromJson(); //reads stored data
     }

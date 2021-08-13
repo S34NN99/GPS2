@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour, IFmod
 
     void Start()
     {
-        //StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+        StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
     }
 
     #region NAVMESH

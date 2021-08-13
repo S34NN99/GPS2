@@ -77,8 +77,9 @@ public class MenuManager : MonoBehaviour
 
     public void SaveSetting()
     {
-        mainMenu.SetActive(true);
+        SaveHandler.sH.SaveToJSON();
 
+        mainMenu.SetActive(true);
         settingMenu.SetActive(false);
     }
 
