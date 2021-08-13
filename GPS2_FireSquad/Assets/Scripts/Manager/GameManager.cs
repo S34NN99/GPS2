@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour, IFmod
 
     void Start()
     {
-        StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+        //StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
     }
 
     #region NAVMESH
@@ -179,6 +179,7 @@ public class GameManager : MonoBehaviour, IFmod
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iPlayer.UsingMainSkill(true);
+                    playerMovement.gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
                     break;
 
                 case "Victim":
@@ -217,6 +218,7 @@ public class GameManager : MonoBehaviour, IFmod
         IPlayer iPlayer = playerObject.GetComponent<IPlayer>();
         IFmod fmod = playerObject.GetComponent<IFmod>();
 
+        playerMovement.gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
         actionBtn.gameObject.SetActive(false);
         playerMovement.myPlayer.isLookingAtFire = false;
         playerMovement.myPlayer.isExtinguishing = false;
