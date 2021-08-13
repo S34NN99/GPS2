@@ -173,11 +173,8 @@ public class GameManager : MonoBehaviour, IFmod
 
                 case "Button":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[0]);
+                    iPlayer.UniqueAnimation("PushingButton", true);
                     break;
-
-                //case "Door":
-                //    playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterCommonSkill[1]);
-                //    break;
 
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
@@ -263,29 +260,14 @@ public class GameManager : MonoBehaviour, IFmod
 
             case PublicEnumList.CoroutineType.PressButton:
                 //stop press button animaitong
+                playerMovement.target.GetComponent<CoopDoorButton>().ButtonReleased();
+                iPlayer.UniqueAnimation("PushingButton", false);
+                Debug.Log("close button");
                 break;
 
             default:
                 break;
         }
-
-
-
-        //checking for future e.g fire, walls, citizen. Can use switch case
-        //switch (playerMovement.target.tag)
-        //{
-        //    case "Wall":
-        //        //DisableTimer();
-        //        RemoveTimer(playerObject);
-        //        playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
-        //        playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
-        //        iPlayer.UsingMainSkill(false);
-        //        break;
-
-        //    default:
-        //        //DisableTimer();
-        //        break;
-        //}
     }
     #endregion
 

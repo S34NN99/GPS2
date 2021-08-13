@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class CoopDoorButton : MonoBehaviour
 {
-    [SerializeField] private Animator ButtonAnimator;
+    private Animator ButtonAnimator => this.GetComponent<Animator>();
     private string PressedButton = "ButtonPressed";
     private string ReleasedButton = "ButtonReleased";
 
-    public Door coopDoor;
+    public Animator coopDoor;
 
     public bool isPressed;
 
     public void ButtonPressed()
     {
-        ButtonAnimator.Play(PressedButton);
-        coopDoor.OpenDoorAnimation();
-        coopDoor.isLocked = false;
-        isPressed = true;
+        coopDoor.SetBool("DoorOpen", true);
+
+        //ButtonAnimator.Play(PressedButton);
+        //coopDoor.OpenDoorAnimation();
+        //coopDoor.isLocked = false;
+        //isPressed = true;
     }
 
     public void ButtonReleased()
     {
-        ButtonAnimator.Play(ReleasedButton);
-        coopDoor.CloseDoorAnimation();
-        coopDoor.isLocked = true;
-        isPressed = false;
+        coopDoor.SetBool("DoorOpen", false);
+        //ButtonAnimator.Play(ReleasedButton);
+        //coopDoor.CloseDoorAnimation();
+        //coopDoor.isLocked = true;
+        //isPressed = false;
     }
 }

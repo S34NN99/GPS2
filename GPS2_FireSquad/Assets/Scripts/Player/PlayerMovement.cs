@@ -323,9 +323,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     private void CheckInteractInRadius(PlayerInfo myPlayer)
     {
         RaycastHit hit;
-        //if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.GetComponent<Door>() ||
-        //    Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius) && hit.collider.gameObject.CompareTag("Button"))
-        //{
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius))
         {
@@ -437,6 +434,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             case PublicEnumList.CharacterSkill.Press:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(PressButton(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.PressButton;
+                Debug.Log($"using {playerSkill}");
                 break;
 
             //case PublicEnumList.CharacterSkill.InteractDoor:
@@ -597,23 +595,26 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     IEnumerator PressButton(PlayerMovement currPlayer, GameObject target)
     {
         SetCoroutine(currPlayer, true);
-        if (tag == "Button" && currPlayer.myPlayer.isPressingButton == false)
-        {
-            Debug.Log("Target is Button");
-            target.GetComponent<CoopDoorButton>().ButtonPressed();
-            currPlayer.myPlayer.isPressingButton = true;
-            yield return new WaitForSeconds(3.0f);
-        }
-        else if (tag == "Button" && currPlayer.myPlayer.isPressingButton == true)
-        {
-            Debug.Log("Target is Button");
-            target.GetComponent<CoopDoorButton>().ButtonReleased();
-            currPlayer.myPlayer.isPressingButton = false;
-            yield return new WaitForSeconds(3.0f);
-        }
+        CoopDoorButton btn = target.GetComponent<CoopDoorButton>();
+        btn.ButtonPressed();
+        yield return new WaitForSeconds(3.0f);
+        //if (currPlayer.myPlayer.isPressingButton == false)
+        //{
+        //    Debug.Log("Target is Button");
+        //    target.GetComponent<CoopDoorButton>().ButtonPressed();
+        //    currPlayer.myPlayer.isPressingButton = true;
+        //    yield return new WaitForSeconds(3.0f);
+        //}
+        //else if (currPlayer.myPlayer.isPressingButton == true)
+        //{
+        //    Debug.Log("Target is Button");
+        //    target.GetComponent<CoopDoorButton>().ButtonReleased();
+        //    currPlayer.myPlayer.isPressingButton = false;
+        //    yield return new WaitForSeconds(3.0f);
+        //}
 
         gameManager.RemoveTimer(this.gameObject);
-        SetCoroutine(currPlayer, false);
+        //SetCoroutine(currPlayer, false);
     }
 
     //Useless - No normal doors
