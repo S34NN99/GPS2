@@ -271,17 +271,30 @@ public class GameManager : MonoBehaviour, IFmod
     }
     #endregion
 
-    public void ChangeAbilityImage(Button actionBtn, PlayerMovement player)
+    public void ChangeAbilityImage(Button actionBtn, PlayerMovement player, bool isButton)
     {
         foreach (AbilityHolder ah in characterAbility)
         {
-            if (ah.character == player.myPlayer.characterType)
+            if (!isButton)
             {
-                actionBtn.gameObject.SetActive(true);
-                actionBtn.image.sprite = ah.image;
-                return;
+                if (ah.character == player.myPlayer.characterType)
+                {
+                    actionBtn.gameObject.SetActive(true);
+                    actionBtn.image.sprite = ah.image;
+                    return;
+                }
+            }
+            else
+            {
+                if(ah.character == PublicEnumList.CharacterType.Universal)
+                {
+                    actionBtn.gameObject.SetActive(true);
+                    actionBtn.image.sprite = ah.image;
+                    return;
+                }
             }
         }
+
     }
 
   

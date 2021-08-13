@@ -74,15 +74,15 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     // Update is called once per frame
     void Update()
     {
-        
+
         if (playerSelected && !myPlayer.isStunned)
         {
-            if(!myPlayer.isExtinguishing)
-            myPlayer.isMoving = joystick.Horizontal > 0.1 || 
-                joystick.Vertical > 0.1  ||
-                joystick.Horizontal < -0.1 ||
-                joystick.Vertical < -0.1
-                ? myPlayer.isMoving = true : myPlayer.isMoving = false;
+            if (!myPlayer.isExtinguishing)
+                myPlayer.isMoving = joystick.Horizontal > 0.1 ||
+                    joystick.Vertical > 0.1 ||
+                    joystick.Horizontal < -0.1 ||
+                    joystick.Vertical < -0.1
+                    ? myPlayer.isMoving = true : myPlayer.isMoving = false;
 
             if (myPlayer.characterCoroutine.isInCoroutine)
             {
@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             }
         }
 
-        CheckInteractInRadius(myPlayer);
+        //CheckInteractInRadius(this);
     }
 
     #region INTERFACES 
@@ -231,6 +231,22 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             if (!myplayer.isLookingAtFire)
             {
                 Vector3 rayCastPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+
+                if (Physics.Raycast(rayCastPos, transform.forward, out hit, myPlayer.detectMaxRadius))
+                {
+                    if (hit.collider.gameObject.CompareTag("Button"))
+                    {
+                        gameManager.ChangeAbilityImage(actionBtn, this, true);
+                        target = hit.collider.gameObject;
+                        return;
+                    }
+                }
+                else
+                {
+                    actionBtn.gameObject.SetActive(false);
+                    return;
+                }
+
                 switch (myPlayer.characterType)
                 {
                     case PublicEnumList.CharacterType.Extinguisher:
@@ -238,7 +254,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                         {
                             if (hit.collider.gameObject.CompareTag("Fire"))
                             {
-                                gameManager.ChangeAbilityImage(actionBtn, this);
+                                gameManager.ChangeAbilityImage(actionBtn, this, false);
                                 target = hit.collider.gameObject;
                                 Debug.Log("Fire detected");
                             }
@@ -254,7 +270,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                         {
                             if (hit.collider.gameObject.CompareTag("Wall"))
                             {
-                                gameManager.ChangeAbilityImage(actionBtn, this);
+                                gameManager.ChangeAbilityImage(actionBtn, this, false);
                                 target = hit.collider.gameObject;
                             }
                         }
@@ -265,17 +281,17 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                         break;
 
                     case PublicEnumList.CharacterType.Medic:
-                        if(myplayer.isCarryingVictim && !myplayer.isStunned)
+                        if (myplayer.isCarryingVictim && !myplayer.isStunned)
                         {
-                            gameManager.ChangeAbilityImage(actionBtn, this);
+                            gameManager.ChangeAbilityImage(actionBtn, this, false);
                             return;
                         }
 
                         if (Physics.Raycast(rayCastPos, transform.forward, out hit, myplayer.detectMaxRadius))
                         {
-                            if(hit.collider.gameObject.CompareTag("Victim"))
+                            if (hit.collider.gameObject.CompareTag("Victim"))
                             {
-                                gameManager.ChangeAbilityImage(actionBtn, this);
+                                gameManager.ChangeAbilityImage(actionBtn, this, false);
                                 target = hit.collider.gameObject;
                             }
 
@@ -284,7 +300,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                                 PlayerMovement targetPlayer = hit.collider.gameObject.GetComponent<PlayerMovement>();
                                 if (targetPlayer.myPlayer.isStunned)
                                 {
-                                    gameManager.ChangeAbilityImage(actionBtn, this);
+                                    gameManager.ChangeAbilityImage(actionBtn, this, false);
                                     target = hit.collider.gameObject;
                                 }
                             }
@@ -313,56 +329,43 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         {
             Fire fire = hit.collider.gameObject.GetComponent<Fire>();
             Walking(false);
-            gameManager.ChangeAbilityImage(actionBtn, this);
+            gameManager.ChangeAbilityImage(actionBtn, this, false);
             target = hit.collider.gameObject;
             Debug.Log("Looking at fire");
             fire.fireInfo.isDamaged = true;
         }
     }
 
-    private void CheckInteractInRadius(PlayerInfo myPlayer)
+    private void CheckInteractInRadius(PlayerMovement myPlayer)
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.detectMaxRadius))
+        if (myPlayer.playerSelected)
         {
-            if (hit.collider.gameObject.CompareTag("Button"))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.myPlayer.detectMaxRadius))
             {
-                gameManager.ChangeAbilityImage(actionBtn, this); // NEED IMAGE FROM ARTIST AND AFTER THAT DONT NID THE CODES BELOW
-
                 if (hit.collider.gameObject.CompareTag("Button"))
                 {
-                    if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == false)
-                    {
-                        //textBtn.text = "Press button";
-                    }
-                    else if (hit.collider.gameObject.GetComponent<CoopDoorButton>().isPressed == true)
-                    {
-                        //textBtn.text = "Release button";
-                    }
+                    gameManager.ChangeAbilityImage(actionBtn, this, false);
+                    target = hit.collider.gameObject;
                 }
-                else if (hit.collider.gameObject.GetComponent<Door>().isLocked == false)
-                {
-                    //textBtn.text = myPlayer.characterCommonSkill[1].ToString();
-                }
-                else if (hit.collider.gameObject.GetComponent<Door>().isLocked == true)
-                {
-                    //textBtn.text = "Locked";
-                }
-
-                target = hit.collider.gameObject;
             }
+            else
+            {
+                actionBtn.gameObject.SetActive(false);
+            }
+
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Oil Slick") && myPlayer.characterType == PublicEnumList.CharacterType.Medic)
+        if (collision.gameObject.CompareTag("Oil Slick") && myPlayer.characterType == PublicEnumList.CharacterType.Medic)
         {
             Debug.Log("Dected oil");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
-            gameManager.ChangeAbilityImage(actionBtn, this);
+            gameManager.ChangeAbilityImage(actionBtn, this, false);
         }
 
         if (collision.gameObject.CompareTag("Trap") && myPlayer.characterType == PublicEnumList.CharacterType.Demolisher) // demolisher secondary skill 
@@ -370,7 +373,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             Debug.Log("Dected Trap");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
-            gameManager.ChangeAbilityImage(actionBtn, this);
+            gameManager.ChangeAbilityImage(actionBtn, this, false);
         }
     }
 
@@ -541,7 +544,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             oil.AddToObjective();
             Destroy(target);
         }
-        
+
         myPlayer.isOnObstacle = false;
         actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
@@ -572,7 +575,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             target.GetComponent<VictimHealth>().CheckCarrying(true);
             Debug.Log("Victim is picked up");
         }
-        else if(currPlayer.myPlayer.isCarryingVictim)
+        else if (currPlayer.myPlayer.isCarryingVictim)
         {
             UniqueAnimation("isCarryingVictim", false);
             yield return new WaitForSeconds(3.0f);
