@@ -118,7 +118,7 @@ public class MenuManager : MonoBehaviour
     void SetStarImage()
     {
         SaveHandler.sH.ReadFromJson();
-        for (int i = 0; i < levelimage.Count; i++)
+        for (int i = 1; i < levelimage.Count; i++)
         {
             int stars = 0;
             for (int j = 0; j < SaveHandler.sH.myPlayerData.level.Count; j++)
