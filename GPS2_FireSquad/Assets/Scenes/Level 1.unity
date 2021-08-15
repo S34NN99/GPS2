@@ -2411,6 +2411,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 97961440}
     m_Modifications:
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9979682
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.06213991
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0008747411
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.01404836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -7.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271539588, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1.613
+      objectReference: {fileID: 0}
     - target: {fileID: 2449807010518026461, guid: 799219e7d2d4cc8439ade18ce28a0c77,
         type: 3}
       propertyPath: joystick
@@ -2481,7 +2521,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Extinguisher new
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4498633926508837554, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 799219e7d2d4cc8439ade18ce28a0c77, type: 3}
 --- !u!4 &202490025 stripped
 Transform:
@@ -11835,6 +11876,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ab0fd3e55e4bd439fe49592d5c106e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1060087088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5189726888040288808, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 202490024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1073174034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14996,6 +15043,11 @@ PrefabInstance:
       propertyPath: actionBtn
       value: 
       objectReference: {fileID: 443876791}
+    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
+        type: 3}
+      propertyPath: extinguish
+      value: 
+      objectReference: {fileID: 2081012885}
     - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
       propertyPath: currentLevel
@@ -22726,6 +22778,31 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2074012316}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2081012882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1271539587, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 202490024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2081012885 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1271539590, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 202490024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2081012886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081012882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d02da77eb323304c8f1900951173e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 1060087088}
 --- !u!1 &2082447528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1049962202, guid: 2006abbb523401f47a4f2de9162323c5,

@@ -256,7 +256,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                             {
                                 gameManager.ChangeAbilityImage(actionBtn, this, false);
                                 target = hit.collider.gameObject;
-                                Debug.Log("Fire detected");
                             }
                         }
                         else
@@ -331,7 +330,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             Walking(false);
             gameManager.ChangeAbilityImage(actionBtn, this, false);
             target = hit.collider.gameObject;
-            Debug.Log("Looking at fire");
             fire.fireInfo.isDamaged = true;
         }
     }

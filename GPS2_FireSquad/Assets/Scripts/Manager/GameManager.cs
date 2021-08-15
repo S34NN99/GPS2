@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour, IFmod
     public GameObject firePrefab;
 
     [Header("CHARACTERS")]
+    public ParticleSystem extinguish;
     public List<AbilityHolder> characterAbility;
     public bool isPressed = false;
     public bool isGrouping = false;
@@ -179,7 +180,7 @@ public class GameManager : MonoBehaviour, IFmod
                 case "Fire":
                     playerMovement.PlayerSkills(playerMovement, playerMovement.myPlayer.characterMainSkill);
                     iPlayer.UsingMainSkill(true);
-                    playerMovement.gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Play();
+                    extinguish.Play();
                     break;
 
                 case "Victim":
@@ -218,7 +219,7 @@ public class GameManager : MonoBehaviour, IFmod
         IPlayer iPlayer = playerObject.GetComponent<IPlayer>();
         IFmod fmod = playerObject.GetComponent<IFmod>();
 
-        playerMovement.gameObject.transform.GetChild(0).gameObject.GetComponent<ParticleSystem>().Stop();
+        extinguish.Stop();
         actionBtn.gameObject.SetActive(false);
         playerMovement.myPlayer.isLookingAtFire = false;
         playerMovement.myPlayer.isExtinguishing = false;
