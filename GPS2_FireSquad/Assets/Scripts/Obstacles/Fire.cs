@@ -37,7 +37,6 @@ public class Fire : MonoBehaviour, IFmod
         if(fireInfo.currentHealth <= 0)
         {
             bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
-            Debug.Log(temp);
             Death(temp);
         }
 
@@ -45,7 +44,6 @@ public class Fire : MonoBehaviour, IFmod
         {
             if (!fireInfo.isImmunity)
             {
-                Debug.Log(fireInfo.currentHealth);
                 LoseHealth();
                 StartCoroutine(FireImmunity());
             }
