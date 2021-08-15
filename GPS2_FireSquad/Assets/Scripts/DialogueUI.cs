@@ -5,15 +5,9 @@ using TMPro;
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
-    [SerializeField] private GameObject extinguisher;
-    [SerializeField] private GameObject medic;
-    [SerializeField] private GameObject demolisher;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private DialogueObject textDialogue;
 
-    public BoxCollider boxOne;
-    public BoxCollider boxTwo;
-    public BoxCollider boxThree;
     private TypewritingEffect typewritingEffect;
 
     private void Start()
@@ -26,25 +20,26 @@ public class DialogueUI : MonoBehaviour
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         //dialogueBox.SetActive(true);
+        //Time.timeScale = 0f;
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
-        foreach(string dialogue in dialogueObject.Dialogue)
+        for(int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
+            string dialogue = dialogueObject.Dialogue[i];
             yield return typewritingEffect.Run(dialogue, textLabel);
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         }
 
         CloseDialogueBox();
-
-        
     }
 
     private void CloseDialogueBox()
     {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        //Time.timeScale = 1f;
     }
 }
