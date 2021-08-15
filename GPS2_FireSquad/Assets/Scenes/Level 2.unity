@@ -14948,6 +14948,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1098089688}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &1098089691 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1271539590, guid: 799219e7d2d4cc8439ade18ce28a0c77,
+    type: 3}
+  m_PrefabInstance: {fileID: 1098089688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1102904863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23094,6 +23100,11 @@ PrefabInstance:
       propertyPath: actionBtn
       value: 
       objectReference: {fileID: 843821818}
+    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
+        type: 3}
+      propertyPath: extinguish
+      value: 
+      objectReference: {fileID: 1098089691}
     - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
       propertyPath: currentLevel

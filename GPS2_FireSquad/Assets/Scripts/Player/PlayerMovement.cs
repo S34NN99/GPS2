@@ -230,6 +230,13 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         {
             if (!myplayer.isLookingAtFire)
             {
+                if(myplayer.isCarryingVictim)
+                {
+                    gameManager.ChangeAbilityImage(actionBtn, this, false);
+                    Debug.Log("Carrying Victim");
+                    return;
+                }
+
                 Vector3 rayCastPos = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
 
                 if (Physics.Raycast(rayCastPos, transform.forward, out hit, myPlayer.detectMaxRadius))
