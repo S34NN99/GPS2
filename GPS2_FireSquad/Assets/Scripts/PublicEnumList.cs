@@ -9,4 +9,5 @@ public class PublicEnumList
     public enum CoroutineType { Main, Secondary, CarryingVictim, PressButton}
     public enum WallHP { Full, Crack, Broken }
     public enum LevelNum { Tutorial, Level_1, Level_2, Level_3, Level_4, Level_5, Level_6}
+    public enum TriggerBoxes { ExtinguisherEnterRoom, MedicWalksToVictim, DemolisherWalksToWall }
 }

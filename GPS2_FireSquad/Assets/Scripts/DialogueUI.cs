@@ -14,24 +14,29 @@ public class DialogueUI : MonoBehaviour
     {
         typewritingEffect = GetComponent<TypewritingEffect>();
         //CloseDialogueBox();
-        ShowDialogue(textDialogue);
+        ShowDialogue(textDialogue, 0);
     }
 
-    public void ShowDialogue(DialogueObject dialogueObject)
+    public void ShowDialogue(DialogueObject dialogueObject, int dialogueNumber)
     {
         //dialogueBox.SetActive(true);
         //Time.timeScale = 0f;
-        StartCoroutine(StepThroughDialogue(dialogueObject));
+        StartCoroutine(StepThroughDialogue(dialogueObject, dialogueNumber));
     }
 
-    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
+    private IEnumerator StepThroughDialogue(DialogueObject dialogueObject, int dialogueNumber)
     {
+        /*
         for(int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
             yield return typewritingEffect.Run(dialogue, textLabel);
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         }
+        */
+        string dialogue = dialogueObject.Dialogue[dialogueNumber];
+        yield return typewritingEffect.Run(dialogue, textLabel);
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
         CloseDialogueBox();
     }
