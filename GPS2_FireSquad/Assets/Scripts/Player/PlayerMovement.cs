@@ -403,11 +403,13 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             case PublicEnumList.CharacterSkill.DemolishTrap:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(BreakTrap(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Secondary;
+                StartAudioFmod(currPlayer.gameObject, "event:/SFX/Demolisher/BreakWallSFX");
                 break;
 
             case PublicEnumList.CharacterSkill.Heal:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(SaveTeamate(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.Main;
+                StartAudioFmod(currPlayer.gameObject, "event:/SFX/Medic/RescueSFX");
                 break;
 
             case PublicEnumList.CharacterSkill.Carry:

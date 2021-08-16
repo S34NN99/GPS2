@@ -12,6 +12,7 @@ public class FireInfo
 
     public bool spawnOnPlayer = false;
     public FMOD.Studio.EventInstance EI;
+    public Coroutine reignite;
 }
 
 public class Fire : MonoBehaviour, IFmod
@@ -33,30 +34,7 @@ public class Fire : MonoBehaviour, IFmod
 
     private void Update()
     {
-        //if(fireInfo.currentHealth <= 0)
-        //{
-        //    bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
-        //    Death(temp);
-        //}
 
-        //if(fireInfo.isDamaged)
-        //{
-        //    if (!fireInfo.isImmunity)
-        //    {
-        //        LoseHealth();
-        //        StartCoroutine(FireImmunity());
-        //    }
-        //}
-        //else
-        //{
-        //if (fireInfo.currentHealth < fireInfo.maxHealth)
-        //{
-        //    if (!reigniting)
-        //    {
-        //        StartCoroutine(Reignite(this));
-        //    }
-        //}
-        //}
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -118,12 +96,12 @@ public class Fire : MonoBehaviour, IFmod
 
             if (reigniting)
             {
-                StopCoroutine(Reignite(this));
-                StartCoroutine(Reignite(this));
+                StopCoroutine(fireInfo.reignite);
+                fireInfo.reignite = StartCoroutine(Reignite(this));
             }
             else
             {
-                StartCoroutine(Reignite(this));
+                fireInfo.reignite = StartCoroutine(Reignite(this));
             }
 
             if (fireInfo.currentHealth <= 0)
