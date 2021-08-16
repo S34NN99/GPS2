@@ -7,88 +7,98 @@ public class TutorialManager : MonoBehaviour
     [SerializeField] private GameObject extinguisher;
     [SerializeField] private GameObject medic;
     [SerializeField] private GameObject demolisher;
-    public DialogueObject dialogueObject;
+    [SerializeField] private DialogueObject dialogueObject;
 
-    public DialogueUI dialogueUi;
+    [SerializeField] private DialogueUI dialogueUi;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private PlayerMovement playerMovement;
 
-    private int tutorialCheck = 0;
-
-    //public BoxCollider boxOne, boxTwo, boxThree;
+    [SerializeField] private int tutorialCheck = 0;
 
     //Need to disable character swap buttons
 
     private void Start()
     {
-        dialogueUi = GetComponent<DialogueUI>();
-        dialogueObject = GetComponent<DialogueObject>();
-        gameManager = GetComponent<GameManager>();
+        StartDialogueAndChecks(0);
     }
 
     private void Update()
     {
-        #region Checks Starting Actions
-        //Is extinguishing
-        if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.isExtinguishing == true)
+        if (!dialogueUi.dialogueBoxisOpen)
         {
-            StartDialogueAndChecks(3);
-        }
+            if (tutorialCheck == 1)
+            {
+                StartDialogueAndChecks(1);
+            }
 
-        //Is carrying
-        if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.isCarryingVictim == true)
-        {
-            StartDialogueAndChecks(7);
-        }
-        #endregion
+            #region Checks Starting Actions
+            //Is extinguishing
+            if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.isExtinguishing == true)
+            {
+                StartDialogueAndChecks(3);
+            }
 
-        #region Checks Character Swap
-        //Swaps to Medic
-        //if (gameManager.playerObject.GetComponent<PlayerMovement>().playerSelected == true && 
-        if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.characterType == PublicEnumList.CharacterType.Medic)
-        {
-            StartDialogueAndChecks(5);
-        }
-        //Swaps to Demolisher
-        //if (gameManager.playerObject.GetComponent<PlayerMovement>().playerSelected == true &&
-        if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.characterType == PublicEnumList.CharacterType.Demolisher)
-        {
-            StartDialogueAndChecks(9);
-        }
-        #endregion
+            //Is carrying
+            if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.isCarryingVictim == true)
+            {
+                StartDialogueAndChecks(7);
+            }
+            #endregion
 
-        #region Checks Completed Tasks
-        //  "extinguishes them" trigger
-        if (GetComponent<TaskManager>().ActiveObjectives[0].objectiveCompleted() == true)
-        {
-            StartDialogueAndChecks(4);
-        }
+            #region Checks Character Swap
+            //Swaps to Medic
+            //if (gameManager.playerObject.GetComponent<PlayerMovement>().playerSelected == true && 
+            if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.characterType == PublicEnumList.CharacterType.Medic)
+            {
+                StartDialogueAndChecks(5);
+            }
+            //Swaps to Demolisher
+            //if (gameManager.playerObject.GetComponent<PlayerMovement>().playerSelected == true &&
+            if (gameManager.playerObject.GetComponent<PlayerMovement>().myPlayer.characterType == PublicEnumList.CharacterType.Demolisher)
+            {
+                StartDialogueAndChecks(9);
+            }
+            #endregion
 
-        //  Carry all civilians
-        if (GetComponent<TaskManager>().ActiveObjectives[1].objectiveCompleted() == true)
-        {
-            StartDialogueAndChecks(8);
-        }
+            #region Checks Completed Tasks
+            //  "extinguishes them" trigger
+            if (GetComponent<TaskManager>().ActiveObjectives[0].objectiveCompleted() == true)
+            {
+                StartDialogueAndChecks(4);
+            }
 
-        //  Destroyed the one wall
-        if (GetComponent<TaskManager>().ActiveObjectives[2].objectiveCompleted() == true)
-        {
-            StartDialogueAndChecks(11);
+            //  Carry all civilians
+            if (GetComponent<TaskManager>().ActiveObjectives[1].objectiveCompleted() == true)
+            {
+                StartDialogueAndChecks(8);
+            }
+
+            //  Destroyed the one wall
+            if (GetComponent<TaskManager>().ActiveObjectives[2].objectiveCompleted() == true)
+            {
+                StartDialogueAndChecks(11);
+            }
+            #endregion
         }
-        #endregion
     }
 
-    public void StartGameTutorial()
+    public void TriggerBoxDialogue(int dialogueNumber)
     {
-        StartDialogueAndChecks(1);
+        StartDialogueAndChecks(dialogueNumber);
     }
 
     public void StartDialogueAndChecks(int dialogueNumber)
     {
-        if (tutorialCheck == dialogueNumber - 1)
+        Debug.Log("Dialogue : " + dialogueNumber + "\n TutorialCheck : " + tutorialCheck);
+        if (tutorialCheck == dialogueNumber)
         {
             dialogueUi.ShowDialogue(dialogueObject, dialogueNumber);
-            tutorialCheck = dialogueNumber;
+            tutorialCheck = dialogueNumber + 1;
+            Debug.Log("TutorialCheck : " + tutorialCheck);
+        }
+        else
+        {
+            Debug.LogWarning("ERROR FOR DIALOGUE" + dialogueNumber);
         }
     }
 

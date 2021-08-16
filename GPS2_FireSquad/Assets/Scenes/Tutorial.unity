@@ -1157,9 +1157,10 @@ MonoBehaviour:
   medic: {fileID: 255510022}
   demolisher: {fileID: 2028138078}
   dialogueObject: {fileID: 11400000, guid: 0824fe0124b197c4895b4a5f36f07880, type: 2}
-  dialogueUi: {fileID: 1055523173}
-  gameManager: {fileID: 0}
+  dialogueUi: {fileID: 2109174595}
+  gameManager: {fileID: 820734079}
   playerMovement: {fileID: 0}
+  tutorialCheck: 0
 --- !u!1001 &164365930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,6 +1431,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 820734078}
+    - target: {fileID: 2016107435, guid: 2006abbb523401f47a4f2de9162323c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1052815817569860085, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
       propertyPath: m_IsActive
@@ -8269,8 +8274,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1055523171}
-  - component: {fileID: 1055523173}
-  - component: {fileID: 1055523172}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -8299,35 +8302,6 @@ RectTransform:
   m_AnchoredPosition: {x: -444.25623, y: -186.79211}
   m_SizeDelta: {x: 1000, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1055523172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055523170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63d1865a323abbe47b114c3febb85810, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  typeSpeed: 50
---- !u!114 &1055523173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055523170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c958283bb7a603042b204e1d57e6b989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 1055523170}
-  textLabel: {fileID: 68880205}
-  textDialogue: {fileID: 11400000, guid: 0824fe0124b197c4895b4a5f36f07880, type: 2}
-  dialogueBoxisOpen: 0
 --- !u!1001 &1074384668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13105,6 +13079,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2100519863}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2109174592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109174593}
+  - component: {fileID: 2109174595}
+  - component: {fileID: 2109174594}
+  m_Layer: 0
+  m_Name: TutorialManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109174593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109174592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 767.76874, y: 295.52975, z: -47.240696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2109174594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109174592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63d1865a323abbe47b114c3febb85810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeSpeed: 50
+--- !u!114 &2109174595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109174592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c958283bb7a603042b204e1d57e6b989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 1055523170}
+  textLabel: {fileID: 68880205}
+  textDialogue: {fileID: 11400000, guid: 0824fe0124b197c4895b4a5f36f07880, type: 2}
+  dialogueBoxisOpen: 0
 --- !u!1 &2122703535
 GameObject:
   m_ObjectHideFlags: 0

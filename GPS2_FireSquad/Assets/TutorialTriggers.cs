@@ -8,11 +8,6 @@ public class TutorialTriggers : MonoBehaviour
 
     [SerializeField] private TutorialManager tutorialManager;
 
-    private void Start()
-    {
-        //tutorialManager = GetComponent<TutorialManager>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerMovement>())
@@ -20,16 +15,15 @@ public class TutorialTriggers : MonoBehaviour
             switch (triggerBoxes)
             {
                 case PublicEnumList.TriggerBoxes.ExtinguisherEnterRoom:
-
-                    tutorialManager.dialogueUi.ShowDialogue(tutorialManager.dialogueObject, 2);
+                    tutorialManager.TriggerBoxDialogue(2);
                     break;
                     
                 case PublicEnumList.TriggerBoxes.MedicWalksToVictim:
-                    tutorialManager.dialogueUi.ShowDialogue(tutorialManager.dialogueObject, 6);
+                    tutorialManager.TriggerBoxDialogue(6);
                     break;
                     
                 case PublicEnumList.TriggerBoxes.DemolisherWalksToWall:
-                    tutorialManager.dialogueUi.ShowDialogue(tutorialManager.dialogueObject, 10);
+                    tutorialManager.TriggerBoxDialogue(10);
                     break;
             }
         }

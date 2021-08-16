@@ -22,6 +22,7 @@ public class Fire : MonoBehaviour, IFmod
 
     private bool reigniting = false;
     private GameManager gameManager;
+    private TaskManager taskManager;
 
     private float small = 0.3f, medium = 0.5f, large = 1.0f, normal = 1.5f;
 
@@ -29,6 +30,7 @@ public class Fire : MonoBehaviour, IFmod
     {
         fireInfo.currentHealth = fireInfo.maxHealth;
         gameManager = FindObjectOfType<GameManager>();
+        taskManager = FindObjectOfType<TaskManager>();
         //StartAudioFmod(this.gameObject, "event:/BGM/bgm");
     }
 
@@ -134,6 +136,7 @@ public class Fire : MonoBehaviour, IFmod
             player.UnStun(player);
             iPlayer.UniqueAnimation("Burn", false);
         }
+        taskManager.UpdateValue(Objective.ObjectiveType.Fire, 1f);
         Destroy(this.gameObject);
     }
 
@@ -187,6 +190,4 @@ public class Fire : MonoBehaviour, IFmod
         mainPS.startLifetime = normal;
         UpdateHealth(fireInfo, transform.Find("HealthIcon(Clone)").gameObject);
     }
-
-
 }
