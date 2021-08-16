@@ -47,7 +47,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
     [Header("UI Element")]
     public Button actionBtn;
-    private Text textBtn;
     private CharacterController controller;
     public Joystick joystick;
 
@@ -59,7 +58,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     public bool playerSelected = false;
     float horizontalMove;
     float verticalMove;
-    private Vector3 prevRotation;
+
 
     private void Start()
     {
@@ -337,29 +336,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             Walking(false);
             gameManager.ChangeAbilityImage(actionBtn, this, false);
             target = hit.collider.gameObject;
-            fire.fireInfo.isDamaged = true;
-        }
-    }
-
-    private void CheckInteractInRadius(PlayerMovement myPlayer)
-    {
-        RaycastHit hit;
-
-        if (myPlayer.playerSelected)
-        {
-            if (Physics.Raycast(transform.position, transform.forward, out hit, myPlayer.myPlayer.detectMaxRadius))
-            {
-                if (hit.collider.gameObject.CompareTag("Button"))
-                {
-                    gameManager.ChangeAbilityImage(actionBtn, this, false);
-                    target = hit.collider.gameObject;
-                }
-            }
-            else
-            {
-                actionBtn.gameObject.SetActive(false);
-            }
-
+            fire.LoseHealth();
         }
     }
 

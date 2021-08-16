@@ -35,9 +35,6 @@ public class GameManager : MonoBehaviour, IFmod
     public bool isPressed = false;
     public bool isGrouping = false;
 
-    float maxCountDown = 2.0f;
-    float currCountDown;
-    //public Image timer;
 
     private FMOD.Studio.EventInstance EI;
 
@@ -140,8 +137,6 @@ public class GameManager : MonoBehaviour, IFmod
     }
 
     #endregion
-    //TESTING FMOD
-    FMOD.Studio.EventInstance AE;
 
     //add any new obstacles' tag here 
     public void UseSkill()

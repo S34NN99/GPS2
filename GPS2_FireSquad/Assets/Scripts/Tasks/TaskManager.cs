@@ -172,37 +172,39 @@ public class TaskManager : MonoBehaviour
         timer = FindObjectOfType<Timer>();
         SetObjectivesValue(ActiveObjectives, timer);
 
-        foreach(Transform textObject in taskObjectivesGO.transform)
+
+        foreach (Transform textObject in taskObjectivesGO.transform)
         {
             textObjectiveList.Add(textObject.GetComponent<Text>());
         }
+        UpdateObjectiveList();
     }
 
     private void Update()
     {
 
-        foreach (Objective objective in ActiveObjectives)
-        {
-            Objective.ObjectiveType objType = objective.objectiveType;
-            switch(objective.objectiveType)
-            {
-                //case Objective.ObjectiveType.Rescue:
-                //    objective.currentValue = FindObjectsOfType<VictimHealth>().Length;  //To change
-                //    break;
-                case Objective.ObjectiveType.Time:
-                    float time = timer.currentTime;
-                    time = Mathf.Round(time);
-                    objective.currentValue = time;
-                    break;
-                //case Objective.ObjectiveType.Teammates:
-                //    objective.currentValue = FindObjectsOfType<PlayerMovement>().Length;    //To change
-                //    break;
-            }
-        }
+        //foreach (Objective objective in ActiveObjectives)
+        //{
+        //    Objective.ObjectiveType objType = objective.objectiveType;
+        //    switch(objective.objectiveType)
+        //    {
+        //        //case Objective.ObjectiveType.Rescue:
+        //        //    objective.currentValue = FindObjectsOfType<VictimHealth>().Length;  //To change
+        //        //    break;
+        //        case Objective.ObjectiveType.Time:
+        //            float time = timer.currentTime;
+        //            time = Mathf.Round(time);
+        //            objective.currentValue = time;
+        //            break;
+        //        //case Objective.ObjectiveType.Teammates:
+        //        //    objective.currentValue = FindObjectsOfType<PlayerMovement>().Length;    //To change
+        //        //    break;
+        //    }
+        //}
 
         //Display task list
 
-        UpdateObjectiveList();
+        //UpdateObjectiveList();
 
         if(timeRanOut())
         {
@@ -260,6 +262,7 @@ public class TaskManager : MonoBehaviour
             if (objective.objectiveType == thisObjectiveType)
             {
                 objective.currentValue += value;
+                UpdateObjectiveList();
             }
         }
     }

@@ -9,7 +9,6 @@ public class FireInfo
     public int currentHealth;
     public bool isImmunity = false;
     public float immunityDuration = 1.0f;
-    public bool isDamaged = false;
 
     public bool spawnOnPlayer = false;
     public FMOD.Studio.EventInstance EI;
@@ -34,30 +33,30 @@ public class Fire : MonoBehaviour, IFmod
 
     private void Update()
     {
-        if(fireInfo.currentHealth <= 0)
-        {
-            bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
-            Death(temp);
-        }
+        //if(fireInfo.currentHealth <= 0)
+        //{
+        //    bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
+        //    Death(temp);
+        //}
 
-        if(fireInfo.isDamaged)
+        //if(fireInfo.isDamaged)
+        //{
+        //    if (!fireInfo.isImmunity)
+        //    {
+        //        LoseHealth();
+        //        StartCoroutine(FireImmunity());
+        //    }
+        //}
+        //else
+        //{
+        if (fireInfo.currentHealth < fireInfo.maxHealth)
         {
-            if (!fireInfo.isImmunity)
+            if (!reigniting)
             {
-                LoseHealth();
-                StartCoroutine(FireImmunity());
+                StartCoroutine(Reignite(this));
             }
         }
-        else
-        {
-            if(fireInfo.currentHealth < fireInfo.maxHealth)
-            {
-                if (!reigniting)
-                {
-                    StartCoroutine(Reignite(this));
-                }
-            }
-        }
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -111,20 +110,30 @@ public class Fire : MonoBehaviour, IFmod
 
     public void LoseHealth()
     {
-        fireInfo.currentHealth--;
-        fireInfo.isImmunity = true;
+        if (!fireInfo.isImmunity)
+        {
+            fireInfo.currentHealth--;
+            fireInfo.isImmunity = true;
+            StartCoroutine(FireImmunity());
 
-        if(transform.Find("HealthIcon(Clone)"))
-        {
-            GameObject tempHealth = transform.Find("HealthIcon(Clone)").gameObject;
-            UpdateHealth(fireInfo, tempHealth);
-        }
-        else
-        {
-            Vector3 aboveChar = new Vector3(transform.position.x, 3.5f, transform.position.z);
-            GameObject tempHealth = Instantiate(healthPrefab, aboveChar, Quaternion.identity);
-            tempHealth.transform.parent = this.transform;
-            UpdateHealth(fireInfo, tempHealth);
+            if (fireInfo.currentHealth <= 0)
+            {
+                bool temp = fireInfo.spawnOnPlayer ? temp = true : temp = false;
+                Death(temp);
+            }
+                  
+            if (transform.Find("HealthIcon(Clone)"))
+            {
+                GameObject tempHealth = transform.Find("HealthIcon(Clone)").gameObject;
+                UpdateHealth(fireInfo, tempHealth);
+            }
+            else
+            {
+                Vector3 aboveChar = new Vector3(transform.position.x, 3.5f, transform.position.z);
+                GameObject tempHealth = Instantiate(healthPrefab, aboveChar, Quaternion.identity);
+                tempHealth.transform.parent = this.transform;
+                UpdateHealth(fireInfo, tempHealth);
+            }
         }
     }
 
@@ -137,8 +146,6 @@ public class Fire : MonoBehaviour, IFmod
             player.UnStun(player);
             iPlayer.UniqueAnimation("Burn", false);
         }
-        //StopAudioFmod(this.gameObject);
-        //NavMeshFixer.FixNavMesh();
         Destroy(this.gameObject);
     }
 
@@ -177,7 +184,6 @@ public class Fire : MonoBehaviour, IFmod
     IEnumerator FireImmunity()
     {
         yield return new WaitForSeconds(fireInfo.immunityDuration);
-        fireInfo.isDamaged = false;
         fireInfo.isImmunity = false;
     }
 
@@ -187,7 +193,7 @@ public class Fire : MonoBehaviour, IFmod
         ParticleSystem firePS = target.GetComponent<ParticleSystem>();
         ParticleSystem.MainModule mainPS = firePS.main;
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(4.0f);
         reigniting = false;
         target.fireInfo.currentHealth = target.fireInfo.maxHealth;
         mainPS.startLifetime = normal;

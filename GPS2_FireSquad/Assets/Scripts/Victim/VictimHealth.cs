@@ -6,15 +6,6 @@ using UnityEngine.UI;
 public class VictimHealth : MonoBehaviour
 {
     private MeshFilter thisMesh;
-    
-    private float maxHP = 100;        //max HP of victim, for start of level and update use
-    [SerializeField]
-    private float currentHP;    //current HP of victim
-
-    public float healthChangeRate = 1f;
-    private float healthChangeValue = 1f;
-
-    public HealthBar healthBar;
 
     private void Start()
     {
@@ -35,11 +26,5 @@ public class VictimHealth : MonoBehaviour
         {
             thisMesh.sharedMesh = Resources.Load<Mesh>("Civilian(collapsed)");
         }
-    }
-
-    private void HealthDecrease()
-    {
-        currentHP -= healthChangeValue;
-        healthBar.SetHealth(currentHP);
     }
 }

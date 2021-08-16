@@ -39,7 +39,6 @@ public class RescueArea : MonoBehaviour
         {
             Debug.Log("Victim is moved out of safe area");
             GameObject health = collision.gameObject;
-            health.GetComponent<VictimHealth>().InvokeRepeating("HealthDecrease", 0f, health.GetComponent<VictimHealth>().healthChangeRate);
 
             taskManager.UpdateValue(Objective.ObjectiveType.Rescue, -1f);
             taskManager.LevelProgression();

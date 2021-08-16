@@ -119,6 +119,8 @@ public class MenuManager : MonoBehaviour
     public void LeaveLevel()
     {
         SceneManager.LoadScene("Main Menu");
+        GameManager gameManager = this.gameObject.GetComponent<GameManager>();
+        gameManager.StopAudioFmod(gameManager.cameraMovement.gameObject);
         //mainMenu.SetActive(false);
         //levelSelectMenu.SetActive(true);
     }
