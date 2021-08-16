@@ -106,7 +106,11 @@ public class MenuManager : MonoBehaviour
 
     public void Confirm()
     {
-        SaveHandler.sH.SaveToJSON();
+        if (SaveHandler.sH)
+        {
+            SaveHandler.sH.SaveToJSON();
+        }
+
         pauseMenu.SetActive(false);
         gameScreenMenu.SetActive(true);
     }

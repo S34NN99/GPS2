@@ -1968,8 +1968,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324913665182506388, guid: 9b24998cf080c364eaa06524217a0852,
         type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324913665182506388, guid: 9b24998cf080c364eaa06524217a0852,
+        type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4324913665182506399, guid: 9b24998cf080c364eaa06524217a0852,
         type: 3}
@@ -14636,6 +14641,11 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1825809450}
+    - target: {fileID: 5272118180504659968, guid: f8039e14d21b44a4cb638e314466d66b,
+        type: 3}
+      propertyPath: gameScreenMenu
+      value: 
+      objectReference: {fileID: 1825809453}
     - target: {fileID: 5272118180504659970, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
       propertyPath: m_RootOrder
@@ -14761,6 +14771,11 @@ PrefabInstance:
       propertyPath: cameraMovement
       value: 
       objectReference: {fileID: 1559247009}
+    - target: {fileID: 5272118180504659981, guid: f8039e14d21b44a4cb638e314466d66b,
+        type: 3}
+      propertyPath: characterAbility.Array.data[3].character
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8039e14d21b44a4cb638e314466d66b, type: 3}
 --- !u!114 &755412270 stripped
@@ -23722,7 +23737,7 @@ PrefabInstance:
     - target: {fileID: 6151480931985832428, guid: 799219e7d2d4cc8439ade18ce28a0c77,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -29.45
+      value: 3.43
       objectReference: {fileID: 0}
     - target: {fileID: 6151480931985832428, guid: 799219e7d2d4cc8439ade18ce28a0c77,
         type: 3}
