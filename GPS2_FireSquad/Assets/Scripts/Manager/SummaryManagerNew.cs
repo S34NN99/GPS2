@@ -137,6 +137,7 @@ public class SummaryManagerNew : MonoBehaviour
     public void SummaryDisplay()
     {
         summaryMenuUI.SetActive(true);
+        gameManager.StopAudioFmod(gameManager.cameraMovement.gameObject);
         Time.timeScale = 0f;
 
         //PlayerPrefs.SetFloat("TimeLeft", timer.currentTime);

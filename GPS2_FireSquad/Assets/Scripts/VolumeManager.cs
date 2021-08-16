@@ -23,10 +23,6 @@ public class VolumeManager : MonoBehaviour
         SFX = FMODUnity.RuntimeManager.GetBus("bus:/Master/SFX");
         BGM = FMODUnity.RuntimeManager.GetBus("bus:/Master/Background");
 
-        //Master.setVolume(MasterVolume);
-        //BGM.setVolume(BGMVolume);
-        //SFX.setVolume(SFXVolume);
-
     }
 
     private void Start()
