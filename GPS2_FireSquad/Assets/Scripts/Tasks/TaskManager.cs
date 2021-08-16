@@ -7,7 +7,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class Objective
 {
-    public enum ObjectiveType { Rescue, Time, Teammates, Stun, BreakWall, BreakTrap, RemoveOil };
+    public enum ObjectiveType { Rescue, Time, Teammates, Stun, BreakWall, BreakTrap, RemoveOil , Fire };
 
     public string ObjectiveText(ObjectiveType thisObjectiveType, float currentValue, float maxValue, Text text)
     {
@@ -39,6 +39,9 @@ public class Objective
 
                 case ObjectiveType.RemoveOil:
                     return ("Remove " + maxVal + " oil\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
+
+                case ObjectiveType.Fire:
+                    return ("Extinguish " + maxVal + " fire\t" + "(" + currVal + "/" + maxVal + ")\n").ToString();
 
                 default:
                     {
@@ -78,6 +81,10 @@ public class Objective
                 case ObjectiveType.RemoveOil:
                     text.color = Color.green;
                     return ("All " + maxVal + " oil removed.\n").ToString();
+   
+                case ObjectiveType.Fire:
+                    text.color = Color.green;
+                    return ("All " + maxVal + " fires extinguished.\n").ToString();
 
 
                 default:
@@ -237,6 +244,11 @@ public class TaskManager : MonoBehaviour
                 case Objective.ObjectiveType.RemoveOil:
                     objective.objectiveValue = GameObject.FindGameObjectsWithTag("Oil Slick").Length;
                     break;
+                    
+                case Objective.ObjectiveType.Fire:
+                    objective.objectiveValue = GameObject.FindGameObjectsWithTag("Fire").Length;
+                    break;
+
             }
         }
     }

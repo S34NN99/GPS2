@@ -1147,7 +1147,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162241539}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b659e6fbd1a9d9b49907a5db2d546cb1, type: 3}
   m_Name: 
@@ -1156,6 +1156,9 @@ MonoBehaviour:
   medic: {fileID: 255510022}
   demolisher: {fileID: 2028138078}
   dialogueObject: {fileID: 11400000, guid: 0824fe0124b197c4895b4a5f36f07880, type: 2}
+  dialogueUi: {fileID: 1055523173}
+  gameManager: {fileID: 0}
+  playerMovement: {fileID: 0}
 --- !u!1001 &164365930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1590,6 +1593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 623814421}
+    - target: {fileID: 3510854934741410295, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3510854934741410295, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
@@ -1610,6 +1618,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 623814421}
+    - target: {fileID: 3510854935060587829, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3510854935060587829, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
@@ -1640,6 +1653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 623814421}
+    - target: {fileID: 3510854935762878988, guid: 2006abbb523401f47a4f2de9162323c5,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 3510854935762878988, guid: 2006abbb523401f47a4f2de9162323c5,
         type: 3}
@@ -2769,6 +2787,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315334223}
   - component: {fileID: 315334224}
+  - component: {fileID: 315334225}
   m_Layer: 0
   m_Name: Box Two
   m_TagString: Untagged
@@ -2803,6 +2822,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &315334225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315334222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ca13a7cfe4c20409b1dda681a7370f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBoxes: 1
+  tutorialManager: {fileID: 162241541}
 --- !u!1001 &316421062
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3244,6 +3277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 410779895}
   - component: {fileID: 410779896}
+  - component: {fileID: 410779897}
   m_Layer: 0
   m_Name: Box One
   m_TagString: Untagged
@@ -3278,6 +3312,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &410779897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410779894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ca13a7cfe4c20409b1dda681a7370f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBoxes: 0
+  tutorialManager: {fileID: 162241541}
 --- !u!1 &415818739
 GameObject:
   m_ObjectHideFlags: 0
@@ -3288,6 +3336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415818740}
   - component: {fileID: 415818741}
+  - component: {fileID: 415818742}
   m_Layer: 0
   m_Name: Box Three
   m_TagString: Untagged
@@ -3322,6 +3371,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &415818742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415818739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ca13a7cfe4c20409b1dda681a7370f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerBoxes: 2
+  tutorialManager: {fileID: 162241541}
 --- !u!1001 &420161650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6685,8 +6748,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272118180504659971, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
+      propertyPath: ActiveObjectives.Array.data[0].objectiveType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5272118180504659971, guid: f8039e14d21b44a4cb638e314466d66b,
+        type: 3}
       propertyPath: ActiveObjectives.Array.data[1].objectiveType
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272118180504659971, guid: f8039e14d21b44a4cb638e314466d66b,
         type: 3}
