@@ -9,6 +9,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private DialogueObject textDialogue;
 
     private TypewritingEffect typewritingEffect;
+    public bool dialogueBoxisOpen = false;
 
     private void Start()
     {
@@ -34,10 +35,12 @@ public class DialogueUI : MonoBehaviour
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
         }
         */
+        dialogueBoxisOpen = true;
         string dialogue = dialogueObject.Dialogue[dialogueNumber];
         yield return typewritingEffect.Run(dialogue, textLabel);
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 
+        dialogueBoxisOpen = false;
         CloseDialogueBox();
     }
 
