@@ -49,13 +49,13 @@ public class Fire : MonoBehaviour, IFmod
         //}
         //else
         //{
-        if (fireInfo.currentHealth < fireInfo.maxHealth)
-        {
-            if (!reigniting)
-            {
-                StartCoroutine(Reignite(this));
-            }
-        }
+        //if (fireInfo.currentHealth < fireInfo.maxHealth)
+        //{
+        //    if (!reigniting)
+        //    {
+        //        StartCoroutine(Reignite(this));
+        //    }
+        //}
         //}
     }
 
@@ -115,6 +115,16 @@ public class Fire : MonoBehaviour, IFmod
             fireInfo.currentHealth--;
             fireInfo.isImmunity = true;
             StartCoroutine(FireImmunity());
+
+            if (reigniting)
+            {
+                StopCoroutine(Reignite(this));
+                StartCoroutine(Reignite(this));
+            }
+            else
+            {
+                StartCoroutine(Reignite(this));
+            }
 
             if (fireInfo.currentHealth <= 0)
             {
