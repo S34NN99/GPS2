@@ -86,8 +86,8 @@ public class SaveHandler : MonoBehaviour
     //change dataPath to persistenDataPath when building
     public PlayerData ReadFromJson()
     {
-        string myDir = Application.dataPath + "/PlayerSaves/playerData.json";
-        //string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
+        //string myDir = Application.dataPath + "/PlayerSaves/playerData.json";
+        string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
         if (File.Exists(myDir))
         {
             string myJson = File.ReadAllText(myDir);
@@ -111,8 +111,8 @@ public class SaveHandler : MonoBehaviour
 
     public void SaveToJSON()
     {
-        string filePath = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
-        //string filePath = Path.Combine(Application.persistentDataPath, "PlayerSave");
+        //string filePath = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
+        string filePath = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
         if (!File.Exists(filePath))
         {
             Directory.CreateDirectory(filePath);
@@ -122,7 +122,8 @@ public class SaveHandler : MonoBehaviour
 
         SetPlayerData(myPlayerData);
         string myJson = JsonUtility.ToJson(myPlayerData);
-        string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
+        //string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
+        string myDir = Path.Combine(Application.persistentDataPath, "PlayerSaves", "playerData.json");
         File.WriteAllText(myDir, myJson);
         ReadFromJson(); //reads stored data
     }
