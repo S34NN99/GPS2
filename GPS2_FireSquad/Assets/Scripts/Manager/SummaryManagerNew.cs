@@ -97,23 +97,26 @@ public class SummaryManagerNew : MonoBehaviour
     {
         //check if this level is in save file
 
-        foreach (Levels lvl in SaveHandler.sH.myPlayerData.level)
+        if (SaveHandler.sH)
         {
-            if (lvl.levelNum == gameManager.currentLevel)
+            foreach (Levels lvl in SaveHandler.sH.myPlayerData.level)
             {
-                lvl.timeLeft = timer.currentTime;
-                lvl.objectivesCompleted = taskManager.numberOfConditionsMet();
-
-                if (timer.currentTime < bestTime)
+                if (lvl.levelNum == gameManager.currentLevel)
                 {
-                    lvl.bestTime = timer.currentTime;
-                }
-                SaveHandler.sH.SaveToJSON();
+                    lvl.timeLeft = timer.currentTime;
+                    lvl.objectivesCompleted = taskManager.numberOfConditionsMet();
 
-                bestTime = lvl.bestTime;
-                timeLeft = lvl.timeLeft;
-                Debug.Log("Existing level found");
-                return;
+                    if (timer.currentTime < bestTime)
+                    {
+                        lvl.bestTime = timer.currentTime;
+                    }
+                    SaveHandler.sH.SaveToJSON();
+
+                    bestTime = lvl.bestTime;
+                    timeLeft = lvl.timeLeft;
+                    Debug.Log("Existing level found");
+                    return;
+                }
             }
         }
 

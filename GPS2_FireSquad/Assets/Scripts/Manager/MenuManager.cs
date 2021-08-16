@@ -31,8 +31,9 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
 
-       levelSelectMenu.SetActive(true);
         SetStarImage();
+        levelSelectMenu.SetActive(true);
+
     }
 
     public void Setting()

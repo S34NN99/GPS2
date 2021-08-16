@@ -84,13 +84,17 @@ public class SaveHandler : MonoBehaviour
     }
 
     //change dataPath to persistenDataPath when building
+    //string myDir = Path.Combine(Application.persistentDataPath, "PlayerSaves", "playerData.json");
+    //string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
+
     public PlayerData ReadFromJson()
     {
-        //string myDir = Application.dataPath + "/PlayerSaves/playerData.json";
         string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
+        //string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
         if (File.Exists(myDir))
         {
             string myJson = File.ReadAllText(myDir);
+            Debug.Log("File exists");
             if (myJson.Length <= 0)
             {
                 SaveToJSON();
@@ -104,27 +108,29 @@ public class SaveHandler : MonoBehaviour
             Debug.Log("no file found");
             SaveToJSON();
 
-
             return null;
         }
     }
 
     public void SaveToJSON()
     {
-        //string filePath = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
-        string filePath = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
+        //string filePath = Path.Combine(Application.dataPath, "PlayerSave", "playerData.json");
+        string filePath = Path.Combine(Application.persistentDataPath, "PlayerSave");
+
         if (!File.Exists(filePath))
         {
             Directory.CreateDirectory(filePath);
             Debug.Log("Creating Path");
-            //Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "PlayerSave"));
+            //Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "PlayerSave");
         }
 
+        Debug.Log("Saving data to file");
         SetPlayerData(myPlayerData);
         string myJson = JsonUtility.ToJson(myPlayerData);
         //string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
-        string myDir = Path.Combine(Application.persistentDataPath, "PlayerSaves", "playerData.json");
+        string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
         File.WriteAllText(myDir, myJson);
         ReadFromJson(); //reads stored data
+        Debug.Log("Data saved");
     }
 }

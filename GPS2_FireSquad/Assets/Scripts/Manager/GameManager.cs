@@ -55,31 +55,34 @@ public class GameManager : MonoBehaviour, IFmod
         {
             PlayerMovement playermovement = playerGroup[i].GetComponent<PlayerMovement>();
             NavMeshAgent navMeshAgent = playermovement.GetComponent<NavMeshAgent>();
-            if (!playermovement.playerSelected && !playermovement.myPlayer.isStunned && !playermovement.myPlayer.characterCoroutine.isInCoroutine)
+            if (navMeshAgent)
             {
-                IPlayer iPlayer = navMeshAgent.gameObject.GetComponent<IPlayer>();
-                Vector3 notSelectedPos = playermovement.transform.position;
-                navMeshAgent.enabled = true;
-                float distance = Vector3.Distance(notSelectedPos, selectedPlayerPos);
-
-                if (distance > 25)
+                if (!playermovement.playerSelected && !playermovement.myPlayer.isStunned && !playermovement.myPlayer.characterCoroutine.isInCoroutine)
                 {
-                    navMeshAgent.isStopped = false;
-                    GroupUp(navMeshAgent, selectedPlayerPos);
-                    iPlayer.Walking(true);
-                    isGrouping = true;
-                }
-                else if (distance < 13 && isGrouping == true)
-                {
+                    IPlayer iPlayer = navMeshAgent.gameObject.GetComponent<IPlayer>();
+                    Vector3 notSelectedPos = playermovement.transform.position;
+                    navMeshAgent.enabled = true;
+                    float distance = Vector3.Distance(notSelectedPos, selectedPlayerPos);
 
-                    navMeshAgent.isStopped = true;
-                    iPlayer.Walking(false);
-                    //playermovement.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                    if (distance > 25)
+                    {
+                        navMeshAgent.isStopped = false;
+                        GroupUp(navMeshAgent, selectedPlayerPos);
+                        iPlayer.Walking(true);
+                        isGrouping = true;
+                    }
+                    else if (distance < 13 && isGrouping == true)
+                    {
+
+                        navMeshAgent.isStopped = true;
+                        iPlayer.Walking(false);
+                        //playermovement.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+                    }
                 }
-            }
-            else
-            {
-                navMeshAgent.enabled = false;
+                else
+                {
+                    navMeshAgent.enabled = false;
+                }
             }
         }
     }
