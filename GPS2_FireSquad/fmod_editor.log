@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000223DA7ACBE8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000223A453D968 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -21,25 +21,25 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 1704640
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 11072
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000039EF24F038
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000039EF44EF18
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA71D77D70
 [LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA71D77D40
 [LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA71D77E40
 [LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA71D77F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000223A07E20A8
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000223A3D07348
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ExtinguishSFX', format=5, channels=2, frequency=48000, lengthbytes=24160, lengthpcm=121626, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.549286.
-[LOG] SoundI::release                          :  (00000223DA5C3098)
-[LOG] SoundI::release                          :     FireBurning (00000222D3F0D738)
-[LOG] SoundI::release                          :  (00000223DA5C3658)
-[LOG] SoundI::release                          :     bgmupdated (00000222D3F0D598)
-[LOG] SoundI::release                          :  (0000022145611558)
-[LOG] SoundI::release                          :     ExtinguishSFX (00000223AEE56208)
-[LOG] SoundI::release                          :  (00000223DA5C3AA8)
-[LOG] SoundI::release                          :     ExplosionSFX (00000222D3F0D3F8)
+[LOG] SoundI::release                          :  (000002239FB17288)
+[LOG] SoundI::release                          :     FireBurning (000002214CE85938)
+[LOG] SoundI::release                          :  (000002239FB16E38)
+[LOG] SoundI::release                          :     bgmupdated (000002214CE86638)
+[LOG] SoundI::release                          :  (000002214FF7DF68)
+[LOG] SoundI::release                          :     ExtinguishSFX (000002214E003168)
+[LOG] SoundI::release                          :  (000002239FB14488)
+[LOG] SoundI::release                          :     ExplosionSFX (000002214CE84A98)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -50,5 +50,7 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
+[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
