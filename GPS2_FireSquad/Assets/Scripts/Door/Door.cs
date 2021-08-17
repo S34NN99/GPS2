@@ -21,10 +21,6 @@ public class Door : MonoBehaviour
             DoorAnimator.Play(OpenDoor);
             isOpen = true;
         }
-        else if (isLocked)
-        {
-            Debug.Log("Door is locked");
-        }
     }
 
     public void CloseDoorAnimation()

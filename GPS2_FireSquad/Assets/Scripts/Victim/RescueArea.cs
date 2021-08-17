@@ -14,10 +14,8 @@ public class RescueArea : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.CompareTag("Victim"))
         {
-            Debug.Log("Victim saved");
             GameObject health = collision.gameObject;
             health.GetComponent<VictimHealth>().CancelInvoke();
 
@@ -26,7 +24,6 @@ public class RescueArea : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Teammate" + collision.gameObject.name + " entered safe area");
 
             taskManager.UpdateValue(Objective.ObjectiveType.Teammates, 1f);
             taskManager.LevelProgression();
@@ -37,7 +34,6 @@ public class RescueArea : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Victim"))
         {
-            Debug.Log("Victim is moved out of safe area");
             GameObject health = collision.gameObject;
 
             taskManager.UpdateValue(Objective.ObjectiveType.Rescue, -1f);
@@ -45,7 +41,6 @@ public class RescueArea : MonoBehaviour
         }
         else if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Teammate" + collision.gameObject.name + "exits safe area");
 
             taskManager.UpdateValue(Objective.ObjectiveType.Teammates, -1f);
             taskManager.LevelProgression();

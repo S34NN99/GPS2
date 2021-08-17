@@ -171,7 +171,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
     public void UnStun(PlayerMovement playerMovement)
     {
-        Debug.Log("Revoming Stun");
         foreach (Transform transform in playerMovement.transform)
         {
             if (transform.tag == "Stun")
@@ -232,7 +231,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                 if(myplayer.isCarryingVictim)
                 {
                     gameManager.ChangeAbilityImage(actionBtn, this, false);
-                    Debug.Log("Carrying Victim");
                     return;
                 }
 
@@ -318,7 +316,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
                         break;
 
                     default:
-                        Debug.Log("none found");
                         break;
                 }
             }
@@ -344,7 +341,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     {
         if (collision.gameObject.CompareTag("Oil Slick") && myPlayer.characterType == PublicEnumList.CharacterType.Medic)
         {
-            Debug.Log("Dected oil");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
             gameManager.ChangeAbilityImage(actionBtn, this, false);
@@ -352,7 +348,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
         if (collision.gameObject.CompareTag("Trap") && myPlayer.characterType == PublicEnumList.CharacterType.Demolisher) // demolisher secondary skill 
         {
-            Debug.Log("Dected Trap");
             target = collision.gameObject;
             myPlayer.isOnObstacle = true;
             gameManager.ChangeAbilityImage(actionBtn, this, false);
@@ -363,14 +358,12 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
     {
         if (collision.gameObject.CompareTag("Trap")) // demolisher secondary skill 
         {
-            Debug.Log("exit Trap");
             myPlayer.isOnObstacle = false;
             actionBtn.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.CompareTag("Oil Slick")) // Medic secondary skill 
         {
-            Debug.Log("exit oil");
             myPlayer.isOnObstacle = false;
             actionBtn.gameObject.SetActive(false);
         }
@@ -421,7 +414,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             case PublicEnumList.CharacterSkill.Press:
                 currPlayer.myPlayer.characterCoroutine.currCoroutine = StartCoroutine(PressButton(currPlayer, target));
                 currPlayer.myPlayer.characterCoroutine.type = PublicEnumList.CoroutineType.PressButton;
-                Debug.Log($"using {playerSkill}");
+
                 break;
 
             //case PublicEnumList.CharacterSkill.InteractDoor:
@@ -429,7 +422,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             //    break;
 
             default:
-                Debug.Log("Could not find skill");
+
                 break;
         }
     }
@@ -557,7 +550,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
             UniqueAnimation("isCarryingVictim", true);
             target.GetComponent<VictimHealth>().CheckCarrying(true);
-            Debug.Log("Victim is picked up");
         }
         else if (currPlayer.myPlayer.isCarryingVictim)
         {
@@ -573,7 +565,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             currPlayer.myPlayer.isCarryingVictim = false;
 
             target.GetComponent<VictimHealth>().CheckCarrying(false);
-            Debug.Log("Victim is dropped");
         }
 
         StopAudioFmod(currPlayer.gameObject);

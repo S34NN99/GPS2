@@ -45,7 +45,6 @@ public class Objective
 
                 default:
                     {
-                        Debug.LogWarning("No objective found.");
                         return null;
                     }
             }
@@ -89,7 +88,6 @@ public class Objective
 
                 default:
                     {
-                        Debug.LogWarning("No objective found.");
                         return null;
                     }
             }
@@ -315,7 +313,6 @@ public class TaskManager : MonoBehaviour
 
         if (timeRanOut() && numberOfConditionsMet() < 0)
         {
-            Debug.Log("Level Lost");
             summaryManager.SummaryDisplay();
         }
         //else if (timeRanOut() && numberOfConditionsMet() <= 2)
@@ -325,7 +322,6 @@ public class TaskManager : MonoBehaviour
         //}
         else if (numberOfConditionsMet() == ActiveObjectives.Length)
         {
-            Debug.Log("Level Won: 3 Stars");
             summaryManager.SummaryDisplay();
         }
     }

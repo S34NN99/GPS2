@@ -101,7 +101,6 @@ public class GameManager : MonoBehaviour, IFmod
         EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
         //FMODUnity.RuntimeManager.AttachInstanceToGameObject(EI, gameObject.transform, gameObject.GetComponent<Rigidbody>());
         EI.start();
-        Debug.Log("Playing");
     }
 
     public void StopAudioFmod(GameObject gameObject)
@@ -231,7 +230,6 @@ public class GameManager : MonoBehaviour, IFmod
     {
         IPlayer iPlayer = playerMovement.GetComponent<IPlayer>();
 
-        Debug.Log("Checking Target");
         RemoveTimer(playerObject);
         playerMovement.myPlayer.characterCoroutine.isInCoroutine = false;
         playerMovement.StopCoroutine(checkCoroutine.currCoroutine);
@@ -263,7 +261,6 @@ public class GameManager : MonoBehaviour, IFmod
                 //stop press button animaitong
                 playerMovement.target.GetComponent<CoopDoorButton>().ButtonReleased();
                 iPlayer.UniqueAnimation("PushingButton", false);
-                Debug.Log("close button");
                 break;
 
             default:

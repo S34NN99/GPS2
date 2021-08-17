@@ -94,18 +94,15 @@ public class SaveHandler : MonoBehaviour
         if (File.Exists(myDir))
         {
             string myJson = File.ReadAllText(myDir);
-            Debug.Log("File exists");
             if (myJson.Length <= 0)
             {
                 SaveToJSON();
-                Debug.Log("no data");
             }
             myPlayerData = JsonUtility.FromJson<PlayerData>(myJson);
             return myPlayerData;
         }
         else
         {
-            Debug.Log("no file found");
             SaveToJSON();
 
             return null;
@@ -120,17 +117,14 @@ public class SaveHandler : MonoBehaviour
         if (!File.Exists(filePath))
         {
             Directory.CreateDirectory(filePath);
-            Debug.Log("Creating Path");
             //Directory.CreateDirectory(Path.Combine(Application.persistentDataPath, "PlayerSave");
         }
 
-        Debug.Log("Saving data to file");
         SetPlayerData(myPlayerData);
         string myJson = JsonUtility.ToJson(myPlayerData);
         //string myDir = Path.Combine(Application.dataPath, "PlayerSaves", "playerData.json");
         string myDir = Path.Combine(Application.persistentDataPath, "PlayerSave", "playerData.json");
         File.WriteAllText(myDir, myJson);
         ReadFromJson(); //reads stored data
-        Debug.Log("Data saved");
     }
 }

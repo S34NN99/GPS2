@@ -1405,10 +1405,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 17492484}
     m_Modifications:
-    - target: {fileID: 363067866, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3415973496119163074, guid: af699fbc285054a49a371f0cfd0daa3c,
         type: 3}
       propertyPath: m_RootOrder
@@ -1468,16 +1464,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fire Particle
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3415973496119163103, guid: af699fbc285054a49a371f0cfd0daa3c,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af699fbc285054a49a371f0cfd0daa3c, type: 3}
@@ -24786,7 +24772,7 @@ MonoBehaviour:
     m_Bits: 8
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -24795,7 +24781,7 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 0
+    fastMode: 1
     keepAlpha: 0
   fog:
     enabled: 1

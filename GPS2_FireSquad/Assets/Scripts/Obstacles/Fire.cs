@@ -56,7 +56,6 @@ public class Fire : MonoBehaviour, IFmod
                     target.SpawnFire(target, gameManager.firePrefab);
                     iPlayer.UniqueAnimation("Burn", true);
                     iPlayer.Walking(false);
-                    Debug.Log("On fire");
                 }
                 else
                 {
@@ -76,7 +75,6 @@ public class Fire : MonoBehaviour, IFmod
         fireinfo.EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(fireInfo.EI, this.transform, this.GetComponent<Rigidbody>());
         fireinfo.EI.start();
-        Debug.Log("Playing");
     }
 
     public void StopAudioFmod(GameObject gameObject)
@@ -167,7 +165,6 @@ public class Fire : MonoBehaviour, IFmod
                 break;  
 
             default:
-                Debug.Log("Something is wrong");
                 break;
         }    
     }

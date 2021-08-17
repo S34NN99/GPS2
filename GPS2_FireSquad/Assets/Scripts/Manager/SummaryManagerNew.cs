@@ -131,7 +131,6 @@ public class SummaryManagerNew : MonoBehaviour
 
         bestTime = newLevel.bestTime;
         timeLeft = newLevel.timeLeft;
-        Debug.Log("New level recorded");
     }
 
     public void SummaryDisplay()
