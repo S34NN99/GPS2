@@ -495,7 +495,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         Trap trap = target.GetComponent<Trap>();
         SetCoroutine(currPlayer, true);
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(3.3f);
         if (trap.trappedPlayer.Count > 0)
         {
             for (int i = 0; i < trap.trappedPlayer.Count; i++)
@@ -507,11 +507,12 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             }
         }
 
+        StopAudioFmod(currPlayer.gameObject);
         Destroy(target);
         trap.AddToObjective();
         UsingSecondarySkill(false);
         myPlayer.isOnObstacle = false;
-        actionBtn.gameObject.SetActive(false);
+        //actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
         SetCoroutine(currPlayer, false);
     }
@@ -536,7 +537,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         }
 
         myPlayer.isOnObstacle = false;
-        actionBtn.gameObject.SetActive(false);
+        //actionBtn.gameObject.SetActive(false);
         gameManager.RemoveTimer(this.gameObject);
         UsingMainSkill(false);
         SetCoroutine(currPlayer, false);
