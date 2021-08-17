@@ -11,7 +11,7 @@ public class LevelImage
     public List<Sprite> levelImage;
 }
 
-public class MenuManager : MonoBehaviour
+public class MenuManager : MonoBehaviour, IFmod
 {
     public List<LevelImage> levelimage;
     public GameObject buttonGroup;
@@ -25,13 +25,50 @@ public class MenuManager : MonoBehaviour
     //public static bool isPause = false;
     public GameObject pauseMenu;
     public GameObject gameScreenMenu;
-    
+    public bool isMainMenu = false;
+    private FMOD.Studio.EventInstance EI;
+
+
+    #region FMOD
+    public void StartAudioFmod(GameObject gameObject, string pathname)
+    {
+        // EXAMPLE
+        /*AE = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Extinguisher/EXT_Extinguishing");
+        AE.start();*/
+        EI = FMODUnity.RuntimeManager.CreateInstance(pathname);
+        //FMODUnity.RuntimeManager.AttachInstanceToGameObject(EI, gameObject.transform, gameObject.GetComponent<Rigidbody>());
+        EI.start();
+    }
+
+    public void StopAudioFmod(GameObject gameObject)
+    {
+        EI.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EI.release();
+    }
+    #endregion FMOD
+
+    private void Start()
+    {
+        if (isMainMenu)
+        {
+            StartAudioFmod(this.gameObject, "event:/BGM/MainMenuBGM");
+        }
+    }
+
     //MAIN MENU
+    public void PressButtonSFX()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/SelectUIButtonSFX");
+    }
+
+
     public void SwitchLevelSelection()
     {
         mainMenu.SetActive(false);
 
         SetStarImage();
+        StopAudioFmod(this.gameObject);
+        StartAudioFmod(this.gameObject, "event:/BGM/LevelSelectBGM");
         levelSelectMenu.SetActive(true);
 
     }
@@ -69,8 +106,9 @@ public class MenuManager : MonoBehaviour
 
     public void LevelBack()
     {
+        StopAudioFmod(this.gameObject);
+        StartAudioFmod(this.gameObject, "event:/BGM/MainMenuBGM");
         mainMenu.SetActive(true);
-
         levelSelectMenu.SetActive(false);
 
     }
@@ -94,6 +132,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayLevel()
     {
+        StopAudioFmod(this.gameObject);
         SceneManager.LoadScene(levelName);
     }
 

@@ -40,7 +40,39 @@ public class GameManager : MonoBehaviour, IFmod
 
     void Start()
     {
-        StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+        switch(currentLevel)
+        {
+            case PublicEnumList.LevelNum.Tutorial:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/TutorialBGM");
+                break;
+
+            case PublicEnumList.LevelNum.Level_1:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/Level3BGM");
+                break;
+
+            case PublicEnumList.LevelNum.Level_2:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/Level2BGM");
+                break;
+
+            case PublicEnumList.LevelNum.Level_3:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/Level3BGM");
+                break;
+
+            case PublicEnumList.LevelNum.Level_4:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+                break;
+
+            case PublicEnumList.LevelNum.Level_5:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/Level2BGM");
+                break;
+
+            case PublicEnumList.LevelNum.Level_6:
+                StartAudioFmod(cameraMovement.gameObject, "event:/BGM/bgm");
+                break;
+
+            default:
+                break;
+        }
     }
 
     #region NAVMESH

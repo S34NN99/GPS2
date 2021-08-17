@@ -141,8 +141,15 @@ public class SummaryManagerNew : MonoBehaviour
 
         //PlayerPrefs.SetFloat("TimeLeft", timer.currentTime);
         GetScoreFromJson();
-
-
+        if(taskManager.numberOfConditionsMet() > 0)
+        {
+            gameManager.StartAudioFmod(gameManager.gameObject, "event:/SFX/WinJingleSFX");
+        }
+        else
+        {
+            gameManager.StartAudioFmod(gameManager.gameObject, "event:/SFX/LoseJingleSFX");
+        }
+        
         //UpdateBestTime();
         ////Display best time in Summary menu
         SetBestTime();
@@ -159,12 +166,14 @@ public class SummaryManagerNew : MonoBehaviour
     {
         Time.timeScale = 1f;
         //player.gameOver = false;
+        gameManager.StopAudioFmod(gameManager.gameObject);
         SceneManager.LoadScene("Main Menu");
     }
 
     public void NextScene()
     {
         Time.timeScale = 1f;
+        gameManager.StopAudioFmod(gameManager.gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 

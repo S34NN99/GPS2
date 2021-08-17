@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class FireInfo
 {
-    public int maxHealth = 4;
+    public int maxHealth = 3;
     public int currentHealth;
     public bool isImmunity = false;
     public float immunityDuration = 1.0f;
@@ -24,7 +24,7 @@ public class Fire : MonoBehaviour, IFmod
     private GameManager gameManager;
     private TaskManager taskManager;
 
-    private float small = 0.3f, medium = 0.5f, large = 1.0f, normal = 1.5f;
+    private float small = 0.4f, medium = 0.7f, large = 1.0f, normal = 1.5f;
 
     private void Start()
     {
@@ -156,13 +156,8 @@ public class Fire : MonoBehaviour, IFmod
                 break;  
             
             case 3:
-                healthIcon.GetComponent<Renderer>().material.color = Color.green;
-                mainPs.startLifetime = large;
-                break;
-
-            case 4:
                 Destroy(healthIcon);
-                break;  
+                break;
 
             default:
                 break;

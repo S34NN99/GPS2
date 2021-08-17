@@ -160,7 +160,7 @@ public class TaskManager : MonoBehaviour
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Timer timer;
-    [SerializeField] private SummaryManagerNew summaryManager;
+    public SummaryManagerNew summaryManager;
 
     //[SerializeField] private GameObject[] teammates;
 

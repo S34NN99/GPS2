@@ -167,6 +167,19 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
         playerMovement.myPlayer.isStunned = true;
         iPlayer.Walking(false);
+
+        int stunCount = 0;
+        GameObject parent = this.transform.parent.gameObject;
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            if (parent.transform.GetChild(i).GetComponent<PlayerMovement>().myPlayer.isStunned) stunCount++;
+        }
+
+        Debug.Log($"{stunCount}");
+        if(stunCount >= 3)
+        {
+            taskManager.summaryManager.SummaryDisplay();
+        }
     }
 
     public void UnStun(PlayerMovement playerMovement)
@@ -446,7 +459,7 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         currPlayer.myPlayer.isExtinguishing = true;
         currPlayer.myPlayer.isLookingAtFire = true;
         SetCoroutine(currPlayer, false);
-        yield return new WaitForSeconds(0f);
+        yield return null;
     }
 
 
@@ -577,52 +590,11 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
         SetCoroutine(currPlayer, true);
         CoopDoorButton btn = target.GetComponent<CoopDoorButton>();
         btn.ButtonPressed();
-        yield return new WaitForSeconds(3.0f);
-        //if (currPlayer.myPlayer.isPressingButton == false)
-        //{
-        //    Debug.Log("Target is Button");
-        //    target.GetComponent<CoopDoorButton>().ButtonPressed();
-        //    currPlayer.myPlayer.isPressingButton = true;
-        //    yield return new WaitForSeconds(3.0f);
-        //}
-        //else if (currPlayer.myPlayer.isPressingButton == true)
-        //{
-        //    Debug.Log("Target is Button");
-        //    target.GetComponent<CoopDoorButton>().ButtonReleased();
-        //    currPlayer.myPlayer.isPressingButton = false;
-        //    yield return new WaitForSeconds(3.0f);
-        //}
-
-        gameManager.RemoveTimer(this.gameObject);
-        //SetCoroutine(currPlayer, false);
-    }
-
-    //Useless - No normal doors
-    /*
-    IEnumerator InteractDoor(PlayerMovement currPlayer, GameObject target)
-    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/PressButtonSFX");
         yield return new WaitForSeconds(3.0f);
 
-        if (target.GetComponent<Door>())
-        {
-            Debug.Log("Target is Door");
-            Door door = target.GetComponent<Door>();
-
-            if (door.isOpen == true)
-            {
-                door.CloseDoorAnimation();
-            }
-            else if (door.isOpen == false)
-            {
-                door.OpenDoorAnimation();
-            }
-        }
-
         gameManager.RemoveTimer(this.gameObject);
-        SetCoroutine(currPlayer, false);
     }
-    */
-
     #endregion
 
 }
