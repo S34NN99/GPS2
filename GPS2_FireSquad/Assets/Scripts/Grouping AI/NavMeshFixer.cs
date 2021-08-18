@@ -18,7 +18,7 @@
 //        foreach (Renderer item in Object.FindObjectsOfType(typeof(Renderer))) //Loop over all renderers
 //        {
 //            //Check if its marked as NavigationStatic, and it has a disabled renderer
-//            if (GameObjectUtility.AreStaticEditorFlagsSet(item.gameObject, StaticEditorFlags.NavigationStatic) && !item.enabled) 
+//            if (GameObjectUtility.AreStaticEditorFlagsSet(item.gameObject, StaticEditorFlags.NavigationStatic) && !item.enabled)
 //            {
 //                disabledObjects.Add(item);
 //                //item.renderer.enabled = true; //Temporary enable it.
