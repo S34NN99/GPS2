@@ -299,7 +299,8 @@ public class TaskManager : MonoBehaviour
 
     public void LevelProgression()
     {
-        foreach(Objective obj in ActiveObjectives)
+        UpdateObjectiveList();
+        foreach (Objective obj in ActiveObjectives)
         {
             if(obj.objectiveType == Objective.ObjectiveType.Rescue)
             {

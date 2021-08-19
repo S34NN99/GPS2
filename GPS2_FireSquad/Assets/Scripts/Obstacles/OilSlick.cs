@@ -23,10 +23,8 @@ public class OilSlick : MonoBehaviour, IObjectives
             {
                 target.Stun(target);
                 iPlayer.UniqueAnimation("Slip", true);
-                if (taskManager)
-                {
-                    AddToObjective();
-                }
+                AddToObjective();
+
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/OilSlip");
                 Destroy(this.gameObject);
             }
@@ -35,13 +33,16 @@ public class OilSlick : MonoBehaviour, IObjectives
 
     public void AddToObjective()
     {
-        foreach (Objective obj in taskManager.ActiveObjectives)
+        if (taskManager)
         {
-            if (obj.objectiveType == Objective.ObjectiveType.RemoveOil)
+            foreach (Objective obj in taskManager.ActiveObjectives)
             {
-                obj.currentValue++;
-                taskManager.LevelProgression();
-                return;
+                if (obj.objectiveType == Objective.ObjectiveType.RemoveOil)
+                {
+                    obj.currentValue++;
+                    taskManager.LevelProgression();
+                    return;
+                }
             }
         }
     }

@@ -146,13 +146,17 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
     public void AddToObjective()
     {
-        foreach (Objective obj in taskManager.ActiveObjectives)
+        if (taskManager)
         {
-            if (obj.objectiveType == Objective.ObjectiveType.Stun)
+            foreach (Objective obj in taskManager.ActiveObjectives)
             {
-                obj.objectiveValue++;
-                taskManager.LevelProgression();
-                return;
+                if (obj.objectiveType == Objective.ObjectiveType.Stun)
+                {
+                    obj.objectiveValue++;
+                    taskManager.LevelProgression();
+                    taskManager.UpdateObjectiveList();
+                    return;
+                }
             }
         }
     }
