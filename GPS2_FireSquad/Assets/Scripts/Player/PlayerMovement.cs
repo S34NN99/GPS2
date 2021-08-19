@@ -508,7 +508,10 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
 
         StopAudioFmod(currPlayer.gameObject);
         Destroy(target);
-        trap.AddToObjective();
+        if (taskManager)
+        {
+            trap.AddToObjective();
+        }
         UsingSecondarySkill(false);
         myPlayer.isOnObstacle = false;
         //actionBtn.gameObject.SetActive(false);

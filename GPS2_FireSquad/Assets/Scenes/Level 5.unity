@@ -2208,6 +2208,7 @@ GameObject:
   - component: {fileID: 159250111}
   - component: {fileID: 159250110}
   - component: {fileID: 159250109}
+  - component: {fileID: 159250114}
   m_Layer: 0
   m_Name: Rescue Area
   m_TagString: Untagged
@@ -2305,6 +2306,25 @@ Transform:
   m_Father: {fileID: 160939198}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &159250114
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159250108}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c09886bdab174840aa66be69c806558, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &160939197
 GameObject:
   m_ObjectHideFlags: 0
@@ -17991,9 +18011,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1597735688}
-  - {fileID: 452676827}
   - {fileID: 468402295}
   - {fileID: 1184286327}
+  - {fileID: 452676827}
   m_Father: {fileID: 160939198}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

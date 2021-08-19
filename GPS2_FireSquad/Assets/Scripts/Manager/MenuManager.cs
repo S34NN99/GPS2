@@ -154,6 +154,11 @@ public class MenuManager : MonoBehaviour, IFmod
         gameScreenMenu.SetActive(true);
     }
 
+    public void BackExit(GameObject temp)
+    {
+        temp.SetActive(false);
+    }
+
     public void LeaveLevel()
     {
         SceneManager.LoadScene("Main Menu");

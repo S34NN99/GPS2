@@ -19515,6 +19515,7 @@ GameObject:
   - component: {fileID: 1370843319}
   - component: {fileID: 1370843318}
   - component: {fileID: 1370843317}
+  - component: {fileID: 1370843322}
   m_Layer: 0
   m_Name: Rescue Area
   m_TagString: Untagged
@@ -19612,6 +19613,25 @@ Transform:
   m_Father: {fileID: 1103517183}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &1370843322
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370843316}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c09886bdab174840aa66be69c806558, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1377532518
 PrefabInstance:
   m_ObjectHideFlags: 0

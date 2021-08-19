@@ -33,6 +33,7 @@ public class Wall : MonoBehaviour, IObjectives
             AddToObjective();
             player.StopAudioFmod(player.gameObject);
             player.UsingMainSkill(false);
+            player.StopAllCoroutines();
             gameManager.RemoveTimer(player.gameObject);
             player.SetCoroutine(player, false);
             Destroy(this.gameObject);
@@ -70,13 +71,16 @@ public class Wall : MonoBehaviour, IObjectives
 
     public void AddToObjective()
     {
-        foreach (Objective obj in taskManager.ActiveObjectives)
+        if (taskManager)
         {
-            if (obj.objectiveType == Objective.ObjectiveType.BreakWall)
+            foreach (Objective obj in taskManager.ActiveObjectives)
             {
-                obj.currentValue++;
-                taskManager.LevelProgression();
-                return;
+                if (obj.objectiveType == Objective.ObjectiveType.BreakWall)
+                {
+                    obj.currentValue++;
+                    taskManager.LevelProgression();
+                    return;
+                }
             }
         }
     }

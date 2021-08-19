@@ -135,7 +135,7 @@ public class Fire : MonoBehaviour, IFmod
             player.UnStun(player);
             iPlayer.UniqueAnimation("Burn", false);
         }
-        taskManager.UpdateValue(Objective.ObjectiveType.Fire, 1f);
+        //taskManager.UpdateValue(Objective.ObjectiveType.Fire, 1f);
         Destroy(this.gameObject);
     }
 

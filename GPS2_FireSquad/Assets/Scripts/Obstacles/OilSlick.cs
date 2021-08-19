@@ -23,7 +23,10 @@ public class OilSlick : MonoBehaviour, IObjectives
             {
                 target.Stun(target);
                 iPlayer.UniqueAnimation("Slip", true);
-                AddToObjective();
+                if (taskManager)
+                {
+                    AddToObjective();
+                }
                 FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/OilSlip");
                 Destroy(this.gameObject);
             }
