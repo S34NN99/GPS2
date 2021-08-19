@@ -371,6 +371,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 5067
+--- !u!114 &-6078268280007518841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BlazeSFX
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BlazeSFX
+  guid: 61284594078f3e42aa777024741fa63d
+  Banks:
+  - {fileID: 5358077601213276897}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 3500
 --- !u!114 &-6040698150516234787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,11 +716,11 @@ MonoBehaviour:
   Path: ../GPS2_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637648450986795561
+  lastModified: 637650148211952867
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1510
+    Value: 1586
   Exists: 1
 --- !u!114 &-3566728803481983228
 MonoBehaviour:
@@ -918,13 +941,38 @@ MonoBehaviour:
   - {fileID: 4399453930482893713}
   - {fileID: -1905120725031747939}
   - {fileID: -4102736204194838606}
+  - {fileID: -6078268280007518841}
+  - {fileID: 306891684569091022}
   EditorParameters: []
   MasterBanks:
   - {fileID: 5358077601213276897}
   StringsBanks:
   - {fileID: -3643444224340816758}
-  stringsBankWriteTime: 637648450986795561
+  stringsBankWriteTime: 637650148211952867
   cacheVersion: 6
+--- !u!114 &306891684569091022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TrapSFX
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TrapSFX
+  guid: cdd06c6774aacf45b297b434d2679186
+  Banks:
+  - {fileID: 5358077601213276897}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1175
 --- !u!114 &509445836806899751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1635,7 +1683,7 @@ MonoBehaviour:
   Path: ../GPS2_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637648450986765659
+  lastModified: 637650148211932922
   LoadResult: 0
   FileSizes: []
   Exists: 1

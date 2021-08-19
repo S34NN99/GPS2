@@ -26,6 +26,7 @@ public class Trap : MonoBehaviour, IObjectives
                 target.Stun(target);
                 iPlayer.UniqueAnimation("Trap", true);
                 trappedPlayer.Add(target.gameObject);
+                FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/TrapSFX");
             }
         }
     }
