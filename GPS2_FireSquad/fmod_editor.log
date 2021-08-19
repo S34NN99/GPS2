@@ -7,7 +7,11 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
+<<<<<<< HEAD
 [LOG] AsyncManager::init                       : manager 000001FAE808A508 isAsync 0 updatePeriod 0.02
+=======
+[LOG] AsyncManager::init                       : manager 0000018B63F3FF58 isAsync 0 updatePeriod 0.02
+>>>>>>> parent of aeec20d (TrainingRoom)
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -16,5 +20,53 @@
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
 [LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] Manager::readBank                        : fileversion = 135, compatVersion = 132 (oldest = 44, newest = 135)
-[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = ../GPS2_FMOD/Build\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 00000188C57D4BD8 : node = 0000018B1A9AD3B0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000018B6DE13548.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000188C57D4BD8
+[LOG] SystemI::createSoundInternal             :     Create name='../GPS2_FMOD/Build\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3610720
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20768
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000018B1A9AD4C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 3610720
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 20768
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000267C70F0E8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->useropen           = 00007FFA8E197D70
+[LOG] SystemI::createSoundInternal             :     exinfo->userclose          = 00007FFA8E197D40
+[LOG] SystemI::createSoundInternal             :     exinfo->userread           = 00007FFA8E197E40
+[LOG] SystemI::createSoundInternal             :     exinfo->userseek           = 00007FFA8E197F00
+[LOG] SystemI::createSoundInternal             :     exinfo->fileuserdata       = 0000018B701D28D8
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='LevelSelectBGM', format=5, channels=2, frequency=48000, lengthbytes=235136, lengthpcm=819072, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.482605.
+[LOG] SystemI::DSPCodecPoolRegister            :     register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             :     Sample 0/1: name='SelectUIButtonSFX', format=5, channels=2, frequency=48000, lengthbytes=1280, lengthpcm=42631, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.479553.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000188C57D4BD8
+[LOG] SoundI::release                          : MainMenuBGM (00000188C57D4878)
+[LOG] SoundI::release                          :     MainMenuBGM (00000188C9AD6F98)
+[LOG] SoundI::release                          :     MainMenuBGM (00000188CB81EF68)
+[LOG] SoundI::release                          : LevelSelectBGM (00000188C57D4BD8)
+[LOG] SoundI::release                          :     LevelSelectBGM (00000188C9AD6C58)
+[LOG] SoundI::release                          :     LevelSelectBGM (0000018B1B0D5938)
+[LOG] SoundI::release                          :  (0000018B3440E818)
+[LOG] SoundI::release                          :     SelectUIButtonSFX (00000188C9AD60F8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
