@@ -56,6 +56,7 @@ public class Fire : MonoBehaviour, IFmod
                     target.SpawnFire(target, gameManager.firePrefab);
                     iPlayer.UniqueAnimation("Burn", true);
                     iPlayer.Walking(false);
+                    FMODUnity.RuntimeManager.PlayOneShot("event:/SFX/BlazeSFX");
                 }
                 else
                 {

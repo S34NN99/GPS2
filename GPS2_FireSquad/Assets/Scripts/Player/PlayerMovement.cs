@@ -175,7 +175,6 @@ public class PlayerMovement : MonoBehaviour, IPlayer, IFmod, IObjectives
             if (parent.transform.GetChild(i).GetComponent<PlayerMovement>().myPlayer.isStunned) stunCount++;
         }
 
-        Debug.Log($"{stunCount}");
         if(stunCount >= 3)
         {
             taskManager.summaryManager.SummaryDisplay();
