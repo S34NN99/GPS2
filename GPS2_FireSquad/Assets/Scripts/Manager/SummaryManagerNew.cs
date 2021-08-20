@@ -157,8 +157,6 @@ public class SummaryManagerNew : MonoBehaviour
         SetTimeLeft();
 
         DisplayFireHydrants();
-
-
     }
 
     #region SceneChangeButtons
@@ -172,9 +170,9 @@ public class SummaryManagerNew : MonoBehaviour
 
     public void NextScene()
     {
-        Time.timeScale = 1f;
         gameManager.StopAudioFmod(gameManager.gameObject);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Time.timeScale = 1f;
     }
 
     public void Replay()

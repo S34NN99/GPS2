@@ -206,6 +206,7 @@ public class TaskManager : MonoBehaviour
 
         if(timeRanOut())
         {
+            Debug.Log("Still checking");
             summaryManager.SummaryDisplay();
         }
         //LevelProgression();

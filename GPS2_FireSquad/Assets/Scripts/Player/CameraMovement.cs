@@ -15,6 +15,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         selectedPlayer = playerGroup.transform.GetChild(0).gameObject;
         selectedPlayer.GetComponent<PlayerMovement>().playerSelected = true;
         FindObjectOfType<GameManager>().playerObject = selectedPlayer;
